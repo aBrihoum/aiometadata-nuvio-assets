@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720" role="img" aria-label="pluto-tv">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0D"/>
+      <stop offset="55%" stop-color="#14141A"/>
+      <stop offset="100%" stop-color="#1C1C24"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#FFF200" stop-opacity="0.24"/>
+      <stop offset="65%" stop-color="#FFF200" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0A0A0D" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="plutoCutout">
+      <rect x="0" y="0" width="512" height="512" fill="#FFFFFF"/>
+      <g fill="#000000" font-family="'Montserrat', 'Futura', 'Arial Rounded MT Bold', 'Nunito', system-ui, sans-serif" font-weight="900" font-size="148" letter-spacing="-4">
+        <text x="58" y="308">pluto</text>
+      </g>
+    </mask>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)"/>
+  <rect width="720" height="720" fill="url(#glow)"/>
+  <rect x="0" y="0" width="720" height="4" fill="#FFF200" fill-opacity="0.45"/>
+  <rect x="0" y="716" width="720" height="4" fill="#FFF200" fill-opacity="0.45"/>
+  <g transform="translate(86.62, 100.80) scale(1.0125)">
+        <circle cx="220" cy="256" r="172" fill="#FFF200" mask="url(#plutoCutout)"/>
+    <g fill="#FFFFFF" transform="translate(394, 118)">
+      <path d="M18 0h22v26h24v20H40v40c0 10 4 14 14 14h10v20H48c-22 0-30-11-30-32V46H4V26h14V0z"/>
+      <path d="M74 26h24l18 60 18-60h24l-30 94h-24L74 26z"/>
+    </g>
+  </g>
+</svg>

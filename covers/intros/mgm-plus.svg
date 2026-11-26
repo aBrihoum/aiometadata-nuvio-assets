@@ -1,0 +1,460 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MGM+ Original Intro Animation">
+  <style>
+    svg {
+      background: #0a0c10;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Pearlescent silver-white studio atmosphere */
+    #studio-stage {
+      opacity: 0;
+      animation: studio-fade 7.2s linear infinite;
+    }
+
+    /* Faint drifting studio bokeh specks */
+    #bokeh-drift {
+      animation: bokeh-move 7.2s linear infinite;
+    }
+
+    /* Phase 1: Delicate golden stardust wisps sweeping left -&gt; center */
+    #wisp-1 {
+      stroke-dasharray: 22 120;
+      stroke-dashoffset: 22;
+      opacity: 0;
+      animation: wisp-1-flow 7.2s linear infinite;
+    }
+
+    #wisp-2 {
+      stroke-dasharray: 18 120;
+      stroke-dashoffset: 18;
+      opacity: 0;
+      animation: wisp-2-flow 7.2s linear infinite;
+    }
+
+    #wisp-3 {
+      stroke-dasharray: 15 120;
+      stroke-dashoffset: 15;
+      opacity: 0;
+      animation: wisp-3-flow 7.2s linear infinite;
+    }
+
+    /* Fine gold dust particle clouds converging into center */
+    #dust-cloud-a {
+      opacity: 0;
+      animation:
+        cloud-a-move 7.2s linear infinite,
+        cloud-a-fade 7.2s linear infinite;
+    }
+
+    #dust-cloud-b {
+      opacity: 0;
+      animation:
+        cloud-b-move 7.2s linear infinite,
+        cloud-b-fade 7.2s linear infinite;
+    }
+
+    /* Warm champagne-gold flare peaking right as MGM+ materializes */
+    #gold-bloom-scale {
+      animation: bloom-scale 7.2s linear infinite;
+    }
+
+    #gold-bloom-fade {
+      opacity: 0;
+      animation: bloom-fade 7.2s linear infinite;
+    }
+
+    /* Master lockup gentle camera drift &amp; clean end dissolve */
+    #lockup-drift {
+      animation: lockup-drift-move 7.2s linear infinite;
+    }
+
+    #lockup-fade {
+      opacity: 0;
+      animation: lockup-alpha 7.2s linear infinite;
+    }
+
+    /* MGM+ settles dead center -&gt; glides left cleanly when ORIGINAL enters */
+    #mgm-shift {
+      animation: mgm-shift-move 7.2s linear infinite;
+    }
+
+    #mgm-settle {
+      animation: mgm-settle-scale 7.2s linear infinite;
+    }
+
+    /* Diagonal specular sheen sweeping across the gold letters */
+    #gold-sheen {
+      animation: sheen-pass 7.2s linear infinite;
+    }
+
+    /* Clean uppercase ORIGINAL emerging right of '+' */
+    #original-mover {
+      animation: orig-slide 7.2s linear infinite;
+    }
+
+    #original-fade {
+      opacity: 0;
+      animation: orig-alpha 7.2s linear infinite;
+    }
+
+    /* ---- MOTION TRACKS (one uninterrupted curve per phase, local 0,0 origins) ---- */
+    @keyframes bokeh-move {
+      0%   { transform: translate(-18px, 14px); }
+      100% { transform: translate(26px, -18px); }
+    }
+
+    @keyframes wisp-1-flow {
+      0%, 5%    { stroke-dashoffset: 22; opacity: 0; }
+      10%       { opacity: 0.85; animation-timing-function: cubic-bezier(0.32, 0.04, 0.22, 1); }
+      29%       { stroke-dashoffset: -102; opacity: 0.72; }
+      33%, 100% { stroke-dashoffset: -108; opacity: 0; }
+    }
+
+    @keyframes wisp-2-flow {
+      0%, 7%    { stroke-dashoffset: 18; opacity: 0; }
+      12%       { opacity: 0.78; animation-timing-function: cubic-bezier(0.32, 0.04, 0.22, 1); }
+      31%       { stroke-dashoffset: -102; opacity: 0.65; }
+      35%, 100% { stroke-dashoffset: -108; opacity: 0; }
+    }
+
+    @keyframes wisp-3-flow {
+      0%, 9%    { stroke-dashoffset: 15; opacity: 0; }
+      14%       { opacity: 0.68; animation-timing-function: cubic-bezier(0.32, 0.04, 0.22, 1); }
+      32%       { stroke-dashoffset: -102; opacity: 0.55; }
+      36%, 100% { stroke-dashoffset: -108; opacity: 0; }
+    }
+
+    @keyframes cloud-a-move {
+      0%, 6% {
+        transform: translate(-360px, 18px) scale(1.35, 0.78);
+        animation-timing-function: cubic-bezier(0.28, 0.06, 0.22, 1);
+      }
+      33%, 100% {
+        transform: translate(12px, -4px) scale(0.52, 0.52);
+      }
+    }
+
+    @keyframes cloud-b-move {
+      0%, 9% {
+        transform: translate(-290px, -22px) scale(1.25, 0.82);
+        animation-timing-function: cubic-bezier(0.28, 0.06, 0.22, 1);
+      }
+      35%, 100% {
+        transform: translate(-8px, 6px) scale(0.46, 0.46);
+      }
+    }
+
+    @keyframes bloom-scale {
+      0%, 22% {
+        transform: scale(0.45, 0.35);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      40%, 100% {
+        transform: scale(1.25, 0.95);
+      }
+    }
+
+    @keyframes mgm-settle-scale {
+      0%, 25% {
+        transform: scale(0.95);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      38%, 100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes mgm-shift-move {
+      0%, 42% {
+        transform: translateX(0px);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      58%, 100% {
+        transform: translateX(-92px);
+      }
+    }
+
+    @keyframes orig-slide {
+      0%, 44% {
+        transform: translateX(-22px);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      60%, 100% {
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes sheen-pass {
+      0%, 34% {
+        transform: translateX(-260px);
+        animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+      }
+      62%, 100% {
+        transform: translateX(340px);
+      }
+    }
+
+    @keyframes lockup-drift-move {
+      0%, 25%   { transform: scale(0.985); }
+      94%, 100% { transform: scale(1.018); }
+    }
+
+    /* ---- OPACITY TRACKS ---- */
+    @keyframes studio-fade {
+      0%        { opacity: 0; animation-timing-function: ease-out; }
+      7%, 88%   { opacity: 1; animation-timing-function: ease-in-out; }
+      96%, 100% { opacity: 0; }
+    }
+
+    @keyframes cloud-a-fade {
+      0%, 6%    { opacity: 0; animation-timing-function: ease-out; }
+      15%       { opacity: 0.92; animation-timing-function: linear; }
+      26%       { opacity: 0.85; animation-timing-function: ease-in; }
+      33%, 100% { opacity: 0; }
+    }
+
+    @keyframes cloud-b-fade {
+      0%, 9%    { opacity: 0; animation-timing-function: ease-out; }
+      18%       { opacity: 0.88; animation-timing-function: linear; }
+      28%       { opacity: 0.78; animation-timing-function: ease-in; }
+      35%, 100% { opacity: 0; }
+    }
+
+    @keyframes bloom-fade {
+      0%, 22%   { opacity: 0; animation-timing-function: ease-out; }
+      30%       { opacity: 0.85; animation-timing-function: ease-out; }
+      41%, 100% { opacity: 0; }
+    }
+
+    @keyframes lockup-alpha {
+      0%, 25%   { opacity: 0; animation-timing-function: ease-out; }
+      33%, 86%  { opacity: 1; animation-timing-function: ease-in-out; }
+      94%, 100% { opacity: 0; }
+    }
+
+    @keyframes orig-alpha {
+      0%, 45%   { opacity: 0; animation-timing-function: ease-out; }
+      57%, 100% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #studio-stage, #bokeh-drift, #wisp-1, #wisp-2, #wisp-3,
+      #dust-cloud-a, #dust-cloud-b, #gold-bloom-scale, #gold-bloom-fade,
+      #lockup-drift, #lockup-fade, #mgm-shift, #mgm-settle, #gold-sheen,
+      #original-mover, #original-fade {
+        animation: none;
+      }
+      #wisp-1, #wisp-2, #wisp-3, #dust-cloud-a, #dust-cloud-b, #gold-bloom-fade { opacity: 0; }
+      #studio-stage, #lockup-fade, #original-fade { opacity: 1; }
+      #mgm-shift { transform: translateX(-92px); }
+      #mgm-settle, #original-mover, #lockup-drift { transform: none; }
+    }
+  </style>
+
+  <defs>
+    
+    <radialGradient id="studioSilver" cx="47%" cy="47%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="38%" stop-color="#f7f8fa" />
+      <stop offset="68%" stop-color="#cfd5dc" />
+      <stop offset="90%" stop-color="#9aa3ae" />
+      <stop offset="100%" stop-color="#76808c" />
+    </radialGradient>
+
+    <linearGradient id="edgeVignetteR" gradientUnits="userSpaceOnUse" x1="780" y1="360" x2="1280" y2="360">
+      <stop offset="0%" stop-color="#56606e" stop-opacity="0" />
+      <stop offset="70%" stop-color="#56606e" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#37404d" stop-opacity="0.42" />
+    </linearGradient>
+
+    
+    <linearGradient id="wispGoldA" gradientUnits="userSpaceOnUse" x1="120" y1="330" x2="650" y2="380">
+      <stop offset="0%" stop-color="#b8892c" stop-opacity="0" />
+      <stop offset="35%" stop-color="#d4a442" stop-opacity="0.72" />
+      <stop offset="75%" stop-color="#f5d98a" stop-opacity="0.88" />
+      <stop offset="100%" stop-color="#8f6318" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="wispGoldB" gradientUnits="userSpaceOnUse" x1="160" y1="390" x2="645" y2="350">
+      <stop offset="0%" stop-color="#9e701e" stop-opacity="0" />
+      <stop offset="45%" stop-color="#e3ba5b" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#fff0ba" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <radialGradient id="goldBloomGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff5cc" stop-opacity="0.92" />
+      <stop offset="28%" stop-color="#e3b652" stop-opacity="0.46" />
+      <stop offset="64%" stop-color="#b58328" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="bokehSoft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="mgmGoldMain" gradientUnits="userSpaceOnUse" x1="-118" y1="-48" x2="112" y2="62">
+      <stop offset="0%" stop-color="#6e480e" />
+      <stop offset="16%" stop-color="#c99834" />
+      <stop offset="30%" stop-color="#fce595" />
+      <stop offset="45%" stop-color="#8f6216" />
+      <stop offset="62%" stop-color="#e6be5c" />
+      <stop offset="76%" stop-color="#fff0b3" />
+      <stop offset="90%" stop-color="#8c5f14" />
+      <stop offset="100%" stop-color="#cfa03e" />
+    </linearGradient>
+
+    
+    <linearGradient id="mgmGoldRim" gradientUnits="userSpaceOnUse" x1="0" y1="-47" x2="0" y2="66">
+      <stop offset="0%" stop-color="#fff5cc" stop-opacity="0.9" />
+      <stop offset="48%" stop-color="#d4a038" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#4d2f06" stop-opacity="0.85" />
+    </linearGradient>
+
+    
+    <linearGradient id="sheenGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="88" y2="0">
+      <stop offset="0%" stop-color="#fffbe6" stop-opacity="0" />
+      <stop offset="50%" stop-color="#fffbe6" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#fffbe6" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <g id="mgmLetters">
+      
+      <path d="M -119 -46 H -102 L -82 14 L -64 -46 H -49 V -43.5 C -53 -43 -54.5 -40.5 -54.5 -35 V 35 C -54.5 40.5 -53 43 -48.5 43.5 V 46 H -72 V 43.5 C -67.5 43 -66 40.5 -66 35 V -20 L -85 45 H -87 L -108 -19 V 35 C -108 40.5 -106.5 43 -102 43.5 V 46 H -120 V 43.5 C -116 43 -114.5 40.5 -114.5 35 V -35 C -114.5 -40.5 -116 -43 -119 -43.5 Z" />
+
+      
+      <path d="M 24.5 -45.5 L 26 -24 H 23.5 C 20.5 -35.5 12 -41.5 -1 -41.5 C -19 -41.5 -26.5 -24 -26.5 -0.5 C -26.5 23.5 -18 39 -1.5 39 C 6.5 39 11.5 36.5 14 32.5 V 10.5 C 14 7.5 12 6 6.5 5.5 V 3 H 30.5 V 5.5 C 26.5 6 25 7.5 25 11.5 V 36 C 25 55 12.5 66.5 -6.5 66.5 C -13.5 66.5 -18.5 64 -20.5 60.5 C -17.5 58 -13 58.8 -8 58.8 C 4.5 58.8 13.5 51.5 14 40 C 8.5 44.5 2 46.5 -5.5 46.5 C -26.5 46.5 -40 28.5 -40 -0.5 C -40 -29 -25 -47 -1.5 -47 C 9.5 -47 16.5 -43.5 21.5 -42 Z" />
+
+      
+      <path transform="translate(159, 0)" d="M -119 -46 H -102 L -82 14 L -64 -46 H -49 V -43.5 C -53 -43 -54.5 -40.5 -54.5 -35 V 35 C -54.5 40.5 -53 43 -48.5 43.5 V 46 H -72 V 43.5 C -67.5 43 -66 40.5 -66 35 V -20 L -85 45 H -87 L -108 -19 V 35 C -108 40.5 -106.5 43 -102 43.5 V 46 H -120 V 43.5 C -116 43 -114.5 40.5 -114.5 35 V -35 C -114.5 -40.5 -116 -43 -119 -43.5 Z" />
+    </g>
+
+    
+    <clipPath id="mgmPlusClip">
+      <path d="M -119 -46 H -102 L -82 14 L -64 -46 H -49 V -43.5 C -53 -43 -54.5 -40.5 -54.5 -35 V 35 C -54.5 40.5 -53 43 -48.5 43.5 V 46 H -72 V 43.5 C -67.5 43 -66 40.5 -66 35 V -20 L -85 45 H -87 L -108 -19 V 35 C -108 40.5 -106.5 43 -102 43.5 V 46 H -120 V 43.5 C -116 43 -114.5 40.5 -114.5 35 V -35 C -114.5 -40.5 -116 -43 -119 -43.5 Z" />
+      <path d="M 24.5 -45.5 L 26 -24 H 23.5 C 20.5 -35.5 12 -41.5 -1 -41.5 C -19 -41.5 -26.5 -24 -26.5 -0.5 C -26.5 23.5 -18 39 -1.5 39 C 6.5 39 11.5 36.5 14 32.5 V 10.5 C 14 7.5 12 6 6.5 5.5 V 3 H 30.5 V 5.5 C 26.5 6 25 7.5 25 11.5 V 36 C 25 55 12.5 66.5 -6.5 66.5 C -13.5 66.5 -18.5 64 -20.5 60.5 C -17.5 58 -13 58.8 -8 58.8 C 4.5 58.8 13.5 51.5 14 40 C 8.5 44.5 2 46.5 -5.5 46.5 C -26.5 46.5 -40 28.5 -40 -0.5 C -40 -29 -25 -47 -1.5 -47 C 9.5 -47 16.5 -43.5 21.5 -42 Z" />
+      <path transform="translate(159, 0)" d="M -119 -46 H -102 L -82 14 L -64 -46 H -49 V -43.5 C -53 -43 -54.5 -40.5 -54.5 -35 V 35 C -54.5 40.5 -53 43 -48.5 43.5 V 46 H -72 V 43.5 C -67.5 43 -66 40.5 -66 35 V -20 L -85 45 H -87 L -108 -19 V 35 C -108 40.5 -106.5 43 -102 43.5 V 46 H -120 V 43.5 C -116 43 -114.5 40.5 -114.5 35 V -35 C -114.5 -40.5 -116 -43 -119 -43.5 Z" />
+      <path transform="translate(144, -2)" d="M -5 -25 H 5 V -5 H 25 V 5 H 5 V 25 H -5 V 5 H -25 V -5 H -5 Z" />
+    </clipPath>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#0a0c10" />
+
+  
+  <g id="studio-stage">
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#studioSilver)" />
+    <rect x="780" y="-200%" width="260%" height="500%" fill="url(#edgeVignetteR)" />
+
+    
+    <g id="bokeh-drift" opacity="0.58">
+      <circle cx="155" cy="590" r="5.5" fill="url(#bokehSoft)" />
+      <circle cx="245" cy="635" r="3.2" fill="url(#bokehSoft)" />
+      <circle cx="965" cy="560" r="4.5" fill="url(#bokehSoft)" />
+      <circle cx="1090" cy="495" r="6.5" fill="url(#bokehSoft)" />
+      <circle cx="1145" cy="585" r="3.8" fill="url(#bokehSoft)" />
+      <circle cx="1030" cy="245" r="3.0" fill="url(#bokehSoft)" />
+      <circle cx="220" cy="210" r="3.5" fill="url(#bokehSoft)" />
+    </g>
+  </g>
+
+  
+  <g fill="none" stroke-linecap="round">
+    <path id="wisp-1" pathLength="100" d="M 110 358 C 255 326, 385 404, 515 362 C 568 345, 602 346, 640 360" stroke="url(#wispGoldA)" stroke-width="1.6" />
+    <path id="wisp-2" pathLength="100" d="M 150 388 C 285 412, 415 332, 535 376 C 580 392, 610 374, 640 360" stroke="url(#wispGoldB)" stroke-width="1.1" />
+    <path id="wisp-3" pathLength="100" d="M 175 332 C 325 314, 440 368, 560 348 C 598 342, 620 352, 640 360" stroke="url(#wispGoldA)" stroke-width="0.9" />
+  </g>
+
+  
+  <g transform="translate(640, 360)">
+    <g id="dust-cloud-a">
+      <circle cx="-118" cy="-12" r="1.4" fill="#c99834" />
+      <circle cx="-94" cy="14" r="1.9" fill="#e6be5c" />
+      <circle cx="-78" cy="-4" r="1.1" fill="#8f6216" />
+      <circle cx="-62" cy="22" r="1.6" fill="#d4a442" />
+      <circle cx="-46" cy="-18" r="2.1" fill="#fce595" />
+      <circle cx="-32" cy="6" r="1.3" fill="#b8892c" />
+      <circle cx="-18" cy="-10" r="1.8" fill="#e6be5c" />
+      <circle cx="-6" cy="16" r="1.2" fill="#8f6216" />
+      <circle cx="12" cy="-14" r="1.7" fill="#fce595" />
+      <circle cx="28" cy="8" r="1.5" fill="#c99834" />
+      <circle cx="44" cy="-6" r="1.1" fill="#d4a442" />
+      <circle cx="62" cy="12" r="1.6" fill="#e6be5c" />
+    </g>
+    <g id="dust-cloud-b">
+      <circle cx="-102" cy="8" r="1.2" fill="#8f6216" />
+      <circle cx="-82" cy="-20" r="1.7" fill="#d4a442" />
+      <circle cx="-58" cy="4" r="2.0" fill="#fce595" />
+      <circle cx="-38" cy="24" r="1.3" fill="#c99834" />
+      <circle cx="-20" cy="-22" r="1.5" fill="#b8892c" />
+      <circle cx="-4" cy="-2" r="1.9" fill="#e6be5c" />
+      <circle cx="18" cy="18" r="1.2" fill="#8f6216" />
+      <circle cx="34" cy="-16" r="1.6" fill="#fce595" />
+      <circle cx="52" cy="2" r="1.4" fill="#c99834" />
+      <circle cx="74" cy="-10" r="1.1" fill="#d4a442" />
+    </g>
+
+    
+    <g id="gold-bloom-scale">
+      <ellipse id="gold-bloom-fade" cx="0" cy="0" rx="185" ry="72" fill="url(#goldBloomGrad)" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(640, 360)">
+    <g id="lockup-drift">
+      <g id="lockup-fade">
+        
+        <g id="mgm-shift">
+          <g id="mgm-settle">
+            <g transform="scale(0.92) translate(-24.5, 0)">
+              
+              <use href="#mgmLetters" transform="translate(2, 3.2)" fill="#434b57" opacity="0.18" />
+              <path transform="translate(146, 1.2)" d="M -5 -25 H 5 V -5 H 25 V 5 H 5 V 25 H -5 V 5 H -25 V -5 H -5 Z" fill="#434b57" opacity="0.18" />
+
+              
+              <use href="#mgmLetters" transform="translate(1.1, 1.4)" fill="#472c05" />
+
+              
+              <use href="#mgmLetters" fill="url(#mgmGoldMain)" stroke="url(#mgmGoldRim)" stroke-width="0.9" stroke-linejoin="miter" />
+
+              
+              <g transform="translate(144, -2)">
+                <polygon points="-5,-25 0,-20 0,0 -5,-5" fill="#fce595" />
+                <polygon points="5,-25 0,-20 0,0 5,-5" fill="#c99630" />
+                <polygon points="-25,-5 -20,0 0,0 -5,-5" fill="#fff6cf" />
+                <polygon points="-25,5 -20,0 0,0 -5,5" fill="#785112" />
+                <polygon points="25,-5 20,0 0,0 5,-5" fill="#e6b952" />
+                <polygon points="25,5 20,0 0,0 5,5" fill="#5e3c0a" />
+                <polygon points="-5,25 0,20 0,0 -5,5" fill="#b58324" />
+                <polygon points="5,25 0,20 0,0 5,5" fill="#4f3208" />
+                <polygon points="-5,-25 5,-25 0,-20" fill="#fff8dc" />
+                <polygon points="-25,-5 -25,5 -20,0" fill="#ffe99e" />
+                <polygon points="25,-5 25,5 20,0" fill="#8a5d16" />
+                <polygon points="-5,25 5,25 0,20" fill="#452b06" />
+              </g>
+
+              
+              <g clip-path="url(#mgmPlusClip)">
+                <g id="gold-sheen">
+                  <rect x="0" y="-65" width="88" height="145" fill="url(#sheenGrad)" transform="skewX(-24)" />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+
+        
+        <g id="original-mover">
+          <text id="original-fade" x="62" y="7" fill="#827968" font-family="&#39;Montserrat&#39;, &#39;Avenir Next&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="22" font-weight="400" letter-spacing="8">ORIGINAL</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Crunchyroll Intro Animation">
+  <style>
+    svg { background: #000000; width: 100%; height: 100%; display: block; }
+
+    #cr-stage {
+      opacity: 1;
+      will-change: opacity;
+      animation: cr-stage-loop 5.0s linear infinite;
+    }
+
+    #drop-orb {
+      opacity: 0;
+      transform: translate(640px, 140px) scale(0.5);
+      will-change: opacity, transform;
+      animation: orb-drop-loop 5.0s linear infinite;
+    }
+
+    .cr-ripple {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scale(0.35);
+      will-change: opacity, transform;
+    }
+
+    #rp1 { animation: ripple-1-loop 5.0s linear infinite; }
+    #rp2 { animation: ripple-2-loop 5.0s linear infinite; }
+    #rp3 { animation: ripple-3-loop 5.0s linear infinite; }
+
+    #eye-carrier {
+      opacity: 0;
+      transform: translate(640px, 360px) scale(1.2);
+      will-change: opacity, transform;
+      animation: eye-settle-loop 5.0s linear infinite;
+    }
+
+    #cr-word {
+      opacity: 0;
+      transform: translateX(-32px);
+      will-change: opacity, transform;
+      animation: cr-text-loop 5.0s linear infinite;
+    }
+
+    @keyframes cr-stage-loop {
+      0%, 77.0% { opacity: 1; animation-timing-function: ease-in; }
+      86.0%, 97.0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes orb-drop-loop {
+      0%, 3.0% {
+        opacity: 0;
+        transform: translate(640px, 140px) scale(0.5);
+        animation-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
+      }
+      6.2% {
+        opacity: 1;
+      }
+      12.8% {
+        opacity: 1;
+        transform: translate(640px, 360px) scale(1.1);
+      }
+      16.0%, 86.0% {
+        opacity: 0;
+        transform: translate(640px, 360px) scale(0.8);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translate(640px, 140px) scale(0.5);
+      }
+    }
+
+    @keyframes ripple-1-loop {
+      0%, 13.6% { opacity: 0; transform: scale(0.35); stroke-width: 14px; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+      14.0%     { opacity: 0.95; }
+      34.6%, 100% { opacity: 0; transform: scale(4.2); stroke-width: 1px; }
+    }
+
+    @keyframes ripple-2-loop {
+      0%, 16.4% { opacity: 0; transform: scale(0.35); stroke-width: 14px; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+      16.8%     { opacity: 0.95; }
+      37.4%, 100% { opacity: 0; transform: scale(4.2); stroke-width: 1px; }
+    }
+
+    @keyframes ripple-3-loop {
+      0%, 19.2% { opacity: 0; transform: scale(0.35); stroke-width: 14px; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+      19.6%     { opacity: 0.95; }
+      40.2%, 100% { opacity: 0; transform: scale(4.2); stroke-width: 1px; }
+    }
+
+    @keyframes eye-settle-loop {
+      0%, 19.6% {
+        opacity: 0;
+        transform: translate(640px, 360px) scale(1.2);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      25.6% {
+        opacity: 1;
+        transform: translate(640px, 360px) scale(1);
+      }
+      36.6%, 86.0% {
+        opacity: 1;
+        transform: translate(432px, 360px) scale(1);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translate(640px, 360px) scale(1.2);
+      }
+    }
+
+    @keyframes cr-text-loop {
+      0%, 28.4% {
+        opacity: 0;
+        transform: translateX(-32px);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      39.4%, 86.0% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateX(-32px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #cr-stage, #drop-orb, .cr-ripple, #eye-carrier, #cr-word { animation: none; }
+      #drop-orb, .cr-ripple { opacity: 0; }
+      #eye-carrier { opacity: 1; transform: translate(432px, 360px) scale(1); }
+      #cr-word { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <defs>
+    
+    <mask id="crEyeMask">
+      <rect x="-60" y="-60" width="120" height="120" fill="#ffffff" />
+      <circle cx="8" cy="5" r="34" fill="#000000" />
+      <circle cx="24" cy="-6" r="14" fill="#ffffff" />
+    </mask>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  <g id="cr-stage">
+    
+    <circle id="rp1" class="cr-ripple" cx="640" cy="360" r="56" fill="none" stroke="#f47521" />
+    <circle id="rp2" class="cr-ripple" cx="640" cy="360" r="56" fill="none" stroke="#ff9e44" />
+    <circle id="rp3" class="cr-ripple" cx="640" cy="360" r="56" fill="none" stroke="#f47521" />
+
+    
+    <circle id="drop-orb" cx="0" cy="0" r="38" fill="#f47521" />
+
+    
+    <g id="eye-carrier">
+      <circle cx="0" cy="0" r="46" fill="#f47521" mask="url(#crEyeMask)" />
+      <circle cx="8" cy="5" r="24" fill="#f47521" />
+      <circle cx="21" cy="-5" r="11" fill="#000000" />
+    </g>
+
+    
+    <text id="cr-word" x="498" y="384" fill="#f47521" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-1.5">crunchyroll</text>
+  </g>
+</svg>

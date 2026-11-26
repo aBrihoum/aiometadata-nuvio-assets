@@ -1,0 +1,448 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curiosity Stream Intro Animation">
+  <style>
+    svg {
+      background: #030612;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Phase 1 (00:04 transition): Soft cyan-blue anamorphic flare sweep (zero hard edges) */
+    #intro-flare-move {
+      animation: flare-sweep 6.2s linear infinite;
+    }
+
+    #intro-flare-fade {
+      opacity: 0;
+      animation: flare-alpha 6.2s linear infinite;
+    }
+
+    /* Phase 2 (00:05): Soft volumetric coral-peach &amp; slate-blue mist around orb */
+    #mist-stage {
+      opacity: 0;
+      animation: mist-alpha 6.2s linear infinite;
+    }
+
+    #mist-coral-drift {
+      animation: mist-coral-move 6.2s linear infinite;
+    }
+
+    #mist-blue-drift {
+      animation: mist-blue-move 6.2s linear infinite;
+    }
+
+    /* Backlit translucent crystal sphere */
+    #orb-scale {
+      animation: orb-grow 6.2s linear infinite;
+    }
+
+    #orb-fade {
+      opacity: 0;
+      animation: orb-alpha 6.2s linear infinite;
+    }
+
+    /* Master lockup gentle drift + clean fade-out before bottom horizon dims */
+    #lockup-drift {
+      animation: lockup-push 6.2s linear infinite;
+    }
+
+    #lockup-fade {
+      opacity: 1;
+      animation: lockup-alpha 6.2s linear infinite;
+    }
+
+    /* Signature 'y' emblem: centered in orb -&gt; single-curve glide right into wordmark */
+    #y-mover {
+      animation: y-glide 6.2s linear infinite;
+    }
+
+    #y-white {
+      opacity: 0;
+      animation: y-white-alpha 6.2s linear infinite;
+    }
+
+    #y-amber {
+      opacity: 0;
+      animation: y-amber-alpha 6.2s linear infinite;
+    }
+
+    /* 'Curiosit' emerging cleanly with rightward momentum (no collision with 'y') */
+    #curiosit-mover {
+      animation: curiosit-slide 6.2s linear infinite;
+    }
+
+    #curiosit-fade {
+      opacity: 0;
+      animation: curiosit-alpha 6.2s linear infinite;
+    }
+
+    /* Wide-tracked 'STREAM' rising smoothly under 'Curio' */
+    #stream-mover {
+      animation: stream-rise 6.2s linear infinite;
+    }
+
+    #stream-fade {
+      opacity: 0;
+      animation: stream-alpha 6.2s linear infinite;
+    }
+
+    /* Warm golden-amber horizon glow hugging the bottom edge */
+    #bottom-horizon-scale {
+      animation: horizon-scale 6.2s linear infinite;
+    }
+
+    #bottom-horizon-fade {
+      opacity: 0;
+      animation: horizon-alpha 6.2s linear infinite;
+    }
+
+    /* ---- MOTION TRACKS (one uninterrupted curve per phase, local 0,0 origins) ---- */
+    @keyframes flare-sweep {
+      0% {
+        transform: translate(-360px, -40px) scale(1.25, 0.85);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      18%, 100% {
+        transform: translate(18px, 0px) scale(0.75, 0.75);
+      }
+    }
+
+    @keyframes mist-coral-move {
+      0%, 5% {
+        transform: translate(-24px, 14px) rotate(-14deg) scale(0.82);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      46%, 100% {
+        transform: translate(32px, -16px) rotate(14deg) scale(1.28);
+      }
+    }
+
+    @keyframes mist-blue-move {
+      0%, 5% {
+        transform: translate(26px, -12px) rotate(12deg) scale(0.84);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      46%, 100% {
+        transform: translate(-28px, 16px) rotate(-12deg) scale(1.25);
+      }
+    }
+
+    @keyframes orb-grow {
+      0%, 6% {
+        transform: scale(0.82);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      30% {
+        transform: scale(1.0);
+        animation-timing-function: cubic-bezier(0.45, 0, 0.85, 0.45);
+      }
+      45%, 100% {
+        transform: scale(1.48);
+      }
+    }
+
+    @keyframes y-glide {
+      0%, 8% {
+        transform: translate(0px, 0px) scale(0.96);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      22%, 33% {
+        transform: translate(0px, 0px) scale(1.18);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      49%, 100% {
+        transform: translate(174px, 0px) scale(1);
+      }
+    }
+
+    @keyframes curiosit-slide {
+      0%, 38% {
+        transform: translateX(-24px);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      52%, 100% {
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes stream-rise {
+      0%, 44% {
+        transform: translateY(8px);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      56%, 100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes lockup-push {
+      0%, 34%   { transform: scale(0.99); }
+      92%, 100% { transform: scale(1.018); }
+    }
+
+    @keyframes horizon-scale {
+      0%, 38%   { transform: scale(0.88, 0.72); animation-timing-function: ease-out; }
+      56%       { transform: scale(1.02, 1.0); animation-timing-function: ease-in-out; }
+      98%, 100% { transform: scale(0.96, 0.90); }
+    }
+
+    /* ---- OPACITY TRACKS ---- */
+    @keyframes flare-alpha {
+      0%        { opacity: 0; animation-timing-function: ease-out; }
+      5%        { opacity: 0.95; animation-timing-function: ease-in; }
+      17%, 100% { opacity: 0; }
+    }
+
+    @keyframes mist-alpha {
+      0%, 5%    { opacity: 0; animation-timing-function: ease-out; }
+      17%       { opacity: 1; animation-timing-function: linear; }
+      32%       { opacity: 0.95; animation-timing-function: ease-in; }
+      45%, 100% { opacity: 0; }
+    }
+
+    @keyframes orb-alpha {
+      0%, 6%    { opacity: 0; animation-timing-function: ease-out; }
+      17%       { opacity: 1; animation-timing-function: linear; }
+      32%       { opacity: 0.96; animation-timing-function: ease-in; }
+      44%, 100% { opacity: 0; }
+    }
+
+    @keyframes y-white-alpha {
+      0%, 9%    { opacity: 0; animation-timing-function: ease-out; }
+      19%       { opacity: 1; animation-timing-function: linear; }
+      35%       { opacity: 1; animation-timing-function: ease-in-out; }
+      46%, 100% { opacity: 0; }
+    }
+
+    @keyframes y-amber-alpha {
+      0%, 35%   { opacity: 0; animation-timing-function: ease-in-out; }
+      46%, 100% { opacity: 1; }
+    }
+
+    @keyframes curiosit-alpha {
+      0%, 38%   { opacity: 0; animation-timing-function: ease-out; }
+      49%, 100% { opacity: 1; }
+    }
+
+    @keyframes stream-alpha {
+      0%, 44%   { opacity: 0; animation-timing-function: ease-out; }
+      55%, 100% { opacity: 1; }
+    }
+
+    @keyframes lockup-alpha {
+      0%, 81%   { opacity: 1; animation-timing-function: ease-in-out; }
+      89%, 100% { opacity: 0; }
+    }
+
+    @keyframes horizon-alpha {
+      0%, 38%   { opacity: 0; animation-timing-function: ease-out; }
+      53%       { opacity: 0.96; animation-timing-function: linear; }
+      88%       { opacity: 0.92; animation-timing-function: ease-in-out; }
+      97%, 100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #intro-flare-move, #intro-flare-fade, #mist-stage, #mist-coral-drift, #mist-blue-drift,
+      #orb-scale, #orb-fade, #lockup-drift, #lockup-fade, #y-mover, #y-white, #y-amber,
+      #curiosit-mover, #curiosit-fade, #stream-mover, #stream-fade,
+      #bottom-horizon-scale, #bottom-horizon-fade {
+        animation: none;
+      }
+      #intro-flare-fade, #mist-stage, #orb-fade, #y-white { opacity: 0; }
+      #lockup-fade, #y-amber, #curiosit-fade, #stream-fade, #bottom-horizon-fade {
+        opacity: 1;
+        transform: none;
+      }
+      #y-mover { transform: translate(174px, 0px) scale(1); }
+    }
+  </style>
+
+  <defs>
+    
+    <radialGradient id="spaceBase" cx="50%" cy="46%" r="74%">
+      <stop offset="0%" stop-color="#071028" />
+      <stop offset="56%" stop-color="#040818" />
+      <stop offset="100%" stop-color="#02040c" />
+    </radialGradient>
+
+    
+    <radialGradient id="introFlareCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="16%" stop-color="#b5f6ff" stop-opacity="0.72" />
+      <stop offset="42%" stop-color="#2ea6d9" stop-opacity="0.34" />
+      <stop offset="72%" stop-color="#143c7a" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="introFlareStreak" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dffcff" stop-opacity="0.75" />
+      <stop offset="35%" stop-color="#48c4eb" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <radialGradient id="mistCoral" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f58c64" stop-opacity="0.46" />
+      <stop offset="32%" stop-color="#c44e3b" stop-opacity="0.26" />
+      <stop offset="64%" stop-color="#5c212e" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="mistBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#769fd1" stop-opacity="0.38" />
+      <stop offset="38%" stop-color="#2b4a78" stop-opacity="0.20" />
+      <stop offset="72%" stop-color="#112142" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <radialGradient id="orbHalo" cx="52%" cy="52%" r="50%">
+      <stop offset="56%" stop-color="#ffb899" stop-opacity="0" />
+      <stop offset="71%" stop-color="#ffaa85" stop-opacity="0.36" />
+      <stop offset="78%" stop-color="#ff8a63" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <radialGradient id="orbGlassBody" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#e8f2ff" stop-opacity="0.34" />
+      <stop offset="36%" stop-color="#7b93b5" stop-opacity="0.16" />
+      <stop offset="74%" stop-color="#222e4d" stop-opacity="0.18" />
+      <stop offset="93%" stop-color="#ffc9b0" stop-opacity="0.42" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.52" />
+    </radialGradient>
+
+    
+    <linearGradient id="orbRimGrad" gradientUnits="userSpaceOnUse" x1="-104" y1="-104" x2="104" y2="104">
+      <stop offset="0%" stop-color="#eef5ff" stop-opacity="0.72" />
+      <stop offset="48%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="84%" stop-color="#ffaa85" stop-opacity="0.78" />
+      <stop offset="100%" stop-color="#ff865c" stop-opacity="0.42" />
+    </linearGradient>
+
+    
+    <radialGradient id="orbSpecular" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.38" />
+      <stop offset="52%" stop-color="#cfe2ff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="amberYGrad" gradientUnits="userSpaceOnUse" x1="0" y1="-52" x2="0" y2="52">
+      <stop offset="0%" stop-color="#f7ba45" />
+      <stop offset="55%" stop-color="#eda12d" />
+      <stop offset="100%" stop-color="#df8d20" />
+    </linearGradient>
+
+    
+    <radialGradient id="horizonAmberWide" cx="50%" cy="100%" r="68%">
+      <stop offset="0%" stop-color="#ffbc4f" stop-opacity="0.78" />
+      <stop offset="32%" stop-color="#c4741d" stop-opacity="0.44" />
+      <stop offset="66%" stop-color="#4d2b12" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="horizonAmberCore" cx="50%" cy="100%" r="54%">
+      <stop offset="0%" stop-color="#ffe7a8" stop-opacity="0.92" />
+      <stop offset="38%" stop-color="#f09a29" stop-opacity="0.54" />
+      <stop offset="100%" stop-color="#030612" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#spaceBase)" />
+
+  
+  <g transform="translate(640, 352)">
+    <g id="intro-flare-move">
+      <g id="intro-flare-fade">
+        <ellipse cx="0" cy="0" rx="440" ry="155" fill="url(#introFlareCore)" transform="rotate(-10)" />
+        <ellipse cx="0" cy="0" rx="620" ry="34" fill="url(#introFlareStreak)" transform="rotate(-10)" />
+      </g>
+    </g>
+  </g>
+
+  
+  <g transform="translate(640, 352)">
+    <g id="mist-stage">
+      <g id="mist-coral-drift">
+        <ellipse cx="86" cy="-18" rx="280" ry="230" fill="url(#mistCoral)" />
+        <ellipse cx="18" cy="92" rx="235" ry="170" fill="url(#mistCoral)" opacity="0.78" />
+      </g>
+      <g id="mist-blue-drift">
+        <ellipse cx="-82" cy="-22" rx="260" ry="215" fill="url(#mistBlue)" />
+        <ellipse cx="78" cy="118" rx="215" ry="165" fill="url(#mistBlue)" opacity="0.75" />
+      </g>
+    </g>
+
+    
+    <g id="orb-scale">
+      <g id="orb-fade">
+        <circle cx="0" cy="0" r="142" fill="url(#orbHalo)" />
+        <circle cx="0" cy="0" r="104" fill="url(#orbGlassBody)" stroke="url(#orbRimGrad)" stroke-width="1.5" />
+        <ellipse cx="-32" cy="-38" rx="52" ry="32" fill="url(#orbSpecular)" transform="rotate(-28 -32 -38)" />
+      </g>
+    </g>
+  </g>
+
+  
+  <g transform="translate(640, 725)">
+    <g id="bottom-horizon-scale">
+      <g id="bottom-horizon-fade">
+        <ellipse cx="0" cy="0" rx="610" ry="185" fill="url(#horizonAmberWide)" />
+        <ellipse cx="0" cy="0" rx="355" ry="64" fill="url(#horizonAmberCore)" />
+      </g>
+    </g>
+  </g>
+
+  
+  <g transform="translate(640, 352)">
+    <g id="lockup-drift">
+      <g id="lockup-fade" transform="scale(1.12)">
+        
+        <g id="curiosit-mover">
+          <g id="curiosit-fade" fill="#ffffff" stroke="#ffffff">
+            
+            <path d="M -157 -49 A 16 15 0 0 0 -189 -49 V -9 A 16 15 0 0 0 -157 -9" fill="none" stroke-width="14" stroke-linecap="butt" />
+            
+            <path d="M -131 -51 V -8 A 14 14 0 0 0 -103 -8 V -51 M -103 -9 V 13" fill="none" stroke-width="14" stroke-linecap="butt" />
+            
+            <path d="M -77 -51 V 13 M -77 -28 A 16 16 0 0 1 -61 -44 H -55" fill="none" stroke-width="14" stroke-linecap="butt" />
+            
+            <path d="M -37 -51 V 13" fill="none" stroke-width="14" stroke-linecap="butt" />
+            <circle cx="-37" cy="-64" r="7.5" stroke="none" />
+            
+            <path d="M -11 -29 A 15 15 0 0 1 19 -29 V -9 A 15 15 0 0 1 -11 -9 Z" fill="none" stroke-width="14" />
+            
+            <path d="M 70 -36 C 69 -43, 63 -44, 56.5 -44 C 48 -44, 43 -39.5, 43 -32.5 C 43 -25, 48.5 -22, 57.5 -19.5 C 66.5 -17, 71 -13.5, 71 -6 C 71 2, 65 6, 56.5 6 C 48 6, 43 3, 42 -3" fill="none" stroke-width="14" stroke-linecap="butt" />
+            
+            <path d="M 96 -51 V 13" fill="none" stroke-width="14" stroke-linecap="butt" />
+            <circle cx="96" cy="-64" r="7.5" stroke="none" />
+            
+            <path d="M 126 -70 V -7 A 13 13 0 0 0 139 6 H 144" fill="none" stroke-width="14" stroke-linecap="butt" />
+            <path d="M 113 -44.5 H 143" fill="none" stroke-width="13" stroke-linecap="butt" />
+          </g>
+        </g>
+
+        
+        <g id="stream-mover">
+          <text id="stream-fade" x="-196" y="45" fill="#ffffff" font-family="&#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="21" font-weight="600" letter-spacing="17.5">STREAM</text>
+        </g>
+
+        
+        <g id="y-mover">
+          <g id="y-white">
+            <path d="M -15 -51 V -9 A 15 15 0 0 0 15 -9 V -51" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="butt" />
+            <path d="M 0 10 V 29" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="butt" />
+            <circle cx="0" cy="44" r="7.8" fill="#ffffff" />
+          </g>
+          <g id="y-amber">
+            <path d="M -15 -51 V -9 A 15 15 0 0 0 15 -9 V -51" fill="none" stroke="url(#amberYGrad)" stroke-width="14" stroke-linecap="butt" />
+            <path d="M 0 10 V 29" fill="none" stroke="url(#amberYGrad)" stroke-width="14" stroke-linecap="butt" />
+            <circle cx="0" cy="44" r="7.8" fill="#df8d20" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

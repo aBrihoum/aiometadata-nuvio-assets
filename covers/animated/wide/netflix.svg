@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="netflix">
+  <defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 640.0px 360.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.86; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.12); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.88; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-537px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(1320px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(1320px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-537px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-438px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1720px) skewX(-24deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="1440" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#E50914" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="22.0" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="7.48" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="1280" height="720" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#E50914" stop-opacity="0" /><stop offset="55%" stop-color="#E50914" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#E50914" stop-opacity="0.85" /><stop offset="100%" stop-color="#E50914" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#E50914" stop-opacity="0.072" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.160" /><stop offset="60%" stop-color="#E50914" stop-opacity="0.072" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A" />
+      <stop offset="55%" stop-color="#140709" />
+      <stop offset="100%" stop-color="#1F080C" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#E50914" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#E50914" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <rect width="1280" height="720" fill="url(#glow)" />
+  <rect width="1280" height="720" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="1280" height="4" fill="#E50914" fill-opacity="0.45" />
+  <rect x="0" y="716" width="1280" height="4" fill="#E50914" fill-opacity="0.45" />
+  <g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(203.92, 230.56) scale(0.8927)" id="nv-logo-src">
+    <path fill="#E50914" d="M140.803 258.904C154.04 256.826 167.277 254.938 180.703 253.427L180.703 0L140.803 0L140.803 144.896L87.855 0L44.23 0L44.23 272.313C57.656 270.422 71.082 268.723 84.508 267.022L84.508 117.028L140.803 258.904ZM217.574 249.647C245.558 247.379 273.541 245.679 301.525 244.545L301.525 204.514C286.021 205.08 270.517 205.835 255.013 206.78L255.013 145.652L292.637 145.652L292.637 105.81L255.013 105.81L255.013 40.032L301.525 40.032L301.525 0L217.574 0L217.574 249.647ZM332.724 40.032L369.596 40.032L369.596 242.656C382.266 242.467 394.936 242.278 407.606 242.278L407.606 40.032L444.478 40.032L444.478 0L332.724 0L332.724 40.032ZM476.433 242.845C489.103 243.034 501.773 243.412 514.443 243.979L514.443 145.652L551.315 145.652L551.315 105.81L514.443 105.81L514.443 40.032L560.577 40.032L560.577 0L476.433 0L476.433 242.845ZM594.989 246.246C622.216 247.947 649.443 250.025 676.481 252.671L676.481 212.64C661.732 211.317 646.983 210.183 632.234 209.239L632.234 0L594.989 0L594.989 246.246ZM705.222 255.884C718.081 257.394 730.751 259.095 743.421 260.985L743.421 0L705.222 0L705.222 255.884ZM883.732 279.687C900.184 282.712 916.447 286.115 932.71 289.707L874.655 135.824L931.008 0L889.027 0L851.964 89.882L814.334 0L772.921 0L828.895 134.879L770.273 264.943C784.455 266.833 798.637 268.912 812.63 271.18L850.64 180.542L883.732 279.687Z" />
+  </g>
+</g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="358" height="720" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="537" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="716" width="537" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

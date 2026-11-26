@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MUBI Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #master-stage {
+      opacity: 1;
+      will-change: opacity;
+      animation: master-stage-loop 5.8s linear infinite;
+    }
+
+    #violet-phase {
+      opacity: 0;
+      will-change: opacity;
+      animation: violet-life-loop 5.8s ease-in-out infinite;
+    }
+
+    #violet-blobs {
+      transform: translate(40px, 30px) scale(1.08);
+      will-change: transform;
+      animation: violet-drift-loop 5.8s ease-out infinite;
+    }
+
+    #orange-phase {
+      opacity: 0;
+      will-change: opacity;
+      animation: orange-life-loop 5.8s ease-in-out infinite;
+    }
+
+    #orange-blobs {
+      transform: translate(90px, -40px);
+      will-change: transform;
+      animation: orange-drift-loop 5.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    }
+
+    #center-seam {
+      transform: translateX(0);
+      will-change: transform;
+      animation: seam-shift-loop 5.8s ease-in-out infinite;
+    }
+
+    #rose-bg {
+      opacity: 0;
+      will-change: opacity;
+      animation: rose-life-loop 5.8s ease-in-out infinite;
+    }
+
+    #cobalt-bg {
+      opacity: 0;
+      will-change: opacity;
+      animation: cobalt-in-loop 5.8s ease-out infinite;
+    }
+
+    #left-rib-glow {
+      opacity: 0;
+      transform: translateX(180px);
+      will-change: opacity, transform;
+      animation: left-rib-loop 5.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    #right-rib-glow {
+      opacity: 0;
+      transform: translateX(-180px);
+      will-change: opacity, transform;
+      animation: right-rib-loop 5.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    #mubi-lockup {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scaleX(0.84) scaleY(1.06);
+      filter: blur(8px);
+      will-change: opacity, transform, filter;
+      animation: lockup-unfold-loop 5.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    .mubi-mark {
+      fill: #ff7ba5;
+      will-change: fill;
+      animation: mark-to-white-loop 5.8s ease-out infinite;
+    }
+
+    #dot-right {
+      transform-box: fill-box;
+      transform-origin: center;
+      transform: translate(34px, 16px) scale(0.82);
+      opacity: 0.75;
+      will-change: transform, opacity;
+      animation: dot-settle-loop 5.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    @keyframes master-stage-loop {
+      0%, 88.3% { opacity: 1; }
+      89.7%, 97.0% { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+
+    @keyframes violet-life-loop {
+      0%, 15.9% { opacity: 0; }
+      19.0%     { opacity: 1; }
+      23.9%     { opacity: 1; }
+      27.1%, 100% { opacity: 0; }
+    }
+
+    @keyframes violet-drift-loop {
+      0%, 15.9% { transform: translate(40px, 30px) scale(1.08); }
+      27.9%, 89.7% { transform: translate(-60px, -25px) scale(1); }
+      97.0%, 100% { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    @keyframes orange-life-loop {
+      0%, 24.5% { opacity: 0; }
+      28.1%     { opacity: 1; }
+      49.4%     { opacity: 1; }
+      54.1%, 100% { opacity: 0; }
+    }
+
+    @keyframes orange-drift-loop {
+      0%, 24.5% { transform: translate(110px, -45px); }
+      54.7%, 89.7% { transform: translate(-115px, 65px); }
+      97.0%, 100% { transform: translate(110px, -45px); }
+    }
+
+    @keyframes seam-shift-loop {
+      0%, 25.0% { transform: translateX(35px); }
+      53.4%, 89.7% { transform: translateX(-110px); }
+      97.0%, 100% { transform: translateX(35px); }
+    }
+
+    @keyframes rose-life-loop {
+      0%, 51.4% { opacity: 0; }
+      55.7%     { opacity: 1; }
+      63.8%, 100% { opacity: 0; }
+    }
+
+    @keyframes cobalt-in-loop {
+      0%, 57.2% { opacity: 0; }
+      70.2%, 89.7% { opacity: 1; }
+      97.0%, 100% { opacity: 0; }
+    }
+
+    @keyframes left-rib-loop {
+      0%, 54.3% { opacity: 0; transform: translateX(220px); }
+      61.0%     { opacity: 0.9; }
+      81.0%, 89.7% { opacity: 0.65; transform: translateX(0px); }
+      97.0%, 100% { opacity: 0; transform: translateX(220px); }
+    }
+
+    @keyframes right-rib-loop {
+      0%, 54.3% { opacity: 0; transform: translateX(-220px); }
+      61.0%     { opacity: 0.9; }
+      81.0%, 89.7% { opacity: 0.65; transform: translateX(0px); }
+      97.0%, 100% { opacity: 0; transform: translateX(-220px); }
+    }
+
+    @keyframes lockup-unfold-loop {
+      0%, 53.1% { opacity: 0; transform: scaleX(0.84) scaleY(1.06); filter: blur(8px); }
+      59.0%     { opacity: 1; filter: blur(2px); }
+      72.9%, 89.7% { opacity: 1; transform: scaleX(1) scaleY(1); filter: blur(0px); }
+      97.0%, 100% { opacity: 0; transform: scaleX(0.84) scaleY(1.06); filter: blur(8px); }
+    }
+
+    @keyframes mark-to-white-loop {
+      0%, 55.5% { fill: #ff7ba5; }
+      68.4%, 89.7% { fill: #ffffff; }
+      97.0%, 100% { fill: #ff7ba5; }
+    }
+
+    @keyframes dot-settle-loop {
+      0%, 54.8% { transform: translate(34px, 16px) scale(0.82); opacity: 0.75; }
+      71.2%, 89.7% { transform: translate(0px, 0px) scale(1); opacity: 1; }
+      97.0%, 100% { transform: translate(34px, 16px) scale(0.82); opacity: 0.75; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #master-stage, #violet-phase, #orange-phase, #rose-bg, #cobalt-bg,
+      #left-rib-glow, #right-rib-glow, #mubi-lockup, .mubi-mark, #dot-right {
+        animation: none;
+      }
+      #cobalt-bg, #mubi-lockup { opacity: 1; transform: none; filter: none; }
+      .mubi-mark { fill: #ffffff; }
+      #left-rib-glow, #right-rib-glow { opacity: 0.65; transform: none; }
+    }
+  </style>
+
+  <defs>
+    <filter id="bokehHeavy" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
+
+    <filter id="ribSoftGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="44" />
+    </filter>
+
+    <radialGradient id="cobaltGrad" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#041587" />
+      <stop offset="65%" stop-color="#020e69" />
+      <stop offset="100%" stop-color="#000845" />
+    </radialGradient>
+
+    <linearGradient id="seamShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="47%" stop-color="#000000" stop-opacity="0.72" />
+      <stop offset="50%" stop-color="#1a0200" stop-opacity="0.95" />
+      <stop offset="53%" stop-color="#000000" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="pillarLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b8c4ff" stop-opacity="0.45" />
+      <stop offset="55%" stop-color="#6076ff" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#020e69" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="roseBloom" cx="55%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#9e3056" stop-opacity="0.75" />
+      <stop offset="55%" stop-color="#220624" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#040212" stop-opacity="1" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  <g id="master-stage">
+    
+    <g id="violet-phase">
+      <rect x="-200%" y="-200%" width="500%" height="500%" fill="#090416" />
+      <g id="violet-blobs" filter="url(#bokehHeavy)">
+        <circle cx="760" cy="70" r="145" fill="#6b42ff" opacity="0.85" />
+        <circle cx="960" cy="590" r="115" fill="#825cff" opacity="0.8" />
+        <circle cx="745" cy="650" r="110" fill="#9a72ff" opacity="0.9" />
+        <ellipse cx="220" cy="360" rx="260" ry="60" fill="#a81d78" opacity="0.5" />
+      </g>
+      <rect x="-200" y="250" width="1680" height="210" fill="#070312" opacity="0.82" filter="url(#ribSoftGlow)" />
+    </g>
+
+    
+    <g id="orange-phase">
+      <rect x="-200%" y="-200%" width="500%" height="500%" fill="#180402" />
+      <g id="orange-blobs" filter="url(#bokehHeavy)">
+        <circle cx="140" cy="280" r="170" fill="#eb4b14" opacity="0.9" />
+        <circle cx="330" cy="60" r="165" fill="#d94e4e" opacity="0.82" />
+        <circle cx="480" cy="610" r="175" fill="#d43f0d" opacity="0.85" />
+        <circle cx="810" cy="180" r="170" fill="#e64d2b" opacity="0.88" />
+        <circle cx="860" cy="480" r="160" fill="#eb4b14" opacity="0.92" />
+        <circle cx="1220" cy="490" r="185" fill="#df430f" opacity="0.9" />
+      </g>
+      
+      <rect id="center-seam" x="500" y="-100" width="90" height="920" fill="url(#seamShadow)" />
+    </g>
+
+    
+    <rect id="rose-bg" x="-200%" y="-200%" width="500%" height="500%" fill="url(#roseBloom)" />
+
+    
+    <rect id="cobalt-bg" x="-200%" y="-200%" width="500%" height="500%" fill="url(#cobaltGrad)" />
+
+    
+    <ellipse id="left-rib-glow" cx="170" cy="375" rx="115" ry="265" fill="url(#pillarLight)" filter="url(#ribSoftGlow)" />
+    <ellipse id="right-rib-glow" cx="1110" cy="375" rx="115" ry="265" fill="url(#pillarLight)" filter="url(#ribSoftGlow)" />
+
+    
+    <g id="mubi-lockup">
+      <g transform="translate(15, 4)">
+        
+        <path class="mubi-mark" d="M 342 420 V 292 H 369 L 401 372 L 433 292 H 460 V 420 H 435 V 337 L 409 402 H 393 L 367 337 V 420 Z" />
+        
+        <path class="mubi-mark" d="M 478 292 H 504 V 369 A 23 23 0 0 0 550 369 V 292 H 576 V 370 A 49 49 0 0 1 478 370 Z" />
+        
+        <path class="mubi-mark" fill-rule="evenodd" d="M 594 292 H 646 C 671 292 683 305 683 324 C 683 338 675 348 662 352 C 679 356 688 368 688 385 C 688 407 672 420 647 420 H 594 Z
+             M 620 314 V 344 H 643 C 653 344 659 339 659 329 C 659 319 653 314 643 314 Z
+             M 620 364 V 398 H 645 C 656 398 663 392 663 381 C 663 370 656 364 645 364 Z" />
+        
+        <path class="mubi-mark" d="M 704 292 H 730 V 420 H 704 Z" />
+
+        
+        <circle class="mubi-mark" cx="796" cy="310" r="20" />
+        <circle class="mubi-mark" cx="796" cy="356" r="20" />
+        <circle class="mubi-mark" cx="796" cy="402" r="20" />
+
+        <circle class="mubi-mark" cx="842" cy="310" r="20" />
+        <circle class="mubi-mark" cx="842" cy="356" r="20" />
+        <circle class="mubi-mark" cx="842" cy="402" r="20" />
+
+        <circle id="dot-right" class="mubi-mark" cx="888" cy="356" r="20" />
+      </g>
+    </g>
+  </g>
+</svg>

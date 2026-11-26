@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Canal+ 2021 Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Separate motion and opacity tracks so movement never pauses mid-flight */
+    #intro-plus {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation:
+        intro-plus-move 6.8s linear infinite,
+        intro-plus-fade 6.8s linear infinite;
+    }
+
+    #mid-stars {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation:
+        mid-stars-move 6.8s linear infinite,
+        mid-stars-fade 6.8s linear infinite;
+    }
+
+    #center-column {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation:
+        center-col-move 6.8s linear infinite,
+        center-col-fade 6.8s linear infinite;
+    }
+
+    #matrix-walls {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation:
+        walls-move 6.8s linear infinite,
+        walls-fade 6.8s linear infinite;
+    }
+
+    /* Continuous gentle depth drift across the entire plaque hold */
+    #plaque-drift {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: plaque-drift-move 6.8s linear infinite;
+    }
+
+    /* Single uninterrupted 3D perspective turn to flat */
+    #plaque-turn {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation:
+        plaque-turn-move 6.8s linear infinite,
+        plaque-fade 6.8s linear infinite;
+    }
+
+    #logo-halo {
+      opacity: 0;
+      will-change: opacity;
+      animation: halo-fade 6.8s linear infinite;
+    }
+
+    /* Smooth staggered letter cascade without harsh blinking */
+    #ltr-c    { opacity: 0; animation: ltr-c-fade    6.8s linear infinite; }
+    #ltr-a1   { opacity: 0; animation: ltr-a1-fade   6.8s linear infinite; }
+    #ltr-n    { opacity: 0; animation: ltr-n-fade    6.8s linear infinite; }
+    #ltr-a2   { opacity: 0; animation: ltr-a2-fade   6.8s linear infinite; }
+    #ltr-l    { opacity: 0; animation: ltr-l-fade    6.8s linear infinite; }
+    #ltr-plus { opacity: 0; animation: ltr-plus-fade 6.8s linear infinite; }
+
+    /* ---- MOTION TRACKS (one continuous curve each) ---- */
+    @keyframes intro-plus-move {
+      0% {
+        transform: translate(0px, 0px) scale(8.5);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      26%, 100% {
+        transform: translate(145.3px, 0px) scale(0.86);
+      }
+    }
+
+    @keyframes mid-stars-move {
+      0%, 10% {
+        transform: scale(0.88);
+        animation-timing-function: linear;
+      }
+      88%, 100% {
+        transform: scale(1.18);
+      }
+    }
+
+    @keyframes center-col-move {
+      0%, 36% {
+        transform: scale(0.94);
+        animation-timing-function: linear;
+      }
+      76%, 100% {
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes walls-move {
+      0%, 54% {
+        transform: scale(0.88);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      92%, 100% {
+        transform: scale(1.16);
+      }
+    }
+
+    @keyframes plaque-drift-move {
+      0%, 13% {
+        transform: scale(1.06);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      95%, 100% {
+        transform: scale(0.985);
+      }
+    }
+
+    @keyframes plaque-turn-move {
+      0%, 13% {
+        transform: scaleX(0.38) skewY(-6deg);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      50%, 100% {
+        transform: scaleX(1) skewY(0deg);
+      }
+    }
+
+    /* ---- OPACITY TRACKS ---- */
+    @keyframes intro-plus-fade {
+      0%        { opacity: 0; animation-timing-function: ease-out; }
+      5%        { opacity: 1; animation-timing-function: linear; }
+      17%       { opacity: 1; animation-timing-function: ease-in-out; }
+      26%, 100% { opacity: 0; }
+    }
+
+    @keyframes mid-stars-fade {
+      0%, 10%   { opacity: 0; animation-timing-function: ease-out; }
+      24%       { opacity: 0.78; animation-timing-function: linear; }
+      62%       { opacity: 0.58; animation-timing-function: ease-in; }
+      84%, 100% { opacity: 0; }
+    }
+
+    @keyframes center-col-fade {
+      0%, 36%   { opacity: 0; animation-timing-function: ease-out; }
+      52%       { opacity: 0.65; animation-timing-function: ease-in-out; }
+      74%, 100% { opacity: 0; }
+    }
+
+    @keyframes walls-fade {
+      0%, 54%   { opacity: 0; animation-timing-function: ease-out; }
+      68%       { opacity: 1; animation-timing-function: linear; }
+      82%       { opacity: 0.96; animation-timing-function: ease-in; }
+      91%, 100% { opacity: 0; }
+    }
+
+    @keyframes plaque-fade {
+      0%, 13%   { opacity: 0; animation-timing-function: ease-out; }
+      22%       { opacity: 1; animation-timing-function: linear; }
+      85%       { opacity: 1; animation-timing-function: ease-in-out; }
+      95%, 100% { opacity: 0; }
+    }
+
+    @keyframes halo-fade {
+      0%, 48%   { opacity: 0; animation-timing-function: ease-out; }
+      62%       { opacity: 0.42; animation-timing-function: linear; }
+      82%       { opacity: 0.34; animation-timing-function: ease-in; }
+      90%, 100% { opacity: 0; }
+    }
+
+    @keyframes ltr-c-fade    { 0%, 18% { opacity: 0; animation-timing-function: ease-out; } 28%, 100% { opacity: 1; } }
+    @keyframes ltr-a1-fade   { 0%, 24% { opacity: 0; animation-timing-function: ease-out; } 34%, 100% { opacity: 1; } }
+    @keyframes ltr-n-fade    { 0%, 30% { opacity: 0; animation-timing-function: ease-out; } 40%, 100% { opacity: 1; } }
+    @keyframes ltr-a2-fade   { 0%, 36% { opacity: 0; animation-timing-function: ease-out; } 46%, 100% { opacity: 1; } }
+    @keyframes ltr-l-fade    { 0%, 41% { opacity: 0; animation-timing-function: ease-out; } 51%, 100% { opacity: 1; } }
+    @keyframes ltr-plus-fade { 0%, 45% { opacity: 0; animation-timing-function: ease-out; } 54%, 100% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      #intro-plus, #mid-stars, #center-column, #matrix-walls, #plaque-drift, #plaque-turn,
+      #ltr-c, #ltr-a1, #ltr-n, #ltr-a2, #ltr-l, #ltr-plus, #logo-halo {
+        animation: none;
+      }
+      #intro-plus, #mid-stars, #center-column, #logo-halo { opacity: 0; }
+      #matrix-walls { opacity: 0.85; transform: none; }
+      #plaque-drift, #plaque-turn, #ltr-c, #ltr-a1, #ltr-n, #ltr-a2, #ltr-l, #ltr-plus {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <defs>
+    
+    <radialGradient id="ledDot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="28%" stop-color="#b8dcff" stop-opacity="0.92" />
+      <stop offset="58%" stop-color="#2b64f5" stop-opacity="0.48" />
+      <stop offset="100%" stop-color="#1a42b8" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="introPlusGrad" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#3c7bff" stop-opacity="0.92" />
+      <stop offset="60%" stop-color="#14359e" stop-opacity="0.88" />
+      <stop offset="100%" stop-color="#071547" stop-opacity="0.95" />
+    </radialGradient>
+
+    <radialGradient id="wallBlueGlowL" cx="18%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#336eff" stop-opacity="0.42" />
+      <stop offset="55%" stop-color="#14328c" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="wallBlueGlowR" cx="82%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#336eff" stop-opacity="0.42" />
+      <stop offset="55%" stop-color="#14328c" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="centerLogoHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dceaff" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#6998ff" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <g id="dotCol" fill="url(#ledDot)">
+      <circle cx="0" cy="-240" r="7.5" />
+      <circle cx="0" cy="-180" r="8.2" />
+      <circle cx="0" cy="-120" r="8.5" />
+      <circle cx="0" cy="-60" r="8.8" />
+      <circle cx="0" cy="0" r="9.0" />
+      <circle cx="0" cy="60" r="8.8" />
+      <circle cx="0" cy="120" r="8.5" />
+      <circle cx="0" cy="180" r="8.2" />
+      <circle cx="0" cy="240" r="7.5" />
+    </g>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  
+  <g id="intro-plus">
+    <g transform="translate(640, 360)">
+      <path d="M -7 -26 H 7 V -7 H 26 V 7 H 7 V 26 H -7 V 7 H -26 V -7 H -7 Z" fill="url(#introPlusGrad)" />
+      
+      <g fill="url(#ledDot)">
+        <circle cx="-19" cy="0" r="3.4" />
+        <circle cx="-11" cy="-2" r="3.2" />
+        <circle cx="0" cy="-19" r="3.4" />
+        <circle cx="2" cy="-11" r="3.0" />
+        <circle cx="0" cy="0" r="4.0" />
+        <circle cx="-2" cy="11" r="3.0" />
+        <circle cx="0" cy="19" r="3.4" />
+        <circle cx="11" cy="2" r="3.2" />
+        <circle cx="19" cy="0" r="3.4" />
+      </g>
+    </g>
+  </g>
+
+  
+  <g id="mid-stars">
+    <use href="#dotCol" transform="translate(275, 360) scale(0.76)" opacity="0.36" />
+    <use href="#dotCol" transform="translate(405, 360) scale(0.56)" opacity="0.46" />
+    <use href="#dotCol" transform="translate(875, 360) scale(0.56)" opacity="0.46" />
+    <use href="#dotCol" transform="translate(1005, 360) scale(0.76)" opacity="0.36" />
+  </g>
+
+  
+  <g id="center-column">
+    <use href="#dotCol" transform="translate(575, 360) scale(0.92)" opacity="0.34" />
+    <use href="#dotCol" transform="translate(640, 360) scale(1.00)" opacity="0.48" />
+    <use href="#dotCol" transform="translate(705, 360) scale(0.92)" opacity="0.34" />
+  </g>
+
+  
+  <g id="matrix-walls">
+    <rect x="-200" y="-100" width="840" height="920" fill="url(#wallBlueGlowL)" />
+    <rect x="640" y="-100" width="840" height="920" fill="url(#wallBlueGlowR)" />
+
+    
+    <use href="#dotCol" transform="translate(432, 360) scale(0.46)" opacity="0.28" />
+    <use href="#dotCol" transform="translate(380, 360) scale(0.58)" opacity="0.44" />
+    <use href="#dotCol" transform="translate(316, 360) scale(0.74)" opacity="0.64" />
+    <use href="#dotCol" transform="translate(238, 360) scale(0.94)" opacity="0.82" />
+    <use href="#dotCol" transform="translate(144, 360) scale(1.18)" opacity="0.94" />
+    <use href="#dotCol" transform="translate(34,  360) scale(1.46)" opacity="1.00" />
+
+    
+    <use href="#dotCol" transform="translate(848, 360) scale(0.46)" opacity="0.28" />
+    <use href="#dotCol" transform="translate(900, 360) scale(0.58)" opacity="0.44" />
+    <use href="#dotCol" transform="translate(964, 360) scale(0.74)" opacity="0.64" />
+    <use href="#dotCol" transform="translate(1042, 360) scale(0.94)" opacity="0.82" />
+    <use href="#dotCol" transform="translate(1136, 360) scale(1.18)" opacity="0.94" />
+    <use href="#dotCol" transform="translate(1246, 360) scale(1.46)" opacity="1.00" />
+  </g>
+
+  
+  <g id="plaque-drift">
+    <g id="plaque-turn">
+      <rect x="442" y="286" width="396" height="148" fill="#000000" />
+      <ellipse id="logo-halo" cx="640" cy="360" rx="205" ry="72" fill="url(#centerLogoHalo)" />
+
+      <g transform="translate(640, 360) scale(0.86) translate(-189, -32)" fill="#ffffff">
+        
+        <g transform="translate(0, 32) skewX(-12) translate(0, -32)">
+          <path id="ltr-c" d="M 55.8 10.6 A 32 32 0 1 0 55.8 53.4 L 45.0 43.7 A 17.5 17.5 0 1 1 45.0 20.3 Z" />
+          <path id="ltr-a1" fill-rule="evenodd" d="M 86 1 H 102 L 126 63 H 109.5 L 104.5 49.5 H 83.5 L 78.5 63 H 62 Z
+               M 94 17.5 L 87 38 H 101 Z" />
+          <path id="ltr-n" d="M 136 1 H 151.5 L 181 40.5 V 1 H 196 V 63 H 180.5 L 151 23.5 V 63 H 136 Z" />
+          <path id="ltr-a2" fill-rule="evenodd" d="M 230 1 H 246 L 270 63 H 253.5 L 248.5 49.5 H 227.5 L 222.5 63 H 206 Z
+               M 238 17.5 L 231 38 H 245 Z" />
+          <path id="ltr-l" d="M 280 1 H 295.5 V 49.5 H 326 V 63 H 280 Z" />
+        </g>
+
+        
+        <path id="ltr-plus" d="M 351 6 H 365 V 25 H 384 V 39 H 365 V 58 H 351 V 39 H 332 V 25 H 351 Z" />
+      </g>
+    </g>
+  </g>
+</svg>

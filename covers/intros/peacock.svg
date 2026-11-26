@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Peacock Original Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #studio-bg {
+      opacity: 1;
+      will-change: opacity;
+      animation: studio-bg-fast-loop 6.2s ease-out infinite;
+    }
+
+    #hero-stage {
+      opacity: 0;
+      will-change: opacity;
+      animation: hero-stage-fast-loop 6.2s ease-in-out infinite;
+    }
+
+    #p-mover {
+      transform: translate(0px, 0px) scale(1);
+      transform-origin: 34px 36px;
+      will-change: transform;
+      animation: p-to-center-fast-loop 6.2s cubic-bezier(0.65, 0, 0.25, 1) infinite;
+    }
+
+    #eacock-group {
+      opacity: 1;
+      transform: translateX(0px);
+      will-change: opacity, transform;
+      animation: eacock-collapse-fast-loop 6.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+
+    #dots-carrier {
+      transform: translateX(0px);
+      will-change: transform;
+      animation: dots-to-center-fast-loop 6.2s cubic-bezier(0.65, 0, 0.25, 1) infinite;
+    }
+
+    .p-dot {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      transform: translate(0px, var(--spread)) scale(0.45);
+      will-change: opacity, transform;
+    }
+
+    #d1 { --spread: -36px; --ax: 16px;  --ay: -8px; animation: dot-1-fast-loop 6.2s linear infinite; }
+    #d2 { --spread: -22px; --ax: 5px;   --ay: -4px; animation: dot-2-fast-loop 6.2s linear infinite; }
+    #d3 { --spread: -8px;  --ax: -3px;  --ay: -1px; animation: dot-3-fast-loop 6.2s linear infinite; }
+    #d4 { --spread: 8px;   --ax: -3px;  --ay: 1px;  animation: dot-4-fast-loop 6.2s linear infinite; }
+    #d5 { --spread: 22px;  --ax: 5px;   --ay: 4px;  animation: dot-5-fast-loop 6.2s linear infinite; }
+    #d6 { --spread: 36px;  --ax: 16px;  --ay: 8px;  animation: dot-6-fast-loop 6.2s linear infinite; }
+
+    #final-original {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scale(0.98);
+      will-change: opacity, transform;
+      animation: final-original-fast-loop 6.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    @keyframes studio-bg-fast-loop {
+      0%, 82.0% { opacity: 1; }
+      93.0%, 98.0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes hero-stage-fast-loop {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      58%  { opacity: 1; }
+      68%, 100% { opacity: 0; }
+    }
+
+    @keyframes p-to-center-fast-loop {
+      0%, 30.0% { transform: translate(0px, 0px) scale(1); }
+      38.4%, 68.0% { transform: translate(206px, -8px) scale(1.24); }
+      93.0%, 100% { transform: translate(0px, 0px) scale(1); }
+    }
+
+    @keyframes eacock-collapse-fast-loop {
+      0%, 29.4% { opacity: 1; transform: translateX(0px); }
+      35.8%, 100% { opacity: 0; transform: translateX(-90px); }
+    }
+
+    @keyframes dots-to-center-fast-loop {
+      0%, 30.0% { transform: translateX(0px); }
+      38.4%, 68.0% { transform: translateX(-206px); }
+      93.0%, 100% { transform: translateX(0px); }
+    }
+
+    @keyframes dot-1-fast-loop {
+      0%, 4.8%  { opacity: 0; transform: translate(0px, -36px) scale(0.45); }
+      15.3%     { opacity: 1; transform: translate(0px, 0px) scale(1); }
+      24.0%     { transform: translate(0px, 0px) scale(1); }
+      33.0%     { transform: translate(16px, -8px) scale(1.06); }
+      44.0%, 68.0% { opacity: 1; transform: translate(0px, 0px) scale(1.05); }
+      93.0%, 100% { opacity: 0; transform: translate(0px, -36px) scale(0.45); }
+    }
+    @keyframes dot-2-fast-loop {
+      0%, 6.0%  { opacity: 0; transform: translate(0px, -22px) scale(0.45); }
+      16.5%     { opacity: 1; transform: translate(0px, 0px) scale(1); }
+      24.0%     { transform: translate(0px, 0px) scale(1); }
+      33.0%     { transform: translate(5px, -4px) scale(1.06); }
+      44.0%, 68.0% { opacity: 1; transform: translate(0px, 0px) scale(1.05); }
+      93.0%, 100% { opacity: 0; transform: translate(0px, -22px) scale(0.45); }
+    }
+    @keyframes dot-3-fast-loop {
+      0%, 7.1%  { opacity: 0; transform: translate(0px, -8px) scale(0.45); }
+      17.6%     { opacity: 1; transform: translate(0px, 0px) scale(1); }
+      24.0%     { transform: translate(0px, 0px) scale(1); }
+      33.0%     { transform: translate(-3px, -1px) scale(1.06); }
+      44.0%, 68.0% { opacity: 1; transform: translate(0px, 0px) scale(1.05); }
+      93.0%, 100% { opacity: 0; transform: translate(0px, -8px) scale(0.45); }
+    }
+    @keyframes dot-4-fast-loop {
+      0%, 8.2%  { opacity: 0; transform: translate(0px, 8px) scale(0.45); }
+      18.7%     { opacity: 1; transform: translate(0px, 0px) scale(1); }
+      24.0%     { transform: translate(0px, 0px) scale(1); }
+      33.0%     { transform: translate(-3px, 1px) scale(1.06); }
+      44.0%, 68.0% { opacity: 1; transform: translate(0px, 0px) scale(1.05); }
+      93.0%, 100% { opacity: 0; transform: translate(0px, 8px) scale(0.45); }
+    }
+    @keyframes dot-5-fast-loop {
+      0%, 9.4%  { opacity: 0; transform: translate(0px, 22px) scale(0.45); }
+      19.8%     { opacity: 1; transform: translate(0px, 0px) scale(1); }
+      24.0%     { transform: translate(0px, 0px) scale(1); }
+      33.0%     { transform: translate(5px, 4px) scale(1.06); }
+      44.0%, 68.0% { opacity: 1; transform: translate(0px, 0px) scale(1.05); }
+      93.0%, 100% { opacity: 0; transform: translate(0px, 22px) scale(0.45); }
+    }
+    @keyframes dot-6-fast-loop {
+      0%, 10.5% { opacity: 0; transform: translate(0px, 36px) scale(0.45); }
+      21.0%     { opacity: 1; transform: translate(0px, 0px) scale(1); }
+      24.0%     { transform: translate(0px, 0px) scale(1); }
+      33.0%     { transform: translate(16px, 8px) scale(1.06); }
+      44.0%, 68.0% { opacity: 1; transform: translate(0px, 0px) scale(1.05); }
+      93.0%, 100% { opacity: 0; transform: translate(0px, 36px) scale(0.45); }
+    }
+
+    @keyframes final-original-fast-loop {
+      0%, 67.0% { opacity: 0; transform: scale(0.98); }
+      75.0%     { opacity: 1; transform: scale(1); }
+      84.0%     { opacity: 1; transform: scale(1); }
+      93.0%, 100% { opacity: 0; transform: scale(0.98); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #studio-bg, #hero-stage, #p-mover, #eacock-group, #dots-carrier, .p-dot, #final-original {
+        animation: none;
+      }
+      #studio-bg, #final-original { opacity: 1; transform: none; }
+      #hero-stage { opacity: 0; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="studioLight" cx="88%" cy="14%" r="86%">
+      <stop offset="0%" stop-color="#2d2d2d" />
+      <stop offset="48%" stop-color="#141414" />
+      <stop offset="100%" stop-color="#050505" />
+    </radialGradient>
+
+    <filter id="studioShadow" x="-30%" y="-25%" width="160%" height="180%">
+      <feDropShadow dx="-12" dy="18" stdDeviation="11" flood-color="#000000" flood-opacity="0.72" />
+    </filter>
+
+    
+    <linearGradient id="letterLight" gradientUnits="userSpaceOnUse" x1="500" y1="-35" x2="0" y2="105">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#f0f0f0" />
+      <stop offset="100%" stop-color="#d2d2d2" />
+    </linearGradient>
+
+    
+    <g id="glyph-p">
+      <path fill-rule="evenodd" d="M 34 2.75 A 33.25 33.25 0 1 1 34 69.25 A 33.25 33.25 0 1 1 34 2.75 Z
+           M 34 16.25 A 19.75 19.75 0 1 0 34 55.75 A 19.75 19.75 0 1 0 34 16.25 Z" />
+      <rect x="0.75" y="4" width="13.5" height="98" />
+    </g>
+
+    
+    <g id="glyph-eacock">
+      
+      <path d="M 139.7 42 A 33.25 33.25 0 1 0 133.2 56.5 L 122.6 48.2 A 19.75 19.75 0 1 1 126.5 39 Z" />
+      <rect x="80" y="30" width="59.7" height="12" />
+
+      
+      <path fill-rule="evenodd" d="M 180 2.75 A 33.25 33.25 0 1 1 180 69.25 A 33.25 33.25 0 1 1 180 2.75 Z
+           M 180 16.25 A 19.75 19.75 0 1 0 180 55.75 A 19.75 19.75 0 1 0 180 16.25 Z" />
+      <rect x="199.75" y="4" width="13.5" height="64" />
+
+      
+      <path d="M 277.7 13.8 A 33.25 33.25 0 1 0 277.7 58.2 L 267.7 49.2 A 19.75 19.75 0 1 1 267.7 22.8 Z" />
+
+      
+      <path fill-rule="evenodd" d="M 323 2.75 A 33.25 33.25 0 1 1 323 69.25 A 33.25 33.25 0 1 1 323 2.75 Z
+           M 323 16.25 A 19.75 19.75 0 1 0 323 55.75 A 19.75 19.75 0 1 0 323 16.25 Z" />
+
+      
+      <path d="M 420.7 13.8 A 33.25 33.25 0 1 0 420.7 58.2 L 410.7 49.2 A 19.75 19.75 0 1 1 410.7 22.8 Z" />
+
+      
+      <rect x="434" y="-32" width="13.5" height="100" />
+      <polygon points="472,4 491,4 456,37 447.5,37 447.5,26.5" />
+      <polygon points="456,31 492,68 473,68 447.5,41" />
+    </g>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+  <rect id="studio-bg" x="-200%" y="-200%" width="500%" height="500%" fill="url(#studioLight)" />
+
+  <g id="hero-stage" filter="url(#studioShadow)">
+    <g transform="translate(368, 326)">
+      <g id="p-mover">
+        <use href="#glyph-p" fill="url(#letterLight)" />
+      </g>
+      <g id="eacock-group">
+        <use href="#glyph-eacock" fill="url(#letterLight)" />
+      </g>
+    </g>
+
+    <g id="dots-carrier">
+      <circle id="d1" class="p-dot" cx="900" cy="285" r="10.5" fill="#fccc12" />
+      <circle id="d2" class="p-dot" cx="900" cy="313" r="10.5" fill="#ff7112" />
+      <circle id="d3" class="p-dot" cx="900" cy="341" r="10.5" fill="#e51937" />
+      <circle id="d4" class="p-dot" cx="900" cy="369" r="10.5" fill="#6e55dc" />
+      <circle id="d5" class="p-dot" cx="900" cy="397" r="10.5" fill="#0591f2" />
+      <circle id="d6" class="p-dot" cx="900" cy="425" r="10.5" fill="#00b84c" />
+    </g>
+  </g>
+
+  <g id="final-original">
+    <g transform="translate(412, 344) scale(0.44)">
+      <use href="#glyph-p" fill="#ffffff" />
+      <use href="#glyph-eacock" fill="#ffffff" />
+    </g>
+    <text x="646" y="373" fill="#ffffff" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="2.2">ORIGINAL</text>
+  </g>
+</svg>

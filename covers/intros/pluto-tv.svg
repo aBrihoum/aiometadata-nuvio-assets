@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pluto TV Intro Animation">
+  <style>
+    svg { background: #000000; width: 100%; height: 100%; display: block; }
+
+    #pluto-stage {
+      opacity: 1;
+      will-change: opacity;
+      animation: pluto-stage-loop 4.6s linear infinite;
+    }
+
+    #pluto-word {
+      opacity: 0;
+      transform-origin: 550px 360px;
+      transform: translateX(-40px) scale(0.88);
+      will-change: opacity, transform;
+      animation: pluto-slam-loop 4.6s linear infinite;
+    }
+
+    #tv-orbit {
+      transform-origin: 808px 360px;
+      transform: rotate(-160deg) scale(0.3);
+      opacity: 0;
+      will-change: opacity, transform;
+      animation: orbit-spin-loop 4.6s linear infinite;
+    }
+
+    #tv-core {
+      opacity: 0;
+      transform-origin: 808px 360px;
+      transform: scale(0.4);
+      will-change: opacity, transform;
+      animation: core-pop-loop 4.6s linear infinite;
+    }
+
+    @keyframes pluto-stage-loop {
+      0%, 77.2% { opacity: 1; animation-timing-function: ease-in; }
+      87.0%, 97.0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes pluto-slam-loop {
+      0%, 5.4% {
+        opacity: 0;
+        transform: translateX(-40px) scale(0.88);
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      16.7%, 87.0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateX(-40px) scale(0.88);
+      }
+    }
+
+    @keyframes orbit-spin-loop {
+      0%, 12.0% {
+        opacity: 0;
+        transform: rotate(-160deg) scale(0.3);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      16.5% {
+        opacity: 1;
+      }
+      30.4%, 87.0% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: rotate(-160deg) scale(0.3);
+      }
+    }
+
+    @keyframes core-pop-loop {
+      0%, 20.7% {
+        opacity: 0;
+        transform: scale(0.4);
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      29.8%, 87.0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: scale(0.4);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #pluto-stage, #pluto-word, #tv-orbit, #tv-core { animation: none; }
+      #pluto-word, #tv-orbit, #tv-core { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  <g id="pluto-stage">
+    
+    <text id="pluto-word" x="400" y="392" fill="#ffffff" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="112" font-weight="800" letter-spacing="-3.5">pluto</text>
+
+    
+    <g id="tv-orbit">
+      <circle cx="808" cy="292" r="15" fill="#fff200" />
+      <circle cx="873" cy="339" r="15" fill="#ff2a85" />
+      <circle cx="848" cy="415" r="15" fill="#00e5ff" />
+      <circle cx="768" cy="415" r="15" fill="#3dff4f" />
+      <circle cx="743" cy="339" r="15" fill="#ff7a00" />
+    </g>
+
+    
+    <g id="tv-core">
+      <circle cx="808" cy="360" r="42" fill="#ffffff" />
+      <text x="808" y="376" text-anchor="middle" fill="#000000" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-1.5">tv</text>
+    </g>
+  </g>
+</svg>

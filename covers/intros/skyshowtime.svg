@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SkyShowtime Eclipse Intro Animation">
+  <style>
+    svg {
+      background: #060318;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #eclipse-stage {
+      opacity: 0;
+      transform-origin: 598.75px 360px;
+      will-change: transform, opacity;
+      animation:
+        eclipse-move 7.4s linear infinite,
+        eclipse-fade 7.4s linear infinite;
+    }
+
+    #corona-blue {
+      opacity: 1;
+      transform-origin: 598.75px 360px;
+      will-change: transform, opacity;
+      animation:
+        corona-spin-a 7.4s linear infinite,
+        corona-blue-fade 7.4s linear infinite;
+    }
+
+    #corona-magenta {
+      opacity: 0;
+      transform-origin: 598.75px 360px;
+      will-change: transform, opacity;
+      animation:
+        corona-spin-b 7.4s linear infinite,
+        corona-magenta-fade 7.4s linear infinite;
+    }
+
+    #silk-bg {
+      opacity: 0;
+      will-change: opacity;
+      animation: silk-bg-fade 7.4s linear infinite;
+    }
+
+    #silk-wave-a {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: silk-drift-a 7.4s linear infinite;
+    }
+
+    #silk-wave-b {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: silk-drift-b 7.4s linear infinite;
+    }
+
+    #logo-camera {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation:
+        logo-move 7.4s linear infinite,
+        logo-fade 7.4s linear infinite;
+    }
+
+    #logo-chrome {
+      opacity: 0;
+      will-change: opacity;
+      animation: chrome-fade 7.4s linear infinite;
+    }
+
+    #logo-white {
+      opacity: 0;
+      will-change: opacity;
+      animation: white-fade 7.4s linear infinite;
+    }
+
+    #loop-veil {
+      opacity: 0;
+      will-change: opacity;
+      animation: veil-fade 7.4s linear infinite;
+    }
+
+    /* ---- MOTION TRACKS (one continuous curve per phase) ---- */
+    @keyframes eclipse-move {
+      0% {
+        transform: scale(3.2);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      38% {
+        transform: scale(1.65);
+        animation-timing-function: cubic-bezier(0.65, 0, 0.25, 1);
+      }
+      52%, 100% {
+        transform: scale(1.0);
+      }
+    }
+
+    @keyframes corona-spin-a {
+      0%   { transform: rotate(0deg) scale(1); }
+      55%  { transform: rotate(85deg) scale(1.08); }
+      100% { transform: rotate(140deg) scale(1.08); }
+    }
+
+    @keyframes corona-spin-b {
+      0%   { transform: rotate(0deg) scale(0.92); }
+      50%  { transform: rotate(-65deg) scale(1.16); }
+      100% { transform: rotate(-110deg) scale(1.22); }
+    }
+
+    @keyframes silk-drift-a {
+      0%, 42% {
+        transform: translate(-110px, -45px) rotate(-14deg) scale(1.02);
+        animation-timing-function: ease-in-out;
+      }
+      100% {
+        transform: translate(110px, 40px) rotate(-5deg) scale(1.12);
+      }
+    }
+
+    @keyframes silk-drift-b {
+      0%, 42% {
+        transform: translate(95px, 55px) rotate(12deg) scale(1.08);
+        animation-timing-function: ease-in-out;
+      }
+      100% {
+        transform: translate(-95px, -35px) rotate(4deg) scale(1.0);
+      }
+    }
+
+    @keyframes logo-move {
+      0%, 46% {
+        transform: scale(1.08);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      66% {
+        transform: scale(1.0);
+        animation-timing-function: linear;
+      }
+      100% {
+        transform: scale(0.97);
+      }
+    }
+
+    /* ---- OPACITY TRACKS ---- */
+    @keyframes eclipse-fade {
+      0%        { opacity: 0; animation-timing-function: ease-out; }
+      10%       { opacity: 1; animation-timing-function: linear; }
+      47%       { opacity: 1; animation-timing-function: ease-in; }
+      54%, 100% { opacity: 0; }
+    }
+
+    @keyframes corona-blue-fade {
+      0%, 28%   { opacity: 0.96; animation-timing-function: ease-in-out; }
+      44%, 100% { opacity: 0.12; }
+    }
+
+    @keyframes corona-magenta-fade {
+      0%, 24%   { opacity: 0; animation-timing-function: ease-out; }
+      42%       { opacity: 1; animation-timing-function: ease-in; }
+      54%, 100% { opacity: 0; }
+    }
+
+    @keyframes silk-bg-fade {
+      0%, 43%   { opacity: 0; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+      55%, 100% { opacity: 1; }
+    }
+
+    @keyframes logo-fade {
+      0%, 46%   { opacity: 0; animation-timing-function: ease-out; }
+      53%, 100% { opacity: 1; }
+    }
+
+    @keyframes chrome-fade {
+      0%, 46%   { opacity: 0; animation-timing-function: ease-out; }
+      53%       { opacity: 0.92; animation-timing-function: ease-out; }
+      63%, 100% { opacity: 0; }
+    }
+
+    @keyframes white-fade {
+      0%, 51%   { opacity: 0; animation-timing-function: ease-out; }
+      62%, 100% { opacity: 1; }
+    }
+
+    @keyframes veil-fade {
+      0%, 87%   { opacity: 0; animation-timing-function: ease-in-out; }
+      95%, 98%  { opacity: 1; animation-timing-function: ease-out; }
+      100%      { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #eclipse-stage, #corona-blue, #corona-magenta, #silk-bg,
+      #silk-wave-a, #silk-wave-b, #logo-camera, #logo-chrome, #logo-white, #loop-veil {
+        animation: none;
+      }
+      #eclipse-stage, #logo-chrome, #loop-veil { opacity: 0; }
+      #silk-bg, #logo-camera, #logo-white { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="eclipseBlueAura" cx="50%" cy="50%" r="50%">
+      <stop offset="32%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#6b5cff" stop-opacity="0.92" />
+      <stop offset="65%" stop-color="#2214b8" stop-opacity="0.48" />
+      <stop offset="100%" stop-color="#060318" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="eclipseMagentaAura" cx="50%" cy="50%" r="50%">
+      <stop offset="30%" stop-color="#ffe6ff" stop-opacity="1" />
+      <stop offset="40%" stop-color="#f24cff" stop-opacity="0.94" />
+      <stop offset="66%" stop-color="#8b24f0" stop-opacity="0.52" />
+      <stop offset="100%" stop-color="#060318" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="eclipseCore" cx="38%" cy="38%" r="68%">
+      <stop offset="0%" stop-color="#140d3b" />
+      <stop offset="72%" stop-color="#23165c" />
+      <stop offset="100%" stop-color="#4e2ea8" />
+    </radialGradient>
+
+    <linearGradient id="silkBaseGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1280" y2="720">
+      <stop offset="0%" stop-color="#311b85" />
+      <stop offset="50%" stop-color="#472ca8" />
+      <stop offset="100%" stop-color="#291670" />
+    </linearGradient>
+
+    <radialGradient id="silkFoldLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7652e8" stop-opacity="0.58" />
+      <stop offset="55%" stop-color="#4e30b8" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#311b85" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="silkFoldDark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#170a4a" stop-opacity="0.55" />
+      <stop offset="60%" stop-color="#261369" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#311b85" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="chromeRimGrad" gradientUnits="userSpaceOnUse" x1="-200" y1="-55" x2="260" y2="55">
+      <stop offset="0%" stop-color="#ff8cf5" />
+      <stop offset="40%" stop-color="#c4a6ff" />
+      <stop offset="70%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#ff7ae8" />
+    </linearGradient>
+
+    
+    <g id="skyShowtimeLogo">
+      
+      <text x="-60" y="27" text-anchor="end" font-family="&#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="82" font-weight="600" letter-spacing="-3">sky</text>
+
+      
+      <path fill-rule="evenodd" d="M 0 -52 A 52 52 0 1 1 0 52 A 52 52 0 1 1 0 -52 Z
+           M -19 -11 C -19 -21 -24 -25 -30.5 -25 C -37.5 -25 -42 -20.5 -42 -12 C -42 -5 -38.5 -1.5 -32.5 1.5 L -29 3.2 C -26 4.8 -25.5 7 -25.5 11.5 C -25.5 16.5 -27.5 18.5 -30.5 18.5 C -33.5 18.5 -35.5 16.5 -35.5 11.5 V 9.5 H -42.5 V 12 C -42.5 21 -37.5 25 -30.5 25 C -23 25 -18.5 20.5 -18.5 11.5 C -18.5 4.2 -22 0.5 -28.5 -2.5 L -32 -4.2 C -34.5 -5.5 -35.2 -7.5 -35.2 -11.5 C -35.2 -16.5 -33.5 -18.5 -30.5 -18.5 C -27.5 -18.5 -26 -16.5 -26 -11.5 V -11 Z
+           M -13 -25 H -6 V -3.5 H 6 V -25 H 13 V 25 H 6 V 3.5 H -6 V 25 H -13 Z
+           M 19 -13.5 A 11.5 11.5 0 0 1 42 -13.5 V 13.5 A 11.5 11.5 0 0 1 19 13.5 Z
+           M 25.5 -13.5 A 5 5 0 0 1 35.5 -13.5 V 13.5 A 5 5 0 0 1 25.5 13.5 Z" />
+
+      
+      
+      <polygon points="60,-27 69,-27 75,11 81,-27 90,-27 96,11 102,-27 111,-27 101,27 91,27 85.5,-3 80,27 70,27" />
+      
+      <path d="M 116 -27 H 148 V -19 H 136.5 V 27 H 127.5 V -19 H 116 Z" />
+      
+      <rect x="155" y="-27" width="9" height="54" />
+      
+      <path d="M 173 -27 H 184 L 195 9 L 206 -27 H 217 V 27 H 208 V -8 L 199 21 H 191 L 182 -8 V 27 H 173 Z" />
+      
+      <path d="M 226 -27 H 256 V -19 H 235 V -4 H 253 V 4 H 235 V 19 H 256 V 27 H 226 Z" />
+    </g>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#060318" />
+
+  
+  <g id="eclipse-stage">
+    <g id="corona-blue">
+      <ellipse cx="598.75" cy="360" rx="220" ry="205" fill="url(#eclipseBlueAura)" />
+      <ellipse cx="590" cy="352" rx="180" ry="168" fill="url(#eclipseBlueAura)" opacity="0.65" />
+    </g>
+    <g id="corona-magenta">
+      <ellipse cx="598.75" cy="360" rx="235" ry="220" fill="url(#eclipseMagentaAura)" />
+      <ellipse cx="608" cy="368" rx="190" ry="178" fill="url(#eclipseMagentaAura)" opacity="0.7" />
+    </g>
+    <circle cx="598.75" cy="360" r="65" fill="url(#eclipseCore)" stroke="#f5d4ff" stroke-width="2.2" />
+  </g>
+
+  
+  <g id="silk-bg">
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#silkBaseGrad)" />
+    <ellipse id="silk-wave-a" cx="460" cy="300" rx="560" ry="340" fill="url(#silkFoldLight)" />
+    <ellipse id="silk-wave-b" cx="890" cy="445" rx="560" ry="340" fill="url(#silkFoldDark)" />
+  </g>
+
+  
+  <g id="logo-camera">
+    <g transform="translate(640, 360) scale(1.25) translate(-33, 0)">
+      <use id="logo-chrome" href="#skyShowtimeLogo" fill="url(#chromeRimGrad)" />
+      <use id="logo-white" href="#skyShowtimeLogo" fill="#ffffff" />
+    </g>
+  </g>
+
+  <rect id="loop-veil" x="-200%" y="-200%" width="500%" height="500%" fill="#060318" />
+</svg>

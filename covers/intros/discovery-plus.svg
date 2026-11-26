@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Discovery+ Originals Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Deep midnight-navy studio stage */
+    #studio-stage {
+      opacity: 0;
+      animation: studio-life 6.4s linear infinite;
+    }
+
+    /* Soft cyan studio floor sheen (no sharp text reflection) */
+    #floor-flash {
+      opacity: 0;
+      animation: floor-flash-life 6.4s linear infinite;
+    }
+
+    /* Master lockup gentle push + clean fade-out before loop reset */
+    #lockup-drift {
+      transform-origin: 640px 360px;
+      animation:
+        lockup-drift-move 6.4s linear infinite,
+        lockup-fade-out 6.4s linear infinite;
+    }
+
+    /* Separated motion tracks on nested groups so the entrance never hitches */
+    #emblem-pullback {
+      transform-origin: 0px 0px;
+      animation: emblem-pullback-move 6.4s linear infinite;
+    }
+
+    #emblem-flip {
+      opacity: 0;
+      transform-origin: 0px 0px;
+      animation:
+        emblem-flip-move 6.4s linear infinite,
+        emblem-fade-in 6.4s linear infinite;
+    }
+
+    /* Soft radial glint right as the emblem turns face-forward */
+    #turn-glint {
+      opacity: 0;
+      animation: glint-flash 6.4s linear infinite;
+    }
+
+    /* discovery+ ORIGINALS smooth glide-in */
+    #wordmark-group {
+      opacity: 0;
+      transform-origin: 640px 410px;
+      animation:
+        wordmark-move 6.4s linear infinite,
+        wordmark-fade 6.4s linear infinite;
+    }
+
+    /* Brief electric-cyan highlight over ORIGINALS that settles into crisp sky-blue */
+    #originals-flash {
+      opacity: 0;
+      animation: originals-glow-life 6.4s linear infinite;
+    }
+
+    /* ---- MOTION TRACKS (one uninterrupted curve each) ---- */
+    @keyframes emblem-pullback-move {
+      0% {
+        transform: translate(32px, 36px) scale(2.45) rotate(-12deg);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      24%, 100% {
+        transform: translate(0px, 0px) scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes emblem-flip-move {
+      0% {
+        transform: scaleX(-0.85);
+        animation-timing-function: cubic-bezier(0.18, 0.88, 0.28, 1);
+      }
+      22%, 100% {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes wordmark-move {
+      0%, 10% {
+        transform: translateY(14px) scale(0.95);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      27%, 100% {
+        transform: translateY(0px) scale(1);
+      }
+    }
+
+    @keyframes lockup-drift-move {
+      0%   { transform: scale(0.985); }
+      100% { transform: scale(1.02); }
+    }
+
+    /* ---- OPACITY TRACKS ---- */
+    @keyframes emblem-fade-in {
+      0%        { opacity: 0; animation-timing-function: ease-out; }
+      6%, 100%  { opacity: 1; }
+    }
+
+    @keyframes glint-flash {
+      0%, 2.5%  { opacity: 0; animation-timing-function: ease-out; }
+      6.5%      { opacity: 0.65; animation-timing-function: ease-out; }
+      15%, 100% { opacity: 0; }
+    }
+
+    @keyframes wordmark-fade {
+      0%, 10%   { opacity: 0; animation-timing-function: ease-out; }
+      22%, 100% { opacity: 1; }
+    }
+
+    @keyframes studio-life {
+      0%, 7%    { opacity: 0; animation-timing-function: ease-out; }
+      22%, 85%  { opacity: 1; animation-timing-function: ease-in-out; }
+      95%, 100% { opacity: 0; }
+    }
+
+    @keyframes floor-flash-life {
+      0%, 10%   { opacity: 0; animation-timing-function: ease-out; }
+      20%       { opacity: 0.92; animation-timing-function: ease-out; }
+      40%       { opacity: 0.44; animation-timing-function: linear; }
+      85%       { opacity: 0.40; animation-timing-function: ease-in-out; }
+      95%, 100% { opacity: 0; }
+    }
+
+    @keyframes originals-glow-life {
+      0%, 11%   { opacity: 0; animation-timing-function: ease-out; }
+      20%       { opacity: 0.9; animation-timing-function: ease-out; }
+      40%, 100% { opacity: 0.14; }
+    }
+
+    @keyframes lockup-fade-out {
+      0%, 85%   { opacity: 1; animation-timing-function: ease-in-out; }
+      95%, 100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #studio-stage, #floor-flash, #lockup-drift, #emblem-pullback,
+      #emblem-flip, #turn-glint, #wordmark-group, #originals-flash {
+        animation: none;
+      }
+      #studio-stage, #lockup-drift, #emblem-pullback, #emblem-flip, #wordmark-group {
+        opacity: 1;
+        transform: none;
+      }
+      #floor-flash { opacity: 0.42; }
+      #originals-flash { opacity: 0.14; }
+      #turn-glint { opacity: 0; }
+    }
+  </style>
+
+  <defs>
+    
+    <radialGradient id="studioNavyGrad" cx="50%" cy="46%" r="68%">
+      <stop offset="0%" stop-color="#172747" />
+      <stop offset="48%" stop-color="#0b152b" />
+      <stop offset="100%" stop-color="#040814" />
+    </radialGradient>
+
+    
+    <radialGradient id="floorGlowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58d0ff" stop-opacity="0.48" />
+      <stop offset="38%" stop-color="#2868b0" stop-opacity="0.28" />
+      <stop offset="74%" stop-color="#132b57" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#040814" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <radialGradient id="origBloomGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8cf6ff" stop-opacity="0.78" />
+      <stop offset="44%" stop-color="#2cb8ff" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#0b152b" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <radialGradient id="glintGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#b8f4ff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="dRainbowGrad" gradientUnits="userSpaceOnUse" x1="-35" y1="-68" x2="45" y2="68">
+      <stop offset="0%" stop-color="#e81523" />
+      <stop offset="28%" stop-color="#ff6200" />
+      <stop offset="62%" stop-color="#ffd900" />
+      <stop offset="86%" stop-color="#6be81c" />
+      <stop offset="100%" stop-color="#15db38" />
+    </linearGradient>
+
+    
+    <radialGradient id="globeSphereGrad" cx="68%" cy="68%" r="74%" fx="74%" fy="72%">
+      <stop offset="0%" stop-color="#b8ffff" />
+      <stop offset="26%" stop-color="#48e8ff" />
+      <stop offset="56%" stop-color="#4e8bff" />
+      <stop offset="84%" stop-color="#6b4dff" />
+      <stop offset="100%" stop-color="#4730d6" />
+    </radialGradient>
+
+    
+    <radialGradient id="globeSpecular" cx="44%" cy="28%" r="48%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.82" />
+      <stop offset="42%" stop-color="#e4c8ff" stop-opacity="0.38" />
+      <stop offset="100%" stop-color="#6b4dff" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="dGlossGrad" gradientUnits="userSpaceOnUse" x1="15" y1="-68" x2="15" y2="10">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <linearGradient id="originalsBlue" gradientUnits="userSpaceOnUse" x1="460" y1="422" x2="820" y2="466">
+      <stop offset="0%" stop-color="#2fa2ff" />
+      <stop offset="50%" stop-color="#4cc6ff" />
+      <stop offset="100%" stop-color="#2a96ff" />
+    </linearGradient>
+
+    
+    <text id="originalsText" x="640" y="460" text-anchor="middle" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="47" font-weight="600" letter-spacing="5.2">ORIGINALS</text>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  
+  <g id="studio-stage">
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#studioNavyGrad)" />
+    <ellipse cx="640" cy="545" rx="590" ry="155" fill="url(#floorGlowGrad)" opacity="0.58" />
+  </g>
+
+  
+  <g id="floor-flash">
+    <ellipse cx="640" cy="495" rx="360" ry="100" fill="url(#floorGlowGrad)" />
+    <ellipse cx="640" cy="444" rx="225" ry="52" fill="url(#origBloomGrad)" />
+  </g>
+
+  <g id="lockup-drift">
+    
+    <g transform="translate(644, 260)">
+      <g id="emblem-pullback">
+        <g id="emblem-flip">
+          
+          <path d="M -46 -68 H 8 A 68 68 0 0 1 8 68 H -46 Z" fill="url(#dRainbowGrad)" stroke="#ffffff" stroke-width="5.2" stroke-linejoin="round" />
+
+          
+          <path d="M -41 -63 H 7 A 63 63 0 0 1 67 -14 C 36 -26, -8 -24, -41 -14 Z" fill="url(#dGlossGrad)" />
+
+          
+          <circle cx="-38" cy="22" r="46" fill="url(#globeSphereGrad)" stroke="#ffffff" stroke-width="5.2" />
+          <ellipse cx="-42" cy="4" rx="30" ry="20" fill="url(#globeSpecular)" transform="rotate(-14 -42 4)" />
+
+          
+          <ellipse id="turn-glint" cx="0" cy="0" rx="95" ry="82" fill="url(#glintGrad)" />
+        </g>
+      </g>
+    </g>
+
+    
+    <g id="wordmark-group">
+      <text x="620" y="405" text-anchor="middle" fill="#ffffff" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.6">discovery</text>
+      <g fill="#ffffff">
+        <rect x="789" y="366" width="5.5" height="36" rx="1.5" />
+        <rect x="773.75" y="381.25" width="36" height="5.5" rx="1.5" />
+      </g>
+
+      <use href="#originalsText" fill="url(#originalsBlue)" />
+      <use id="originals-flash" href="#originalsText" fill="#c9fbff" />
+    </g>
+  </g>
+</svg>

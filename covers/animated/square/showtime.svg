@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720" role="img" aria-label="showtime">
+  <defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 360.0px 360.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.84; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.85; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-302px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(760px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(760px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-302px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-281px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1160px) skewX(-24deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="880" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#FF2020" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="20.0" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="6.8" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="720" height="720" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FF2020" stop-opacity="0" /><stop offset="55%" stop-color="#FF2020" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#FF2020" stop-opacity="0.85" /><stop offset="100%" stop-color="#FF2020" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#FF2020" stop-opacity="0.072" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.160" /><stop offset="60%" stop-color="#FF2020" stop-opacity="0.072" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0305" />
+      <stop offset="55%" stop-color="#1A0509" />
+      <stop offset="100%" stop-color="#29080E" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#FF2020" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#FF2020" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#0D0305" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)" />
+  <rect width="720" height="720" fill="url(#glow)" />
+  <rect width="720" height="720" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="720" height="4" fill="#FF2020" fill-opacity="0.45" />
+  <rect x="0" y="716" width="720" height="4" fill="#FF2020" fill-opacity="0.45" />
+  <g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(151.20, 151.20) scale(17.4000)" fill="#FFFFFF" id="nv-logo-src">
+    <path d="M16.99 12.167c0-4.808 1.779-7.84 3.903-8.16C18.769 1.397 15.221 0 11.999 0 8.451 0 5.265 1.54 3.07 3.985c2.094.416 2.806 2.174 2.806 4.892H3.314c0-1.605-.334-2.436-1.284-2.436-.427 0-.758.217-.954.587-.027.06-.057.122-.084.184a2.115 2.115 0 0 0-.114.71c0 3.324 5.46 3.159 5.46 8.27 0 1.995-1.53 3.855-3.252 3.855C5.35 22.52 8.441 24 12 24c3.46 0 6.577-1.464 8.766-3.808-2.018-.509-3.776-3.413-3.776-8.025zm-1.142 7.921h-2.746V13.26h-2.967v6.83H7.384V4.327h2.746v6.348h2.972V4.327h2.746v15.761zM2.372 17.58c-1.32 0-2.399-2.32-2.372-5.8 1.905 1.72 3.681 2.11 3.681 4.145 0 .981-.543 1.655-1.309 1.655zM24 12.002c0 2.844-.896 5.409-2.1 5.409-1.445 0-2.181-2.703-2.181-5.498 0-2.654.771-5.308 2.181-5.308 1.676 0 2.1 4.102 2.1 5.397z" />
+  </g>
+</g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="201" height="720" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="302" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="716" width="302" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

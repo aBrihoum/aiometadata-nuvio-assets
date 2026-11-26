@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Netflix Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #n-camera {
+      transform-origin: 640px 360px;
+      transform: scale(0.95);
+      will-change: transform;
+      animation: n-push-in-loop 4.2s linear infinite;
+    }
+
+    #n-left {
+      transform-origin: 590px 488px;
+      transform: scaleY(0);
+      will-change: transform;
+      animation: draw-stem-left-loop 4.2s linear infinite;
+    }
+
+    #n-diag {
+      transform-origin: 568px 232px;
+      transform: scaleY(0);
+      will-change: transform, opacity;
+      animation: diag-loop 4.2s linear infinite;
+    }
+
+    #n-right {
+      transform-origin: 690px 488px;
+      transform: scaleY(0);
+      will-change: transform, opacity;
+      animation: right-loop 4.2s linear infinite;
+    }
+
+    #n-fibers {
+      opacity: 0;
+      will-change: opacity;
+      animation: fibers-flash-loop 4.2s ease-in infinite;
+    }
+
+    #n-wrapper {
+      opacity: 1;
+      will-change: opacity;
+      animation: n-wrapper-loop 4.2s linear infinite;
+    }
+
+    #spectrum-core {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scaleX(0.14);
+      will-change: opacity, transform;
+      animation: spectrum-core-loop 4.2s linear infinite;
+    }
+
+    #spectrum-left-wing {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: wing-left-loop 4.2s cubic-bezier(0.75, 0, 0.95, 0.35) infinite;
+    }
+
+    #spectrum-right-wing {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: wing-right-loop 4.2s cubic-bezier(0.75, 0, 0.95, 0.35) infinite;
+    }
+
+    #center-void {
+      transform-origin: 640px 360px;
+      transform: scaleX(0);
+      will-change: transform;
+      animation: void-open-loop 4.2s cubic-bezier(0.65, 0, 0.92, 0.3) infinite;
+    }
+
+    @keyframes n-push-in-loop {
+      0% {
+        transform: scale(0.95);
+        animation-timing-function: cubic-bezier(0.32, 0, 0.72, 0.25);
+      }
+      42.5% {
+        transform: scale(1.42);
+        animation-timing-function: cubic-bezier(0.32, 0, 0.72, 0.25);
+      }
+      56.7%, 85.0% {
+        transform: scale(2.05);
+      }
+      93.0%, 100% {
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes draw-stem-left-loop {
+      0%, 0.5% {
+        transform: scaleY(0);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      6.7%, 56.7% {
+        transform: scaleY(1);
+      }
+      93.0%, 100% {
+        transform: scaleY(0);
+      }
+    }
+
+    @keyframes diag-loop {
+      0%, 3.8% {
+        transform: scaleY(0);
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      10.5% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+      47.1% {
+        opacity: 1;
+        animation-timing-function: ease-in;
+      }
+      55.5%, 100% {
+        transform: scaleY(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes right-loop {
+      0%, 6.7% {
+        transform: scaleY(0);
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      12.9% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+      41.7% {
+        opacity: 1;
+        animation-timing-function: ease-in;
+      }
+      48.3%, 100% {
+        transform: scaleY(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fibers-flash-loop {
+      0%, 44.8% { opacity: 0; }
+      49.3%     { opacity: 1; }
+      54.8%     { opacity: 1; }
+      55.7%, 100% { opacity: 0; }
+    }
+
+    @keyframes n-wrapper-loop {
+      0%, 53.3% { opacity: 1; }
+      57.6%, 97.0% { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+
+    @keyframes spectrum-core-loop {
+      0%, 51.9% { opacity: 0; transform: scaleX(0.14); }
+      55.2%     { opacity: 1; }
+      63.3%     { transform: scaleX(0.95); }
+      80.8%     { opacity: 1; }
+      84.8%, 100% { opacity: 0; transform: scaleX(3.8); }
+    }
+
+    @keyframes wing-left-loop {
+      0%, 56.7% { transform: translateX(0); }
+      84.0%, 100% { transform: translateX(-280px); }
+    }
+
+    @keyframes wing-right-loop {
+      0%, 56.7% { transform: translateX(0); }
+      84.0%, 100% { transform: translateX(280px); }
+    }
+
+    @keyframes void-open-loop {
+      0%, 65.7% { transform: scaleX(0); }
+      82.9%, 100% { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #n-camera, #n-left, #n-diag, #n-right, #n-fibers, #n-wrapper,
+      #spectrum-core, #spectrum-left-wing, #spectrum-right-wing, #center-void {
+        animation: none;
+      }
+      #n-camera, #n-left, #n-diag, #n-right { transform: none; opacity: 1; }
+      #spectrum-core, #n-fibers { opacity: 0; }
+    }
+  </style>
+
+  <defs>
+    
+    <clipPath id="nCurveClip">
+      <path d="M 550 220 H 730 V 490 Q 640 473 550 490 Z" />
+    </clipPath>
+
+    <filter id="diagShadow" x="-35%" y="-15%" width="170%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#000000" flood-opacity="0.72" />
+    </filter>
+
+    <filter id="neonBloom" x="-20%" y="-5%" width="140%" height="110%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  
+  <g id="n-wrapper">
+    <g id="n-camera">
+      <g clip-path="url(#nCurveClip)">
+        <rect id="n-left" x="568" y="232" width="46" height="260" fill="#b1060f" />
+        <rect id="n-right" x="666" y="232" width="46" height="260" fill="#b1060f" />
+        <polygon id="n-diag" points="568,232 614,232 712,492 666,492" fill="#e50914" filter="url(#diagShadow)" />
+
+        
+        <g id="n-fibers">
+          <rect x="572" y="232" width="3" height="260" fill="#ff3842" />
+          <rect x="580" y="232" width="2" height="260" fill="#5e0005" />
+          <rect x="588" y="232" width="4" height="260" fill="#ff5522" />
+          <rect x="598" y="232" width="2" height="260" fill="#ff121f" />
+          <rect x="606" y="232" width="3" height="260" fill="#700008" />
+        </g>
+      </g>
+    </g>
+  </g>
+
+  
+  <g id="spectrum-core" filter="url(#neonBloom)">
+    <g id="spectrum-left-wing">
+      <rect x="290" y="-120" width="22" height="960" fill="#ff8c00" />
+      <rect x="318" y="-120" width="14" height="960" fill="#ffd900" />
+      <rect x="342" y="-120" width="28" height="960" fill="#d90416" />
+      <rect x="392" y="-120" width="24" height="960" fill="#ff2e93" />
+      <rect x="424" y="-120" width="12" height="960" fill="#ffb8d9" />
+      <rect x="448" y="-120" width="16" height="960" fill="#22ff55" />
+      <rect x="470" y="-120" width="26" height="960" fill="#ff4500" />
+      <rect x="510" y="-120" width="14" height="960" fill="#ff1e38" />
+      <rect x="536" y="-120" width="38" height="960" fill="#00d9ff" />
+      <rect x="556" y="-120" width="12" height="960" fill="#e6ffff" />
+      <rect x="582" y="-120" width="26" height="960" fill="#1e6bff" />
+    </g>
+
+    <g id="spectrum-right-wing">
+      <rect x="630" y="-120" width="16" height="960" fill="#6f1dff" />
+      <rect x="656" y="-120" width="26" height="960" fill="#ff26a8" />
+      <rect x="688" y="-120" width="20" height="960" fill="#ff9e22" />
+      <rect x="716" y="-120" width="30" height="960" fill="#1e7bff" />
+      <rect x="726" y="-120" width="10" height="960" fill="#d6ecff" />
+      <rect x="758" y="-120" width="16" height="960" fill="#7c22ff" />
+      <rect x="812" y="-120" width="20" height="960" fill="#ff1478" />
+      <rect x="854" y="-120" width="18" height="960" fill="#ffe600" />
+      <rect x="878" y="-120" width="30" height="960" fill="#ff5500" />
+      <rect x="916" y="-120" width="24" height="960" fill="#e50914" />
+    </g>
+
+    
+    <rect id="center-void" x="450" y="-120" width="380" height="960" fill="#000000" />
+  </g>
+</svg>

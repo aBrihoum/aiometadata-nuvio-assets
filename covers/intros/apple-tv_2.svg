@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Apple TV Intro Animation">
+  <style>
+    svg { background: #000000; width: 100%; height: 100%; display: block; }
+
+    #prism-aura {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scale(0.65);
+      will-change: opacity, transform;
+      animation: aura-pulse-loop 5.3s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+
+    #logo-stage {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scale(0.92);
+      will-change: opacity, transform;
+      animation: stage-life-loop 5.3s linear infinite;
+    }
+
+    #rainbow-sweep {
+      transform: translateX(-340px);
+      will-change: transform;
+      animation: prism-pass-loop 5.3s linear infinite;
+    }
+
+    #rainbow-layer {
+      opacity: 1;
+      will-change: opacity;
+      animation: prism-settle-loop 5.3s linear infinite;
+    }
+
+    #glass-white {
+      opacity: 0;
+      will-change: opacity;
+      animation: white-emerge-loop 5.3s linear infinite;
+    }
+
+    @keyframes aura-pulse-loop {
+      0%, 2.8%  { opacity: 0; transform: scale(0.65); }
+      27.6%     { opacity: 0.72; transform: scale(1.06); }
+      57.0%     { opacity: 0.25; transform: scale(1); }
+      80.2%, 100% { opacity: 0; transform: scale(0.65); }
+    }
+
+    @keyframes stage-life-loop {
+      0%, 3.8% {
+        opacity: 0;
+        transform: scale(0.92);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      18.5% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      72.7% {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+      85.8%, 97.0% {
+        opacity: 0;
+        transform: scale(1.04);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.92);
+      }
+    }
+
+    @keyframes prism-pass-loop {
+      0%, 4.7% {
+        transform: translateX(-340px);
+        animation-timing-function: cubic-bezier(0.38, 0, 0.2, 1);
+      }
+      45.3%, 85.8% {
+        transform: translateX(360px);
+      }
+      93.0%, 100% {
+        transform: translateX(-340px);
+      }
+    }
+
+    @keyframes prism-settle-loop {
+      0%, 39.6% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+      }
+      55.7%, 85.8% {
+        opacity: 0.14;
+      }
+      93.0%, 100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes white-emerge-loop {
+      0%, 34.9% {
+        opacity: 0;
+        animation-timing-function: ease-out;
+      }
+      51.9%, 85.8% {
+        opacity: 1;
+      }
+      93.0%, 100% {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #prism-aura, #logo-stage, #rainbow-sweep, #rainbow-layer, #glass-white { animation: none; }
+      #logo-stage, #glass-white { opacity: 1; transform: none; }
+      #rainbow-layer { opacity: 0.14; }
+    }
+  </style>
+
+  <defs>
+    
+    <linearGradient id="rainbowPrism" gradientUnits="userSpaceOnUse" x1="380" y1="260" x2="900" y2="460">
+      <stop offset="0%" stop-color="#61bb46" />
+      <stop offset="18%" stop-color="#fdb827" />
+      <stop offset="36%" stop-color="#f5821f" />
+      <stop offset="54%" stop-color="#e03a3e" />
+      <stop offset="74%" stop-color="#963d97" />
+      <stop offset="100%" stop-color="#009ddc" />
+    </linearGradient>
+
+    <linearGradient id="glassSilver" gradientUnits="userSpaceOnUse" x1="460" y1="270" x2="820" y2="450">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="55%" stop-color="#eef2f7" />
+      <stop offset="100%" stop-color="#cbd4e1" />
+    </linearGradient>
+
+    <filter id="prismBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="46" />
+    </filter>
+
+    
+    <g id="appleTvMark">
+      
+      <path d="M 556 306 C 562 293, 574 285, 586 284 C 587 297, 577 310, 563 313 C 559 314, 555 312, 556 306 Z" />
+      
+      <path d="M 594 366 C 594 350, 606 339, 608 338 C 599 325, 585 322, 579 322 C 567 321, 557 329, 552 329 C 546 329, 537 322, 528 322 C 514 322, 500 331, 493 345 C 478 371, 490 410, 504 430 C 511 440, 520 451, 531 450 C 542 450, 546 443, 559 443 C 572 443, 575 450, 587 450 C 599 450, 606 440, 613 430 C 621 418, 624 407, 624 406 C 623 405, 594 394, 594 366 Z" />
+      
+      <path d="M 656 306 H 680 V 334 H 701 V 353 H 680 V 414 C 680 426, 685 431, 696 431 H 702 V 449 C 697 450, 691 451, 685 451 C 664 451, 656 441, 656 419 V 353 H 641 V 334 H 656 Z" />
+      
+      <polygon points="712,334 738,334 763,421 788,334 813,334 776,449 749,449" />
+    </g>
+
+    <clipPath id="appleTvClip">
+      <path d="M 556 306 C 562 293, 574 285, 586 284 C 587 297, 577 310, 563 313 C 559 314, 555 312, 556 306 Z" />
+      <path d="M 594 366 C 594 350, 606 339, 608 338 C 599 325, 585 322, 579 322 C 567 321, 557 329, 552 329 C 546 329, 537 322, 528 322 C 514 322, 500 331, 493 345 C 478 371, 490 410, 504 430 C 511 440, 520 451, 531 450 C 542 450, 546 443, 559 443 C 572 443, 575 450, 587 450 C 599 450, 606 440, 613 430 C 621 418, 624 407, 624 406 C 623 405, 594 394, 594 366 Z" />
+      <path d="M 656 306 H 680 V 334 H 701 V 353 H 680 V 414 C 680 426, 685 431, 696 431 H 702 V 449 C 697 450, 691 451, 685 451 C 664 451, 656 441, 656 419 V 353 H 641 V 334 H 656 Z" />
+      <polygon points="712,334 738,334 763,421 788,334 813,334 776,449 749,449" />
+    </clipPath>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  
+  <ellipse id="prism-aura" cx="640" cy="360" rx="280" ry="135" fill="url(#rainbowPrism)" filter="url(#prismBlur)" />
+
+  <g id="logo-stage">
+    
+    <use id="glass-white" href="#appleTvMark" fill="url(#glassSilver)" />
+
+    
+    <g id="rainbow-layer" clip-path="url(#appleTvClip)">
+      <g id="rainbow-sweep">
+        <rect x="260" y="250" width="760" height="230" fill="url(#rainbowPrism)" transform="skewX(-18)" />
+      </g>
+    </g>
+  </g>
+</svg>

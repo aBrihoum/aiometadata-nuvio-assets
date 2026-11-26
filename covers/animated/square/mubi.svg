@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720" role="img" aria-label="mubi">
+  <defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 360.0px 360.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.78; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.09); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.75; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-302px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(760px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(760px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-302px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-281px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1160px) skewX(-24deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="880" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#60A5FA" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="18.0" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="6.12" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="720" height="720" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#60A5FA" stop-opacity="0" /><stop offset="55%" stop-color="#60A5FA" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#60A5FA" stop-opacity="0.85" /><stop offset="100%" stop-color="#60A5FA" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#60A5FA" stop-opacity="0.072" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.160" /><stop offset="60%" stop-color="#60A5FA" stop-opacity="0.072" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060919" />
+      <stop offset="55%" stop-color="#0C1230" />
+      <stop offset="100%" stop-color="#141D4A" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#60A5FA" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#060919" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)" />
+  <rect width="720" height="720" fill="url(#glow)" />
+  <rect width="720" height="720" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="720" height="4" fill="#60A5FA" fill-opacity="0.45" />
+  <rect x="0" y="716" width="720" height="4" fill="#60A5FA" fill-opacity="0.45" />
+  <g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(151.20, 151.20) scale(17.4000)" fill="#FFFFFF" id="nv-logo-src">
+    <path d="M3.357.033A3.357 3.357 0 0 0 0 3.39a3.357 3.357 0 0 0 3.357 3.357A3.357 3.357 0 0 0 6.713 3.39 3.357 3.357 0 0 0 3.357.033Zm8.643 0A3.357 3.357 0 0 0 8.645 3.39 3.357 3.357 0 0 0 12 6.746a3.357 3.357 0 0 0 3.357-3.357A3.357 3.357 0 0 0 12 .033Zm-8.643 8.61A3.357 3.357 0 0 0 0 12a3.357 3.357 0 0 0 3.357 3.355A3.357 3.357 0 0 0 6.713 12a3.357 3.357 0 0 0-3.356-3.357Zm8.643 0A3.357 3.357 0 0 0 8.645 12 3.357 3.357 0 0 0 12 15.355 3.357 3.357 0 0 0 15.357 12 3.357 3.357 0 0 0 12 8.643zm8.643 0A3.357 3.357 0 0 0 17.287 12a3.357 3.357 0 0 0 3.356 3.355A3.357 3.357 0 0 0 24 12a3.357 3.357 0 0 0-3.357-3.357Zm-17.286 8.61A3.357 3.357 0 0 0 0 20.612a3.357 3.357 0 0 0 3.357 3.356 3.357 3.357 0 0 0 3.356-3.356 3.357 3.357 0 0 0-3.356-3.357Zm8.643 0a3.357 3.357 0 0 0-3.355 3.358A3.357 3.357 0 0 0 12 23.967a3.357 3.357 0 0 0 3.357-3.356A3.357 3.357 0 0 0 12 17.254z" />
+  </g>
+</g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="201" height="720" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="302" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="716" width="302" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

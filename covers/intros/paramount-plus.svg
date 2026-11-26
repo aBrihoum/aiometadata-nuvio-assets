@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Paramount+ Original Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #navy-sky {
+      opacity: 0;
+      will-change: opacity;
+      animation: navy-sky-loop 6.8s ease-out infinite;
+    }
+
+    #bright-blue-sky {
+      opacity: 0;
+      will-change: opacity;
+      animation: bright-blue-sky-loop 6.8s ease-in-out infinite;
+    }
+
+    .fly-star {
+      opacity: 0;
+      will-change: opacity, transform;
+    }
+
+    #s1 { --sx: -420px; --sy: 340px; --tx: 561px; --ty: 251px; animation: star-1-loop 6.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+    #s2 { --sx: -360px; --sy: 380px; --tx: 587px; --ty: 215px; animation: star-2-loop 6.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+    #s3 { --sx: -320px; --sy: 410px; --tx: 629px; --ty: 197px; animation: star-3-loop 6.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+    #s4 { --sx: -460px; --sy: 390px; --tx: 673px; --ty: 203px; animation: star-4-loop 6.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+    #s5 { --sx: -520px; --sy: 430px; --tx: 708px; --ty: 231px; animation: star-5-loop 6.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+    #s6 { --sx: -580px; --sy: 440px; --tx: 724px; --ty: 273px; animation: star-6-loop 6.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+
+    #sky-flare {
+      opacity: 0;
+      transform-origin: 640px 270px;
+      transform: scaleX(0.15);
+      will-change: opacity, transform;
+      animation: flare-blink-loop 6.8s ease-out infinite;
+    }
+
+    #mountain-badge {
+      opacity: 0;
+      transform-origin: 640px 280px;
+      transform: scale(0.86);
+      will-change: opacity, transform;
+      animation: badge-emerge-loop 6.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    #crest-disc {
+      opacity: 0;
+      will-change: opacity;
+      animation: crest-disc-loop 6.8s ease-out infinite;
+    }
+
+    #script-camera {
+      opacity: 0;
+      transform-origin: 640px 418px;
+      transform: translateY(115px) scale(2.75);
+      will-change: opacity, transform;
+      animation: script-pullback-loop 6.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    #script-silver {
+      opacity: 1;
+      will-change: opacity;
+      animation: silver-to-white-loop 6.8s ease-out infinite;
+    }
+
+    #p-glint {
+      opacity: 0;
+      transform-origin: 482px 376px;
+      transform: scale(0.3);
+      will-change: opacity, transform;
+      animation: p-glint-loop 6.8s ease-out infinite;
+    }
+
+    #original-sub {
+      opacity: 0;
+      transform: translateY(8px);
+      will-change: opacity, transform;
+      animation: sub-in-loop 6.8s ease-out infinite;
+    }
+
+    #floor-reflection {
+      opacity: 0;
+      will-change: opacity;
+      animation: reflect-in-loop 6.8s ease-out infinite;
+    }
+
+    #end-fade {
+      opacity: 0;
+      will-change: opacity;
+      animation: end-fade-loop 6.8s ease-in-out infinite;
+    }
+
+    @keyframes navy-sky-loop {
+      0%, 3.7%  { opacity: 0; }
+      9.6%, 74.3% { opacity: 1; }
+      87.5%, 100% { opacity: 0; }
+    }
+
+    @keyframes bright-blue-sky-loop {
+      0%, 8.1%  { opacity: 0; }
+      19.1%, 74.3% { opacity: 1; }
+      87.5%, 100% { opacity: 0; }
+    }
+
+    @keyframes star-1-loop {
+      0%, 6.6% { opacity: 0; transform: translate(-420px, 340px) scale(4.8) rotate(-35deg); }
+      9.1%     { opacity: 1; }
+      17.5%    { opacity: 1; transform: translate(561px, 251px) scale(1.05) rotate(0deg); }
+      20.6%, 100% { opacity: 0; transform: translate(561px, 251px) scale(0.95) rotate(0deg); }
+    }
+    @keyframes star-2-loop {
+      0%, 10.6% { opacity: 0; transform: translate(-360px, 380px) scale(4.8) rotate(-35deg); }
+      13.1%     { opacity: 1; }
+      21.5%    { opacity: 1; transform: translate(587px, 215px) scale(1.05) rotate(0deg); }
+      24.6%, 100% { opacity: 0; transform: translate(587px, 215px) scale(0.95) rotate(0deg); }
+    }
+    @keyframes star-3-loop {
+      0%, 14.4% { opacity: 0; transform: translate(-320px, 410px) scale(4.8) rotate(-35deg); }
+      16.9%     { opacity: 1; }
+      25.3%    { opacity: 1; transform: translate(629px, 197px) scale(1.05) rotate(0deg); }
+      28.4%, 100% { opacity: 0; transform: translate(629px, 197px) scale(0.95) rotate(0deg); }
+    }
+    @keyframes star-4-loop {
+      0%, 18.2% { opacity: 0; transform: translate(-460px, 390px) scale(4.8) rotate(-35deg); }
+      20.7%     { opacity: 1; }
+      29.1%    { opacity: 1; transform: translate(673px, 203px) scale(1.05) rotate(0deg); }
+      32.2%, 100% { opacity: 0; transform: translate(673px, 203px) scale(0.95) rotate(0deg); }
+    }
+    @keyframes star-5-loop {
+      0%, 22.1% { opacity: 0; transform: translate(-520px, 430px) scale(4.8) rotate(-35deg); }
+      24.6%     { opacity: 1; }
+      33.0%    { opacity: 1; transform: translate(708px, 231px) scale(1.05) rotate(0deg); }
+      36.1%, 100% { opacity: 0; transform: translate(708px, 231px) scale(0.95) rotate(0deg); }
+    }
+    @keyframes star-6-loop {
+      0%, 25.9% { opacity: 0; transform: translate(-580px, 440px) scale(4.8) rotate(-35deg); }
+      28.4%     { opacity: 1; }
+      36.8%    { opacity: 1; transform: translate(724px, 273px) scale(1.05) rotate(0deg); }
+      39.9%, 100% { opacity: 0; transform: translate(724px, 273px) scale(0.95) rotate(0deg); }
+    }
+
+    @keyframes flare-blink-loop {
+      0%, 11.0% { opacity: 0; transform: scaleX(0.15); }
+      15.9%     { opacity: 0.85; transform: scaleX(1.1); }
+      25.0%, 100% { opacity: 0; transform: scaleX(1.5); }
+    }
+
+    @keyframes badge-emerge-loop {
+      0%, 35.0% { opacity: 0; transform: scale(0.86); }
+      45.6%, 74.3% { opacity: 1; transform: scale(1); }
+      87.5%, 100% { opacity: 0; transform: scale(0.86); }
+    }
+
+    @keyframes crest-disc-loop {
+      0%, 41.5% { opacity: 0; }
+      49.6%, 74.3% { opacity: 1; }
+      87.5%, 100% { opacity: 0; }
+    }
+
+    @keyframes script-pullback-loop {
+      0%, 33.1% { opacity: 0; transform: translateY(115px) scale(2.75); }
+      35.6%     { opacity: 1; }
+      47.1%, 74.3% { opacity: 1; transform: translateY(0px) scale(1); }
+      87.5%, 100% { opacity: 0; transform: translateY(115px) scale(2.75); }
+    }
+
+    @keyframes silver-to-white-loop {
+      0%, 43.4% { opacity: 1; }
+      51.5%, 74.3% { opacity: 0; }
+      87.5%, 100% { opacity: 1; }
+    }
+
+    @keyframes p-glint-loop {
+      0%, 39.4% { opacity: 0; transform: scale(0.3); }
+      43.8%     { opacity: 1; transform: scale(1.15); }
+      50.4%, 100% { opacity: 0; transform: scale(0.4); }
+    }
+
+    @keyframes sub-in-loop {
+      0%, 45.6% { opacity: 0; transform: translateY(8px); }
+      52.2%, 74.3% { opacity: 1; transform: translateY(0); }
+      87.5%, 100% { opacity: 0; transform: translateY(8px); }
+    }
+
+    @keyframes reflect-in-loop {
+      0%, 45.9% { opacity: 0; }
+      55.5%, 74.3% { opacity: 0.32; }
+      87.5%, 100% { opacity: 0; }
+    }
+
+    @keyframes end-fade-loop {
+      0%, 74.3% { opacity: 0; }
+      87.5%, 97.0% { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #navy-sky, #bright-blue-sky, .fly-star, #sky-flare, #mountain-badge, #crest-disc,
+      #script-camera, #script-silver, #p-glint, #original-sub, #floor-reflection, #end-fade {
+        animation: none;
+      }
+      #bright-blue-sky, #mountain-badge, #crest-disc, #script-camera, #original-sub {
+        opacity: 1;
+        transform: none;
+      }
+      #end-fade, .fly-star, #p-glint { opacity: 0; }
+    }
+  </style>
+
+  <defs>
+    
+    <polygon id="starShape" points="0,-9.5 2.4,-2.9 9.2,-2.9 3.6,1.2 5.7,7.8 0,3.8 -5.7,7.8 -3.6,1.2 -9.2,-2.9 -2.4,-2.9" />
+
+    
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#bcd4ff" />
+      <stop offset="65%" stop-color="#5d86c9" />
+      <stop offset="100%" stop-color="#eef5ff" />
+    </linearGradient>
+
+    <linearGradient id="flareHGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#d9f0ff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="glintDot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="40%" stop-color="#a8dcff" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#0064ff" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="reflectMaskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="75%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <mask id="reflectFadeMask">
+      <rect x="340" y="470" width="600" height="190" fill="url(#reflectMaskGrad)" />
+    </mask>
+
+    <filter id="reflectBlur" x="-10%" y="-20%" width="120%" height="140%">
+      <feGaussianBlur stdDeviation="5.5" />
+    </filter>
+
+    
+    <clipPath id="crestClip">
+      <rect x="520" y="160" width="240" height="192" />
+    </clipPath>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+  <rect id="navy-sky" x="-200%" y="-200%" width="500%" height="500%" fill="#082457" />
+  <rect id="bright-blue-sky" x="-200%" y="-200%" width="500%" height="500%" fill="#0064ff" />
+
+  
+  <rect id="sky-flare" x="280" y="268" width="720" height="4" fill="url(#flareHGrad)" />
+
+  
+  <use id="s1" class="fly-star" href="#starShape" fill="url(#chromeGrad)" />
+  <use id="s2" class="fly-star" href="#starShape" fill="url(#chromeGrad)" />
+  <use id="s3" class="fly-star" href="#starShape" fill="url(#chromeGrad)" />
+  <use id="s4" class="fly-star" href="#starShape" fill="url(#chromeGrad)" />
+  <use id="s5" class="fly-star" href="#starShape" fill="url(#chromeGrad)" />
+  <use id="s6" class="fly-star" href="#starShape" fill="url(#chromeGrad)" />
+
+  
+  <g id="mountain-badge">
+    
+    <circle id="crest-disc" cx="640" cy="282" r="102" fill="#ffffff" clip-path="url(#crestClip)" />
+
+    
+    <path d="M 556 352 L 598 292 L 607 301 L 640 232 L 671 294 L 680 286 L 724 352 Z" fill="#0064ff" />
+    
+    <path d="M 640 239 L 619 283 L 629 278 L 624 297 L 641 273 L 647 286 L 652 271 L 664 287 Z" fill="#ffffff" />
+    <path d="M 640 284 L 614 345 L 633 324 L 628 349 L 656 312 L 665 349 L 690 349 L 666 300 L 654 313 Z" fill="#ffffff" />
+    <path d="M 597 298 L 570 349 L 593 331 L 602 342 L 613 314 Z" fill="#ffffff" />
+
+    
+    <g fill="#0064ff">
+      <use href="#starShape" transform="translate(557.5 295.7) scale(0.92)" />
+      <use href="#starShape" transform="translate(556.3 273.0) scale(0.92)" />
+      <use href="#starShape" transform="translate(561.2 250.9) scale(0.92)" />
+      <use href="#starShape" transform="translate(571.8 230.9) scale(0.92)" />
+      <use href="#starShape" transform="translate(587.4 214.5) scale(0.92)" />
+      <use href="#starShape" transform="translate(606.8 202.8) scale(0.92)" />
+      <use href="#starShape" transform="translate(628.7 196.8) scale(0.92)" />
+      <use href="#starShape" transform="translate(651.3 196.8) scale(0.92)" />
+      <use href="#starShape" transform="translate(673.2 202.8) scale(0.92)" />
+      <use href="#starShape" transform="translate(692.6 214.5) scale(0.92)" />
+      <use href="#starShape" transform="translate(708.2 230.9) scale(0.92)" />
+      <use href="#starShape" transform="translate(718.8 250.9) scale(0.92)" />
+      <use href="#starShape" transform="translate(723.7 273.0) scale(0.92)" />
+      <use href="#starShape" transform="translate(722.5 295.7) scale(0.92)" />
+    </g>
+  </g>
+
+  
+  <g id="script-camera">
+    
+    <g fill="#ffffff">
+      <text x="612" y="424" text-anchor="middle" font-family="&#39;Brush Script MT&#39;, &#39;Segoe Script&#39;, &#39;Snell Roundhand&#39;, &#39;Apple Chancery&#39;, Georgia, serif" font-style="italic" font-weight="600" font-size="94" letter-spacing="-1">Paramount</text>
+      
+      <path d="M 819 376 H 831 L 826 396 H 846 L 844 407 H 824 L 819 427 H 807 L 812 407 H 792 L 794 396 H 814 Z" />
+    </g>
+
+    
+    <g id="script-silver" fill="url(#chromeGrad)">
+      <text x="612" y="424" text-anchor="middle" font-family="&#39;Brush Script MT&#39;, &#39;Segoe Script&#39;, &#39;Snell Roundhand&#39;, &#39;Apple Chancery&#39;, Georgia, serif" font-style="italic" font-weight="600" font-size="94" letter-spacing="-1">Paramount</text>
+      <path d="M 819 376 H 831 L 826 396 H 846 L 844 407 H 824 L 819 427 H 807 L 812 407 H 792 L 794 396 H 814 Z" />
+    </g>
+
+    
+    <g id="p-glint">
+      <circle cx="482" cy="376" r="34" fill="url(#glintDot)" />
+      <rect x="362" y="374.5" width="240" height="3" fill="url(#flareHGrad)" />
+    </g>
+  </g>
+
+  
+  <text id="original-sub" x="640" y="468" text-anchor="middle" fill="#ffffff" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="25" font-weight="500" letter-spacing="7.5">ORIGINAL</text>
+
+  
+  <g id="floor-reflection" mask="url(#reflectFadeMask)">
+    <g transform="translate(0, 962) scale(1, -1)" filter="url(#reflectBlur)" fill="#ffffff">
+      <text x="612" y="424" text-anchor="middle" font-family="&#39;Brush Script MT&#39;, &#39;Segoe Script&#39;, &#39;Snell Roundhand&#39;, &#39;Apple Chancery&#39;, Georgia, serif" font-style="italic" font-weight="600" font-size="94" letter-spacing="-1">Paramount</text>
+      <path d="M 819 376 H 831 L 826 396 H 846 L 844 407 H 824 L 819 427 H 807 L 812 407 H 792 L 794 396 H 814 Z" />
+    </g>
+  </g>
+
+  
+  <rect id="end-fade" x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+</svg>

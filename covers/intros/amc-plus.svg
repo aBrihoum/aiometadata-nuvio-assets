@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="AMC+ Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #navy-bg {
+      opacity: 0;
+      will-change: opacity;
+      animation: bg-life-loop 7.2s ease-in-out infinite;
+    }
+
+    #lockup-camera {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: camera-push-loop 7.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+
+    #hero-plus {
+      opacity: 0;
+      transform: translate(128px, 360px) scale(2.05);
+      will-change: opacity, transform;
+      animation:
+        plus-opacity-loop 7.2s linear infinite,
+        plus-motion-loop 7.2s linear infinite;
+    }
+
+    #bar-wipe {
+      transform-origin: 455px 360px;
+      transform: scaleX(0);
+      will-change: transform;
+      animation: bar-wipe-loop 7.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+
+    #bar-morph {
+      transform-origin: 640px 360px;
+      opacity: 1;
+      will-change: transform, opacity;
+      animation: bar-collapse-loop 7.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+
+    #final-lockup {
+      opacity: 0;
+      will-change: opacity;
+      animation: lockup-life-loop 7.2s ease-in-out infinite;
+    }
+
+    #amc-wordmark {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      transform: scale(1.06);
+      will-change: opacity, transform;
+      animation: wordmark-in-loop 7.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    #frame-sheen {
+      transform: translateX(-260px);
+      will-change: transform;
+      animation: sheen-glide-loop 7.2s ease-in-out infinite;
+    }
+
+    @keyframes bg-life-loop {
+      0%, 3.5%  { opacity: 0; }
+      12.4%     { opacity: 1; }
+      78.1%     { opacity: 1; }
+      92.4%, 100% { opacity: 0; }
+    }
+
+    @keyframes camera-push-loop {
+      0%, 34.0% { transform: scale(0.99); }
+      81.2%, 92.4% { transform: scale(1.025); }
+      97.0%, 100% { transform: scale(0.99); }
+    }
+
+    @keyframes plus-opacity-loop {
+      0%, 9.0%  { opacity: 0; }
+      13.2%     { opacity: 1; }
+      78.2%     { opacity: 1; }
+      88.2%, 100% { opacity: 0; }
+    }
+
+    @keyframes plus-motion-loop {
+      0%, 9.0%  { transform: translate(128px, 360px) scale(2.05); }
+      17.0%     { transform: translate(128px, 360px) scale(2.05); animation-timing-function: cubic-bezier(0.7, 0, 0.25, 1); }
+      27.8%     { transform: translate(825px, 360px) scale(2.2); animation-timing-function: linear; }
+      29.2%     { transform: translate(825px, 360px) scale(2.2); animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); }
+      37.5%, 92.4% { transform: translate(752px, 360px) scale(1); }
+      97.0%, 100% { transform: translate(128px, 360px) scale(2.05); }
+    }
+
+    @keyframes bar-wipe-loop {
+      0%, 20.0% { transform: scaleX(0); }
+      27.8%, 92.4% { transform: scaleX(1); }
+      97.0%, 100% { transform: scaleX(0); }
+    }
+
+    @keyframes bar-collapse-loop {
+      0%, 28.5% { transform: scale(1, 1); opacity: 1; }
+      33.7%     { transform: scale(0.6054, 0.6739); opacity: 0.9; }
+      36.5%, 100% { transform: scale(0.6054, 0.6739); opacity: 0; }
+    }
+
+    @keyframes lockup-life-loop {
+      0%, 32.2% { opacity: 0; }
+      37.6%     { opacity: 1; }
+      76.1%     { opacity: 1; }
+      85.7%, 100% { opacity: 0; }
+    }
+
+    @keyframes wordmark-in-loop {
+      0%, 32.8% { opacity: 0; transform: scale(1.06); }
+      39.0%, 85.7% { opacity: 1; transform: scale(1); }
+      92.4%, 100% { opacity: 0; transform: scale(1.06); }
+    }
+
+    @keyframes sheen-glide-loop {
+      0%, 34.0% { transform: translateX(-260px); }
+      58.5%     { transform: translateX(240px); }
+      78.5%, 92.4% { transform: translateX(-90px); }
+      97.0%, 100% { transform: translateX(-260px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #navy-bg, #lockup-camera, #hero-plus, #bar-wipe, #bar-morph,
+      #final-lockup, #amc-wordmark, #frame-sheen {
+        animation: none;
+      }
+      #navy-bg, #final-lockup, #amc-wordmark { opacity: 1; transform: none; }
+      #bar-morph { opacity: 0; }
+      #hero-plus { opacity: 1; transform: translate(752px, 360px) scale(1); }
+    }
+  </style>
+
+  <defs>
+    
+    <linearGradient id="sweepBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#35e4c8" />
+      <stop offset="48%" stop-color="#7dfbe9" />
+      <stop offset="88%" stop-color="#c4fff5" />
+      <stop offset="100%" stop-color="#e3fffa" />
+    </linearGradient>
+
+    
+    <filter id="barGlow" x="-15%" y="-25%" width="130%" height="150%">
+      <feGaussianBlur stdDeviation="14" />
+    </filter>
+
+    
+    <linearGradient id="frameBaseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c2e8eb" stop-opacity="0.88" />
+      <stop offset="50%" stop-color="#4ba7a8" stop-opacity="0.72" />
+      <stop offset="100%" stop-color="#6ef2e2" stop-opacity="0.95" />
+    </linearGradient>
+
+    
+    <linearGradient id="sheenBandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5cf2e2" stop-opacity="0" />
+      <stop offset="35%" stop-color="#7efce9" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="65%" stop-color="#7efce9" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#5cf2e2" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <clipPath id="mClip">
+      <rect x="610" y="336.2" width="64" height="47.6" />
+    </clipPath>
+
+    
+    <mask id="frameLineMask" maskUnits="userSpaceOnUse" x="515" y="285" width="255" height="150">
+      <rect x="515" y="285" width="255" height="150" fill="#000000" />
+      <path d="M 752 332 V 298 H 528 V 422 H 752 V 388" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter" />
+    </mask>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+  <rect id="navy-bg" x="-200%" y="-200%" width="500%" height="500%" fill="#0c1421" />
+
+  <g id="lockup-camera">
+    
+    <g id="bar-morph">
+      <g id="bar-wipe">
+        <rect x="455" y="268" width="370" height="184" fill="url(#sweepBarGrad)" opacity="0.45" filter="url(#barGlow)" />
+        <rect x="455" y="268" width="370" height="184" fill="url(#sweepBarGrad)" />
+      </g>
+    </g>
+
+    
+    <g id="final-lockup">
+      
+      <path d="M 752 332 V 298 H 528 V 422 H 752 V 388" fill="none" stroke="url(#frameBaseGrad)" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter" />
+
+      
+      <g mask="url(#frameLineMask)">
+        <g id="frame-sheen">
+          <rect x="550" y="275" width="180" height="175" fill="url(#sheenBandGrad)" transform="skewX(-22)" />
+        </g>
+      </g>
+
+      
+      <g id="amc-wordmark" fill="none" stroke="#e9f4f6" stroke-width="3.6" stroke-linecap="butt" stroke-linejoin="miter">
+        
+        <circle cx="578" cy="360" r="22" />
+        <path d="M 600 336.2 V 383.8" />
+
+        
+        <g clip-path="url(#mClip)">
+          <path d="M 616 385 L 616 338.5 L 642 380.5 L 668 338.5 L 668 385" />
+        </g>
+
+        
+        <path d="M 722.35 345.28 A 22 22 0 1 0 722.35 374.72" />
+      </g>
+    </g>
+
+    
+    <g id="hero-plus" stroke="#a6f0ea" stroke-width="2.6" stroke-linecap="butt">
+      <line x1="-16" y1="0" x2="16" y2="0" />
+      <line x1="0" y1="-16" x2="0" y2="16" />
+    </g>
+  </g>
+</svg>

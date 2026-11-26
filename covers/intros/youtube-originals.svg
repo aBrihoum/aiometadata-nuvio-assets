@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="YouTube Originals Intro Animation">
+  <style>
+    svg {
+      background: #ffffff;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #bg-rect {
+      fill: #ffffff;
+      animation: bg-flip 5.6s linear infinite;
+    }
+
+    /* Separate motion and pop tracks so the slide never stalls */
+    #icon-mover {
+      will-change: transform;
+      animation: icon-slide 5.6s linear infinite;
+    }
+
+    #icon-pop {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: transform, opacity;
+      animation: icon-enter 5.6s linear infinite;
+    }
+
+    #play-squircle {
+      fill: #ff0000;
+      animation: squircle-flip 5.6s linear infinite;
+    }
+
+    #play-triangle {
+      fill: #ffffff;
+      animation: triangle-flip 5.6s linear infinite;
+    }
+
+    /* Moving white blocker attached to the Play icon keeps text hidden strictly to its left */
+    #left-mask {
+      opacity: 1;
+      animation: mask-life 5.6s linear infinite;
+    }
+
+    #text-mover {
+      opacity: 0;
+      will-change: transform, opacity;
+      animation:
+        text-slide 5.6s linear infinite,
+        text-vis 5.6s linear infinite;
+    }
+
+    #yt-text {
+      fill: #111111;
+      font-family: "YouTube Sans", "Roboto Condensed", "Bahnschrift Condensed", "DIN Condensed", "Arial Narrow", sans-serif;
+      font-size: 94px;
+      font-weight: 700;
+      letter-spacing: -1.8px;
+      animation: text-flip 5.6s linear infinite;
+    }
+
+    #loop-blackout {
+      opacity: 0;
+      will-change: opacity;
+      animation: blackout-loop 5.6s linear infinite;
+    }
+
+    /* ---- MOTION TRACKS ---- */
+    @keyframes icon-enter {
+      0%, 2% {
+        opacity: 0;
+        transform: scale(0.84);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      9%, 90% {
+        opacity: 1;
+        transform: scale(1);
+        animation-timing-function: linear;
+      }
+      92%, 100% {
+        opacity: 0;
+        transform: scale(0.84);
+      }
+    }
+
+    @keyframes icon-slide {
+      0%, 12% {
+        transform: translateX(0px);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      28%, 91.99% {
+        transform: translateX(-257px);
+        animation-timing-function: linear;
+      }
+      92%, 100% {
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes text-slide {
+      0%, 12% {
+        transform: translateX(-520px);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      28%, 91.99% {
+        transform: translateX(0px);
+        animation-timing-function: linear;
+      }
+      92%, 100% {
+        transform: translateX(-520px);
+      }
+    }
+
+    @keyframes text-vis {
+      0%, 11.99%   { opacity: 0; }
+      12%, 91.99%  { opacity: 1; }
+      92%, 100%    { opacity: 0; }
+    }
+
+    @keyframes mask-life {
+      0%, 28.99%   { opacity: 1; }
+      29%, 91.99%  { opacity: 0; }
+      92%, 100%    { opacity: 1; }
+    }
+
+    /* ---- INSTANT FLASH COLOR INVERSION AT 35% (00:02) ---- */
+    @keyframes bg-flip {
+      0%, 34.99%   { fill: #ffffff; }
+      35%, 91.99%  { fill: #ff0000; }
+      92%, 100%    { fill: #ffffff; }
+    }
+
+    @keyframes squircle-flip {
+      0%, 34.99%   { fill: #ff0000; }
+      35%, 91.99%  { fill: #ffffff; }
+      92%, 100%    { fill: #ff0000; }
+    }
+
+    @keyframes triangle-flip {
+      0%, 34.99%   { fill: #ffffff; }
+      35%, 91.99%  { fill: #ff0000; }
+      92%, 100%    { fill: #ffffff; }
+    }
+
+    @keyframes text-flip {
+      0%, 34.99%   { fill: #111111; }
+      35%, 91.99%  { fill: #ffffff; }
+      92%, 100%    { fill: #111111; }
+    }
+
+    /* Smooth fade to black &amp; back to white for seamless infinite looping */
+    @keyframes blackout-loop {
+      0%, 82% {
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+      }
+      89%, 94% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #bg-rect, #icon-mover, #icon-pop, #play-squircle, #play-triangle,
+      #left-mask, #text-mover, #yt-text, #loop-blackout {
+        animation: none;
+      }
+      #bg-rect { fill: #ff0000; }
+      #play-squircle { fill: #ffffff; }
+      #play-triangle { fill: #ff0000; }
+      #yt-text { fill: #ffffff; }
+      #icon-mover { transform: translateX(-257px); }
+      #icon-pop, #text-mover { opacity: 1; transform: none; }
+      #left-mask, #loop-blackout { opacity: 0; }
+    }
+  </style>
+
+  
+  <rect id="bg-rect" x="-200%" y="-200%" width="500%" height="500%" />
+
+  
+  <g id="text-mover">
+    <text id="yt-text" x="458" y="394">YouTube Originals</text>
+  </g>
+
+  
+  <g id="icon-mover">
+    <rect id="left-mask" x="-900" y="250" width="1540" height="220" fill="#ffffff" />
+
+    <g id="icon-pop">
+      <g transform="translate(640, 360) scale(0.98)">
+        
+        <path id="play-squircle" d="M 61.3 -30.9 C 59.8 -36.5 55.4 -40.9 49.8 -42.4 C 39.7 -45 0 -45 0 -45 C 0 -45 -39.7 -45 -49.8 -42.4 C -55.4 -40.9 -59.8 -36.5 -61.3 -30.9 C -64 -20.8 -64 0 -64 0 C -64 0 -64 20.8 -61.3 30.9 C -59.8 36.5 -55.4 40.9 -49.8 42.4 C -39.7 45 0 45 0 45 C 0 45 39.7 45 49.8 42.4 C 55.4 40.9 59.8 36.5 61.3 30.9 C 64 20.8 64 0 64 0 C 64 0 64 -20.8 61.3 -30.9 Z" />
+        <polygon id="play-triangle" points="-12,-19 21,0 -12,19" />
+      </g>
+    </g>
+  </g>
+
+  
+  <rect id="loop-blackout" x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+</svg>

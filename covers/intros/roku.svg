@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Roku Originals Intro Animation">
+  <style>
+    svg { background: #260942; width: 100%; height: 100%; display: block; }
+
+    #roku-stage {
+      opacity: 1;
+      will-change: opacity;
+      animation: roku-stage-loop 5.0s linear infinite;
+    }
+
+    #curtain-left {
+      transform: translateX(0);
+      will-change: transform;
+      animation: slide-left-loop 5.0s linear infinite;
+    }
+
+    #curtain-right {
+      transform: translateX(0);
+      will-change: transform;
+      animation: slide-right-loop 5.0s linear infinite;
+    }
+
+    .r-char {
+      fill: #ffffff;
+      font-family: 'Plus Jakarta Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 132px;
+      font-weight: 800;
+      text-anchor: middle;
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      transform: translateY(48px) scale(0.7) rotate(var(--r));
+      will-change: opacity, transform;
+    }
+
+    #rk1 { --r: -6deg; --endr: -3deg; animation: char-hop-1 5.0s linear infinite; }
+    #rk2 { --r: 8deg;  --endr: 5deg;  animation: char-hop-2 5.0s linear infinite; }
+    #rk3 { --r: -7deg; --endr: -4deg; animation: char-hop-3 5.0s linear infinite; }
+    #rk4 { --r: 6deg;  --endr: 3deg;  animation: char-hop-4 5.0s linear infinite; }
+
+    #roku-orig {
+      opacity: 0;
+      transform: translateY(14px);
+      will-change: opacity, transform;
+      animation: orig-up-loop 5.0s linear infinite;
+    }
+
+    @keyframes roku-stage-loop {
+      0%, 75.0% { opacity: 1; animation-timing-function: ease-in; }
+      86.0%, 97.0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slide-left-loop {
+      0%, 4.0% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.65, 0, 0.25, 1);
+      }
+      22.0%, 86.0% {
+        transform: translateX(-820px);
+      }
+      93.0%, 100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slide-right-loop {
+      0%, 4.0% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.65, 0, 0.25, 1);
+      }
+      22.0%, 86.0% {
+        transform: translateX(820px);
+      }
+      93.0%, 100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes char-hop-1 {
+      0%, 11.6% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(-6deg);
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      23.2%, 86.0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1) rotate(-3deg);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(-6deg);
+      }
+    }
+
+    @keyframes char-hop-2 {
+      0%, 13.6% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(8deg);
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      25.2%, 86.0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1) rotate(5deg);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(8deg);
+      }
+    }
+
+    @keyframes char-hop-3 {
+      0%, 15.6% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(-7deg);
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      27.2%, 86.0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1) rotate(-4deg);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(-7deg);
+      }
+    }
+
+    @keyframes char-hop-4 {
+      0%, 17.6% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(6deg);
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      29.2%, 86.0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1) rotate(3deg);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.7) rotate(6deg);
+      }
+    }
+
+    @keyframes orig-up-loop {
+      0%, 25.0% {
+        opacity: 0;
+        transform: translateY(14px);
+        animation-timing-function: ease-out;
+      }
+      35.0%, 86.0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #roku-stage, #curtain-left, #curtain-right, .r-char, #roku-orig { animation: none; }
+      #curtain-left, #curtain-right { opacity: 0; }
+      .r-char { opacity: 1; transform: rotate(var(--endr)); }
+      #roku-orig { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="rokuBg" cx="50%" cy="46%" r="68%">
+      <stop offset="0%" stop-color="#8438c7" />
+      <stop offset="55%" stop-color="#5d1f96" />
+      <stop offset="100%" stop-color="#260942" />
+    </radialGradient>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#rokuBg)" />
+
+  <g id="roku-stage">
+    <text id="rk1" class="r-char" x="502" y="380">R</text>
+    <text id="rk2" class="r-char" x="596" y="384">o</text>
+    <text id="rk3" class="r-char" x="684" y="376">k</text>
+    <text id="rk4" class="r-char" x="774" y="382">u</text>
+
+    <text id="roku-orig" x="640" y="446" text-anchor="middle" fill="#e9d4ff" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="11">ORIGINALS</text>
+
+    
+    <rect id="curtain-left" x="-200" y="-200" width="845" height="1120" fill="#3a0d63" />
+    <rect id="curtain-right" x="635" y="-200" width="845" height="1120" fill="#3a0d63" />
+  </g>
+</svg>

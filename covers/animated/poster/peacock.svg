@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="peacock">
+  <defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 300.0px 450.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.65; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.06); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.68; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-252px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(640px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(640px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-252px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-248px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1130px) skewX(-24deg); opacity: 0; }
+}
+.nv-feather { animation: nv-feather-wave 3.2s ease-in-out infinite both; }
+@keyframes nv-feather-wave {
+  0%, 44%, 100% { filter: brightness(1) saturate(1) drop-shadow(0 0 0px var(--nv-fc0)); }
+  20% { filter: brightness(1.48) saturate(1.25) drop-shadow(0 0 3.7px var(--nv-fc1)); }
+}
+.nv-f0 { --nv-fc0: rgba(252, 204, 18, 0.00); --nv-fc1: rgba(252, 204, 18, 0.95); animation-delay: 0.00s; }
+.nv-f1 { --nv-fc0: rgba(255, 113, 18, 0.00); --nv-fc1: rgba(255, 113, 18, 0.95); animation-delay: 0.14s; }
+.nv-f2 { --nv-fc0: rgba(239, 21, 65, 0.00); --nv-fc1: rgba(239, 21, 65, 0.95); animation-delay: 0.28s; }
+.nv-f3 { --nv-fc0: rgba(110, 85, 220, 0.00); --nv-fc1: rgba(110, 85, 220, 0.95); animation-delay: 0.42s; }
+.nv-f4 { --nv-fc0: rgba(6, 157, 224, 0.00); --nv-fc1: rgba(6, 157, 224, 0.95); animation-delay: 0.56s; }
+.nv-f5 { --nv-fc0: rgba(5, 172, 63, 0.00); --nv-fc1: rgba(5, 172, 63, 0.95); animation-delay: 0.70s; }
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="760" height="1060" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#FCCC12" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="13.33" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="4.53" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="600" height="900" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FCCC12" stop-opacity="0" /><stop offset="55%" stop-color="#FCCC12" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#FCCC12" stop-opacity="0.85" /><stop offset="100%" stop-color="#FCCC12" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#FCCC12" stop-opacity="0.072" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.160" /><stop offset="60%" stop-color="#FCCC12" stop-opacity="0.072" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090F" />
+      <stop offset="55%" stop-color="#0D111C" />
+      <stop offset="100%" stop-color="#131826" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#FCCC12" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#FCCC12" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#07090F" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#bg)" />
+  <rect width="600" height="900" fill="url(#glow)" />
+  <rect width="600" height="900" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="600" height="4" fill="#FCCC12" fill-opacity="0.45" />
+  <rect x="0" y="896" width="600" height="4" fill="#FCCC12" fill-opacity="0.45" />
+  <g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(-183.57, -33.57) scale(2.4179)" fill="#FFFFFF" id="nv-logo-src">
+    <path d="M122.148 189.481c-6.333 0-11.481 5.148-11.481 11.481v26.556h5.444v-14.74l2 2.11 8-3.147c4.556-1.778 7.519-5.89 7.519-10.778 0-6.333-5.148-11.482-11.482-11.482m2.038 17.445-8.074 3.148v-9.111c0-3.667 2.741-6.296 6.037-6.296s6.037 2.666 6.037 6.296c0 2.296-1.111 4.815-4 5.963m94.037-17.445c-6.333 0-11.481 5.148-11.481 11.481s5.148 11.481 11.481 11.481 11.481-5.148 11.481-11.481-5.148-11.481-11.481-11.481m0 17.778c-3.481 0-6.037-2.777-6.037-6.296s2.63-6.296 6.037-6.296c3.481 0 6.037 2.777 6.037 6.296s-2.556 6.296-6.037 6.296m24.852-12.592c2.369 0 4.295 1.296 5.296 3.222l4.259-3.259c-2.074-3.074-5.555-5.111-9.555-5.111-6.334 0-11.482 5.148-11.482 11.481s5.148 11.481 11.482 11.481c3.963 0 7.48-2.037 9.555-5.111l-4.259-3.26c-1.001 1.927-2.927 3.223-5.296 3.223-3.482 0-6.037-2.777-6.037-6.296s2.629-6.37 6.037-6.37m-46.445 0c2.371 0 4.297 1.296 5.297 3.222l4.259-3.259c-2.074-3.074-5.556-5.111-9.556-5.111-6.333 0-11.481 5.148-11.481 11.481s5.148 11.481 11.481 11.481c3.963 0 7.482-2.037 9.556-5.111l-4.259-3.26c-1 1.927-2.926 3.223-5.297 3.223-3.481 0-6.037-2.777-6.037-6.296s2.593-6.37 6.037-6.37m-19.037-2.445c-1.852-1.926-4.296-2.74-6.852-2.74-5.334 0-10.74 4.852-10.74 11.481s5.406 11.481 10.74 11.481c2.556 0 5-.814 6.852-2.74v2.074h5.445v-21.594h-5.445zm-6.037 15.037c-3.48 0-6.111-2.777-6.111-6.296s2.704-6.296 6.111-6.296c3.482 0 6.037 2.777 6.037 6.296s-2.555 6.296-6.037 6.296m96.222-7.074h-2.444l9.444-10.037h-7l-7.63 8.223v-20h-5.444v33.408h5.444v-6.148l3-3.186 6.407 9.334h6.593zm-120.889-10.704c-6.333 0-11.481 5.148-11.481 11.481s5.148 11.481 11.481 11.481c3.778 0 7.333-1.814 9.371-4.629l-4.371-3.037c-.519.852-2.185 2.48-5 2.48-2.592 0-4.704-1.555-5.592-3.814h16.556c.186-.814.26-1.629.26-2.481.035-6.332-4.89-11.481-11.224-11.481m-5.555 9c.889-2.26 3-3.814 5.555-3.814 2.593 0 4.556 1.555 5.371 3.814z" /><path fill="#069DE0" d="M286.038 208.519a3.304 3.304 0 0 0-3.297 3.297 3.303 3.303 0 0 0 3.297 3.295 3.303 3.303 0 0 0 3.296-3.295 3.303 3.303 0 0 0-3.296-3.297" class="nv-feather nv-f4" /><path fill="#6E55DC" d="M286.038 199.519a3.304 3.304 0 0 0-3.297 3.297 3.303 3.303 0 0 0 3.297 3.295 3.303 3.303 0 0 0 3.296-3.295c-.037-1.853-1.481-3.297-3.296-3.297" class="nv-feather nv-f3" /><path fill="#05AC3F" d="M286.038 217.519a3.304 3.304 0 0 0-3.297 3.297 3.303 3.303 0 0 0 3.297 3.295 3.303 3.303 0 0 0 3.296-3.295 3.303 3.303 0 0 0-3.296-3.297" class="nv-feather nv-f5" /><path fill="#EF1541" d="M286.038 190.481a3.304 3.304 0 0 0-3.297 3.297 3.304 3.304 0 0 0 3.297 3.296 3.303 3.303 0 0 0 3.296-3.296c-.037-1.815-1.481-3.297-3.296-3.297" class="nv-feather nv-f2" /><path fill="#FF7112" d="M286.038 181.481a3.304 3.304 0 0 0-3.297 3.297 3.304 3.304 0 0 0 3.297 3.296 3.303 3.303 0 0 0 3.296-3.296c-.037-1.815-1.481-3.297-3.296-3.297" class="nv-feather nv-f1" /><path fill="#FCCC12" d="M286.038 172.481a3.304 3.304 0 0 0-3.297 3.297 3.304 3.304 0 0 0 3.297 3.296 3.303 3.303 0 0 0 3.296-3.296c-.037-1.815-1.481-3.297-3.296-3.297" class="nv-feather nv-f0" />
+  </g>
+</g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="168" height="900" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="252" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="896" width="252" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

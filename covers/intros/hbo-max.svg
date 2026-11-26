@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="HBO Max Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Full-screen signature purple -&gt; cobalt gradient flooding in behind the logo */
+    #purple-flood {
+      opacity: 0;
+      animation: flood-loop 5.2s linear infinite;
+    }
+
+    /* Subtle shifting ambient violet-blue sheen during the hold */
+    #ambient-drift {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      animation: ambient-loop 5.2s linear infinite;
+    }
+
+    /* Volumetric radiating purple god rays (pure gradients, zero lag) */
+    #god-rays {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      animation: rays-loop 5.2s linear infinite;
+    }
+
+    /* Dramatic camera zoom-out from O-m-a close-up into centered HBOmax */
+    #logo-camera {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      animation: camera-loop 5.2s linear infinite;
+    }
+
+    /* Glowing lavender pass (00:00 - 00:01) crossfading into pure white (00:02 - 00:03) */
+    #logo-lavender {
+      opacity: 1;
+      animation: lavender-loop 5.2s linear infinite;
+    }
+
+    #logo-white {
+      opacity: 0;
+      animation: white-loop 5.2s linear infinite;
+    }
+
+    /* Seamless black fade between loops */
+    #loop-blackout {
+      opacity: 0;
+      animation: blackout-loop 5.2s linear infinite;
+    }
+
+    @keyframes camera-loop {
+      0% {
+        opacity: 0;
+        transform: translate(-185px, 0px) scale(3.55);
+        animation-timing-function: ease-out;
+      }
+      5% {
+        opacity: 1;
+        transform: translate(-155px, 0px) scale(3.25);
+        animation-timing-function: cubic-bezier(0.14, 0.86, 0.24, 1);
+      }
+      38% {
+        opacity: 1;
+        transform: translate(0px, 0px) scale(1.035);
+        animation-timing-function: linear;
+      }
+      84% {
+        opacity: 1;
+        transform: translate(0px, 0px) scale(0.985);
+      }
+      92%, 100% {
+        opacity: 0;
+        transform: translate(0px, 0px) scale(0.985);
+      }
+    }
+
+    @keyframes rays-loop {
+      0% {
+        opacity: 0;
+        transform: scale(1.35);
+        animation-timing-function: ease-out;
+      }
+      8% {
+        opacity: 1;
+        transform: scale(1.22);
+        animation-timing-function: cubic-bezier(0.16, 0.84, 0.28, 1);
+      }
+      36% {
+        opacity: 0.92;
+        transform: scale(1.0);
+        animation-timing-function: ease-out;
+      }
+      52%, 100% {
+        opacity: 0;
+        transform: scale(0.92);
+      }
+    }
+
+    @keyframes flood-loop {
+      0%, 24% {
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+      }
+      46%, 86% {
+        opacity: 1;
+        animation-timing-function: ease-in;
+      }
+      94%, 100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes ambient-loop {
+      0%, 30% {
+        opacity: 0;
+        transform: translate(-40px, -20px) scale(1.02);
+        animation-timing-function: ease-out;
+      }
+      52% {
+        opacity: 0.85;
+        transform: translate(0px, 0px) scale(1.06);
+        animation-timing-function: linear;
+      }
+      86% {
+        opacity: 0.85;
+        transform: translate(35px, 18px) scale(1.02);
+        animation-timing-function: ease-in;
+      }
+      94%, 100% {
+        opacity: 0;
+        transform: translate(45px, 24px) scale(1.0);
+      }
+    }
+
+    @keyframes lavender-loop {
+      0%, 26% { opacity: 1; animation-timing-function: ease-in-out; }
+      44%, 100% { opacity: 0; }
+    }
+
+    @keyframes white-loop {
+      0%, 24% { opacity: 0; animation-timing-function: ease-in-out; }
+      44%, 84% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+      44%, 100% { opacity: 1; }
+    }
+
+    @keyframes blackout-loop {
+      0%, 84%  { opacity: 0; animation-timing-function: ease-in-out; }
+      93%, 98% { opacity: 1; animation-timing-function: ease-out; }
+      100%     { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #purple-flood, #ambient-drift, #god-rays, #logo-camera,
+      #logo-lavender, #logo-white, #loop-blackout {
+        animation: none;
+      }
+      #purple-flood, #logo-camera, #logo-white { opacity: 1; transform: none; }
+      #god-rays, #logo-lavender, #loop-blackout { opacity: 0; }
+    }
+  </style>
+
+  <defs>
+    
+    <linearGradient id="hboMaxBg" gradientUnits="userSpaceOnUse" x1="120" y1="40" x2="1180" y2="700">
+      <stop offset="0%" stop-color="#9b2cff" />
+      <stop offset="32%" stop-color="#6c19eb" />
+      <stop offset="68%" stop-color="#4e18cc" />
+      <stop offset="100%" stop-color="#3c62e8" />
+    </linearGradient>
+
+    <radialGradient id="topLeftViolet" cx="14%" cy="12%" r="58%">
+      <stop offset="0%" stop-color="#c259ff" stop-opacity="0.72" />
+      <stop offset="55%" stop-color="#7d1ff5" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#4e18cc" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="bottomRightCobalt" cx="90%" cy="88%" r="56%">
+      <stop offset="0%" stop-color="#3d82ff" stop-opacity="0.75" />
+      <stop offset="55%" stop-color="#394ee0" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#4e18cc" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="rayLeftGrad" gradientUnits="userSpaceOnUse" x1="640" y1="360" x2="-40" y2="320">
+      <stop offset="0%" stop-color="#5d11b8" stop-opacity="0" />
+      <stop offset="22%" stop-color="#7d1ef0" stop-opacity="0.62" />
+      <stop offset="62%" stop-color="#a840ff" stop-opacity="0.88" />
+      <stop offset="100%" stop-color="#6414d1" stop-opacity="0.35" />
+    </linearGradient>
+
+    <linearGradient id="rayRightGrad" gradientUnits="userSpaceOnUse" x1="640" y1="360" x2="1320" y2="320">
+      <stop offset="0%" stop-color="#4710a6" stop-opacity="0" />
+      <stop offset="24%" stop-color="#6c1ce6" stop-opacity="0.65" />
+      <stop offset="64%" stop-color="#9e3bff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#4728e0" stop-opacity="0.4" />
+    </linearGradient>
+
+    <radialGradient id="rayGlowCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b85cff" stop-opacity="0.55" />
+      <stop offset="48%" stop-color="#6814db" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <g id="hboMaxWordmark" transform="translate(298, 304)">
+      
+      <path d="M 0 2 H 28 V 43 H 64 V 2 H 92 V 110 H 64 V 69 H 28 V 110 H 0 Z" />
+      
+      <path fill-rule="evenodd" d="M 98 2 H 154 C 178 2 189 13 189 30 C 189 42 183 50 172 54 C 186 58 193 68 193 82 C 193 99 180 110 156 110 H 98 Z
+           M 126 23 V 44 H 149 C 157 44 162 40 162 33.5 C 162 27 157 23 149 23 Z
+           M 126 65 V 89 H 152 C 161 89 166 84.5 166 77 C 166 69.5 161 65 152 65 Z" />
+      
+      <path fill-rule="evenodd" d="M 251 0 A 56 56 0 1 1 251 112 A 56 56 0 1 1 251 0 Z
+           M 251 28 A 28 28 0 1 0 251 84 A 28 28 0 1 0 251 28 Z" />
+      <circle cx="251" cy="56" r="17" />
+
+      
+      <path d="M 320 110 V 42 A 41 41 0 0 1 393 16.5 A 41 41 0 0 1 466 42 V 110 H 449 V 42 A 24 24 0 0 0 401.5 42 V 110 H 384.5 V 42 A 24 24 0 0 0 337 42 V 110 Z" />
+
+      
+      <path fill-rule="evenodd" d="M 529 1 A 51 55 0 1 1 529 111 A 51 55 0 1 1 529 1 Z
+           M 529 18 A 34 38 0 1 0 529 94 A 34 38 0 1 0 529 18 Z" />
+      <rect x="563" y="2" width="17" height="108" />
+
+      
+      <polygon points="594,2 614,2 684,110 664,110" />
+      <polygon points="664,2 684,2 614,110 594,110" />
+    </g>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  
+  <g id="god-rays">
+    <ellipse cx="640" cy="360" rx="580" ry="320" fill="url(#rayGlowCore)" />
+    
+    <polygon points="640,360 -240,-180 -240,80" fill="url(#rayLeftGrad)" opacity="0.72" />
+    <polygon points="640,360 -240,60 -240,320" fill="url(#rayLeftGrad)" opacity="0.95" />
+    <polygon points="640,360 -240,280 -240,560" fill="url(#rayLeftGrad)" opacity="0.88" />
+    <polygon points="640,360 -240,520 180,900" fill="url(#rayLeftGrad)" opacity="0.68" />
+    
+    <polygon points="640,360 1080,-180 1520,-180" fill="url(#rayRightGrad)" opacity="0.78" />
+    <polygon points="640,360 1520,-80 1520,240" fill="url(#rayRightGrad)" opacity="0.92" />
+    <polygon points="640,360 1520,200 1520,520" fill="url(#rayRightGrad)" opacity="0.82" />
+    <polygon points="640,360 1520,480 1120,900" fill="url(#rayRightGrad)" opacity="0.65" />
+    
+    <polygon points="640,375 430,860 850,860" fill="#000000" opacity="0.78" />
+  </g>
+
+  
+  <g id="purple-flood">
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#hboMaxBg)" />
+  </g>
+
+  <g id="ambient-drift">
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#topLeftViolet)" />
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#bottomRightCobalt)" />
+  </g>
+
+  
+  <g id="logo-camera">
+    <use id="logo-lavender" href="#hboMaxWordmark" fill="#c778ff" />
+    <use id="logo-white" href="#hboMaxWordmark" fill="#ffffff" />
+  </g>
+
+  
+  <rect id="loop-blackout" x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+</svg>

@@ -1,0 +1,284 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Crave Logo to App Icon Animation">
+  <style>
+    svg {
+      background: #060d20;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Phase 1 (0.0s - 0.65s): Giant foreground fly-by sweeping right-to-left */
+    #flyby-stage {
+      opacity: 0;
+      animation: flyby-sweep 5.4s linear infinite;
+    }
+
+    /* Phase 1-2: Centered CRAVe wordmark (reveal -&gt; hold -&gt; tilt &amp; implode to center) */
+    #ltr-c { opacity: 0; animation: c-anim 5.4s linear infinite; }
+    #ltr-r { opacity: 0; animation: r-anim 5.4s linear infinite; }
+    #ltr-a { opacity: 0; animation: a-anim 5.4s linear infinite; }
+    #ltr-v { opacity: 0; animation: v-anim 5.4s linear infinite; }
+    #ltr-e { opacity: 0; animation: e-anim 5.4s linear infinite; }
+
+    /* Coral-red chromatic trails behind CRAVe snapping cleanly into place */
+    #ghost-c { opacity: 0; animation: ghost-c-anim 5.4s linear infinite; }
+    #ghost-r { opacity: 0; animation: ghost-r-anim 5.4s linear infinite; }
+    #ghost-a { opacity: 0; animation: ghost-a-anim 5.4s linear infinite; }
+    #ghost-v { opacity: 0; animation: ghost-v-anim 5.4s linear infinite; }
+    #ghost-e { opacity: 0; animation: ghost-e-anim 5.4s linear infinite; }
+
+    /* Phase 3 (2.45s - 2.95s): Blue implosion blob -&gt; coral-red rounded square */
+    #implode-blob { opacity: 0; animation: blob-anim 5.4s linear infinite; }
+    #red-dot      { opacity: 0; animation: red-dot-anim 5.4s linear infinite; }
+
+    /* Phase 4 (2.95s - 5.2s): App Icon C draw (CCW) + Play Triangle (CW) + hero pop */
+    #app-icon-stage { opacity: 0; animation: icon-stage-anim 5.4s linear infinite; }
+
+    #c-draw-red {
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: 100;
+      opacity: 0;
+      animation: c-red-draw 5.4s linear infinite;
+    }
+
+    #c-draw-blue {
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: 100;
+      animation: c-blue-draw 5.4s linear infinite;
+    }
+
+    #play-tri {
+      opacity: 0;
+      animation: tri-spin 5.4s linear infinite;
+    }
+
+    @keyframes flyby-sweep {
+      0%          { opacity: 0; transform: translateX(460px); }
+      1.5%        { opacity: 0.92; transform: translateX(260px); }
+      10.5%       { opacity: 0.85; transform: translateX(-2500px); }
+      12.5%, 100% { opacity: 0; transform: translateX(-3100px); }
+    }
+
+    @keyframes c-anim {
+      0%, 2.5%    { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(1); }
+      4.5%, 41.5% { opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1); animation-timing-function: ease-in; }
+      44.2%       { opacity: 1; transform: translate(18px, -2px) rotate(-13deg) scale(0.95); animation-timing-function: ease-in; }
+      46.8%       { opacity: 1; transform: translate(132px, 0px) rotate(-20deg) scale(0.35); }
+      47.6%, 100% { opacity: 0; transform: translate(132px, 0px) rotate(-20deg) scale(0.2); }
+    }
+
+    @keyframes r-anim {
+      0%, 4.0%    { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(1); }
+      6.0%, 41.5% { opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1); animation-timing-function: ease-in; }
+      44.2%       { opacity: 1; transform: translate(10px, 2px) rotate(11deg) scale(0.95); animation-timing-function: ease-in; }
+      46.8%       { opacity: 1; transform: translate(66px, 0px) rotate(16deg) scale(0.35); }
+      47.6%, 100% { opacity: 0; transform: translate(66px, 0px) rotate(16deg) scale(0.2); }
+    }
+
+    @keyframes a-anim {
+      0%, 5.5%    { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(1); }
+      7.5%, 41.5% { opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1); animation-timing-function: ease-in; }
+      44.2%       { opacity: 1; transform: translate(0px, -2px) rotate(-9deg) scale(0.94); animation-timing-function: ease-in; }
+      46.8%       { opacity: 1; transform: translate(0px, 0px) rotate(12deg) scale(0.35); }
+      47.6%, 100% { opacity: 0; transform: translate(0px, 0px) rotate(12deg) scale(0.2); }
+    }
+
+    @keyframes v-anim {
+      0%, 7.0%    { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(1); }
+      9.0%, 41.5% { opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1); animation-timing-function: ease-in; }
+      44.2%       { opacity: 1; transform: translate(-10px, 2px) rotate(12deg) scale(0.95); animation-timing-function: ease-in; }
+      46.8%       { opacity: 1; transform: translate(-66px, 0px) rotate(-16deg) scale(0.35); }
+      47.6%, 100% { opacity: 0; transform: translate(-66px, 0px) rotate(-16deg) scale(0.2); }
+    }
+
+    @keyframes e-anim {
+      0%, 8.5%    { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(1); }
+      10.5%, 41.5%{ opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1); animation-timing-function: ease-in; }
+      44.2%       { opacity: 1; transform: translate(-18px, -2px) rotate(-14deg) scale(0.95); animation-timing-function: ease-in; }
+      46.8%       { opacity: 1; transform: translate(-132px, 0px) rotate(20deg) scale(0.35); }
+      47.6%, 100% { opacity: 0; transform: translate(-132px, 0px) rotate(20deg) scale(0.2); }
+    }
+
+    @keyframes ghost-c-anim {
+      0%, 2.5%    { opacity: 0; transform: translateX(-16px); }
+      4.5%        { opacity: 0.9; transform: translateX(-10px); animation-timing-function: ease-out; }
+      13.5%, 100% { opacity: 0; transform: translateX(0px); }
+    }
+
+    @keyframes ghost-r-anim {
+      0%, 4.0%    { opacity: 0; transform: translateX(-14px); }
+      6.0%        { opacity: 0.9; transform: translateX(-9px); animation-timing-function: ease-out; }
+      14.5%, 100% { opacity: 0; transform: translateX(0px); }
+    }
+
+    @keyframes ghost-a-anim {
+      0%, 5.5%    { opacity: 0; transform: translateX(-12px); }
+      7.5%        { opacity: 0.9; transform: translateX(-8px); animation-timing-function: ease-out; }
+      15.5%, 100% { opacity: 0; transform: translateX(0px); }
+    }
+
+    @keyframes ghost-v-anim {
+      0%, 7.0%    { opacity: 0; transform: translateX(-14px); }
+      9.0%        { opacity: 0.92; transform: translateX(-9px); animation-timing-function: ease-out; }
+      16.5%, 100% { opacity: 0; transform: translateX(0px); }
+    }
+
+    @keyframes ghost-e-anim {
+      0%, 8.5%    { opacity: 0; transform: translateX(14px); }
+      10.5%       { opacity: 0.92; transform: translateX(9px); animation-timing-function: ease-out; }
+      17.5%, 100% { opacity: 0; transform: translateX(0px); }
+    }
+
+    /* Chunky cyan center implosion blob (00:02.500) */
+    @keyframes blob-anim {
+      0%, 46.0%   { opacity: 0; transform: scale(1.25, 0.85); }
+      47.2%       { opacity: 1; transform: scale(1.0, 1.0); animation-timing-function: ease-in; }
+      50.0%       { opacity: 1; transform: scale(0.32, 0.45); }
+      50.8%, 100% { opacity: 0; transform: scale(0.2, 0.2); }
+    }
+
+    /* Chunky coral-red rounded square spark dead center (00:02.750) */
+    @keyframes red-dot-anim {
+      0%, 50.0%   { opacity: 0; transform: scale(0.45); }
+      51.4%       { opacity: 1; transform: scale(1.05); }
+      54.2%       { opacity: 1; transform: scale(0.92); }
+      55.4%, 100% { opacity: 0; transform: scale(0.5); }
+    }
+
+    /* App Icon container: draws at compact scale (0.78), punches up smoothly to hero scale (1.06) */
+    @keyframes icon-stage-anim {
+      0%, 54.0%   { opacity: 0; transform: scale(0.76); }
+      55.0%       { opacity: 1; transform: scale(0.78); }
+      68.0%       { opacity: 1; transform: scale(0.80); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+      76.5%, 92.5%{ opacity: 1; transform: scale(1.06); animation-timing-function: ease-in; }
+      97.5%, 100% { opacity: 0; transform: scale(0.92); }
+    }
+
+    /* Coral-red leading head racing counter-clockwise around the C */
+    @keyframes c-red-draw {
+      0%, 54.2%   { opacity: 0; stroke-dashoffset: 100; }
+      54.8%       { opacity: 1; stroke-dashoffset: 94; animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+      67.2%       { opacity: 1; stroke-dashoffset: 0; }
+      70.0%, 100% { opacity: 0; stroke-dashoffset: 0; }
+    }
+
+    /* Electric cyan-blue body chasing right behind the red tip and locking solid */
+    @keyframes c-blue-draw {
+      0%, 56.8%   { stroke-dashoffset: 100; animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+      69.5%, 100% { stroke-dashoffset: 0; }
+    }
+
+    /* Inner play triangle spinning clockwise: 140deg -&gt; 270deg (up at 00:03.25) -&gt; 360deg (right) */
+    @keyframes tri-spin {
+      0%, 54.5%   { opacity: 0; transform: rotate(140deg) scale(0.65); }
+      56.5%       { opacity: 1; transform: rotate(165deg) scale(0.85); animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+      68.5%, 100% { opacity: 1; transform: rotate(360deg) scale(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #flyby-stage, #ltr-c, #ltr-r, #ltr-a, #ltr-v, #ltr-e,
+      #ghost-c, #ghost-r, #ghost-a, #ghost-v, #ghost-e,
+      #implode-blob, #red-dot, #app-icon-stage, #c-draw-red, #c-draw-blue, #play-tri {
+        animation: none;
+      }
+      #app-icon-stage, #play-tri { opacity: 1; transform: none; }
+      #c-draw-blue { stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="flyBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00a3ff" stop-opacity="0" />
+      <stop offset="30%" stop-color="#00a6fb" stop-opacity="0.92" />
+      <stop offset="70%" stop-color="#22c0ff" stop-opacity="0.88" />
+      <stop offset="100%" stop-color="#00a3ff" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="flyRedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2e4d" stop-opacity="0" />
+      <stop offset="35%" stop-color="#e93656" stop-opacity="0.78" />
+      <stop offset="70%" stop-color="#ff5a75" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#ff2e4d" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#060d20" />
+
+  
+  
+  <g transform="translate(508, 360)">
+    <g id="ltr-c">
+      <path id="ghost-c" fill="#ff2e4d" d="M 24 -25 H -10 A 15 15 0 0 0 -25 -10 V 10 A 15 15 0 0 0 -10 25 H 24 V 14.5 H -8 A 6 6 0 0 1 -14 8.5 V -8.5 A 6 6 0 0 1 -8 -14.5 H 24 Z" />
+      <path fill="#00a3ff" d="M 24 -25 H -10 A 15 15 0 0 0 -25 -10 V 10 A 15 15 0 0 0 -10 25 H 24 V 14.5 H -8 A 6 6 0 0 1 -14 8.5 V -8.5 A 6 6 0 0 1 -8 -14.5 H 24 Z" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(574, 360)">
+    <g id="ltr-r">
+      <path id="ghost-r" fill="#ff2e4d" fill-rule="evenodd" d="M -24 -25 H 8 A 16 16 0 0 1 24 -9 C 24 -0.5 18.5 5.5 10.5 7 L 25 25 H 12 L -1 8 H -13.5 V 25 H -24 Z M -13.5 -14.5 V -2.5 H 6.5 A 6 6 0 0 0 6.5 -14.5 Z" />
+      <path fill="#00a3ff" fill-rule="evenodd" d="M -24 -25 H 8 A 16 16 0 0 1 24 -9 C 24 -0.5 18.5 5.5 10.5 7 L 25 25 H 12 L -1 8 H -13.5 V 25 H -24 Z M -13.5 -14.5 V -2.5 H 6.5 A 6 6 0 0 0 6.5 -14.5 Z" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(640, 360)">
+    <g id="ltr-a">
+      <path id="ghost-a" fill="#ff2e4d" fill-rule="evenodd" d="M -25 25 V -8 A 17 17 0 0 1 -8 -25 H 8 A 17 17 0 0 1 25 -8 V 25 H 14.5 V 11 H -14.5 V 25 Z M -14.5 1 H 14.5 V -7 A 7.5 7.5 0 0 0 7 -14.5 H -7 A 7.5 7.5 0 0 0 -14.5 -7 Z" />
+      <path fill="#00a3ff" fill-rule="evenodd" d="M -25 25 V -8 A 17 17 0 0 1 -8 -25 H 8 A 17 17 0 0 1 25 -8 V 25 H 14.5 V 11 H -14.5 V 25 Z M -14.5 1 H 14.5 V -7 A 7.5 7.5 0 0 0 7 -14.5 H -7 A 7.5 7.5 0 0 0 -14.5 -7 Z" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(706, 360)">
+    <g id="ltr-v">
+      <path id="ghost-v" fill="#ff2e4d" d="M -26 -25 H -14.5 L 0 12 L 14.5 -25 H 26 L 8.5 19 C 6.5 23.8 3.5 25.5 0 25.5 C -3.5 25.5 -6.5 23.8 -8.5 19 Z" />
+      <path fill="#00a3ff" d="M -26 -25 H -14.5 L 0 12 L 14.5 -25 H 26 L 8.5 19 C 6.5 23.8 3.5 25.5 0 25.5 C -3.5 25.5 -6.5 23.8 -8.5 19 Z" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(772, 360)">
+    <g id="ltr-e">
+      <path id="ghost-e" fill="#ff2e4d" fill-rule="evenodd" d="M -9 -25 H 9 A 16 16 0 0 1 25 -9 V 5 H -14.5 V 8.5 A 6 6 0 0 0 -8.5 14.5 H 23 V 25 H -9 A 16 16 0 0 1 -25 9 V -9 A 16 16 0 0 1 -9 -25 Z M -8.5 -14.5 H 8.5 A 6 6 0 0 1 14.5 -8.5 V -4.5 H -14.5 V -8.5 A 6 6 0 0 1 -8.5 -14.5 Z" />
+      <path fill="#00a3ff" fill-rule="evenodd" d="M -9 -25 H 9 A 16 16 0 0 1 25 -9 V 5 H -14.5 V 8.5 A 6 6 0 0 0 -8.5 14.5 H 23 V 25 H -9 A 16 16 0 0 1 -25 9 V -9 A 16 16 0 0 1 -9 -25 Z M -8.5 -14.5 H 8.5 A 6 6 0 0 1 14.5 -8.5 V -4.5 H -14.5 V -8.5 A 6 6 0 0 1 -8.5 -14.5 Z" />
+    </g>
+  </g>
+
+  
+  <g id="flyby-stage">
+    <polygon points="320,-120 660,-120 960,840 620,840" fill="url(#flyBlueGrad)" />
+    <polygon points="620,-120 880,-120 1180,840 920,840" fill="url(#flyRedGrad)" />
+    <polygon points="1160,-120 1480,-120 1120,840 800,840" fill="url(#flyBlueGrad)" />
+    <rect x="1740" y="0" width="960" height="170" fill="url(#flyRedGrad)" opacity="0.52" />
+    <rect x="1820" y="280" width="960" height="175" fill="url(#flyBlueGrad)" opacity="0.45" />
+    <rect x="1760" y="560" width="960" height="170" fill="url(#flyRedGrad)" opacity="0.48" />
+  </g>
+
+  
+  <g transform="translate(640, 360)">
+    <g id="implode-blob" fill="#00a3ff">
+      <rect x="-52" y="-32" width="104" height="64" rx="28" />
+      <circle cx="-24" cy="-6" r="28" />
+      <circle cx="22" cy="4" r="26" />
+    </g>
+    <rect id="red-dot" x="-18" y="-18" width="36" height="36" rx="10" fill="#ff2e4d" />
+  </g>
+
+  
+  <g transform="translate(640, 360)">
+    <g id="app-icon-stage">
+      
+      <path id="c-draw-red" pathLength="100" d="M 42 -26 C 37 -40, 26 -46, 10 -46 H -12 C -34 -46, -44 -36, -44 -14 V 14 C -44 36, -34 46, -12 46 H 10 C 26 46, 37 40, 42 26" fill="none" stroke="#ff2e4d" stroke-width="28" stroke-linecap="butt" stroke-linejoin="round" />
+
+      
+      <path id="c-draw-blue" pathLength="100" d="M 42 -26 C 37 -40, 26 -46, 10 -46 H -12 C -34 -46, -44 -36, -44 -14 V 14 C -44 36, -34 46, -12 46 H 10 C 26 46, 37 40, 42 26" fill="none" stroke="#00a3ff" stroke-width="28" stroke-linecap="butt" stroke-linejoin="round" />
+
+      
+      <g transform="translate(2, 0)">
+        <path id="play-tri" d="M -10 -12.5 C -10 -15, -7.2 -16.5, -5 -15 L 13 -2.5 C 15 -1, 15 1, 13 2.5 L -5 15 C -7.2 16.5, -10 15, -10 12.5 Z" fill="#00a3ff" />
+      </g>
+    </g>
+  </g>
+</svg>

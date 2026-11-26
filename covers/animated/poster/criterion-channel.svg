@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="criterion-channel"><defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 300.0px 450.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.68; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.7; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-252px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(640px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(640px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-252px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-248px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1130px) skewX(-24deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="760" height="1060" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#E2E8F0" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="15.0" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="5.1" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="600" height="900" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#E2E8F0" stop-opacity="0" /><stop offset="55%" stop-color="#E2E8F0" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#E2E8F0" stop-opacity="0.85" /><stop offset="100%" stop-color="#E2E8F0" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#E2E8F0" stop-opacity="0.099" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.220" /><stop offset="60%" stop-color="#E2E8F0" stop-opacity="0.099" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#070709" /><stop offset="55%" stop-color="#111216" /><stop offset="100%" stop-color="#1A1C22" /></linearGradient><radialGradient id="glow" cx="50%" cy="50%" r="52%"><stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.24" /><stop offset="65%" stop-color="#E2E8F0" stop-opacity="0.06" /><stop offset="100%" stop-color="#070709" stop-opacity="0" /></radialGradient></defs><rect width="600" height="900" fill="url(#bg)" /><rect width="600" height="900" fill="url(#glow)" /><rect width="600" height="900" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="600" height="4" fill="#E2E8F0" fill-opacity="0.45" /><rect x="0" y="896" width="600" height="4" fill="#E2E8F0" fill-opacity="0.45" /><g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(66.00, 387.18) scale(1.0470)" id="nv-logo-src"><g fill="#FFFFFF" transform="translate(-0.00, 12.00) scale(1.5238)"><path fill="#FFFFFF" d="M31.5,48C22.387,48,15,40.613,15,31.5C15,22.387,22.387,15,31.5,15c7.417,0,13.688,4.894,15.767,11.627l14.392-4.233C57.751,9.438,45.729,0,31.5,0C14.103,0,0,14.103,0,31.5C0,48.896,14.103,63,31.5,63c2.175,0,4.299-0.221,6.35-0.641l-3.443-14.631C33.462,47.896,32.493,48,31.5,48z" />
+</g><g fill="#FFFFFF" font-family="'Helvetica Neue', 'Futura', 'Montserrat', 'Arial', system-ui, sans-serif"><text x="122.0" y="40" font-size="18" font-weight="600" letter-spacing="6.5" opacity="0.85">THE</text><text x="122.0" y="76" font-size="38" font-weight="800" letter-spacing="5.5">CRITERION</text><text x="122.0" y="104" font-size="21" font-weight="600" letter-spacing="9.2" opacity="0.90">CHANNEL</text></g></g></g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="168" height="900" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="252" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="896" width="252" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

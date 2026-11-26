@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Letterboxd">
+  <title>Letterboxd</title>
+  <defs>
+    <clipPath id="lbLeft"><circle cx="4.45" cy="12" r="4.45"/></clipPath>
+    <clipPath id="lbMid"><circle cx="12" cy="12" r="4.45"/></clipPath>
+  </defs>
+  <circle cx="4.45" cy="12" r="4.45" fill="#FF8000"/>
+  <circle cx="12" cy="12" r="4.45" fill="#00E054"/>
+  <circle cx="19.55" cy="12" r="4.45" fill="#40BCF4"/>
+  <circle cx="12" cy="12" r="4.45" fill="#14181C" clip-path="url(#lbLeft)"/>
+  <circle cx="19.55" cy="12" r="4.45" fill="#14181C" clip-path="url(#lbMid)"/>
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Plex Intro Animation">
+  <style>
+    svg { background: #111214; width: 100%; height: 100%; display: block; }
+
+    #plex-stage {
+      opacity: 1;
+      will-change: opacity;
+      animation: plex-stage-loop 4.6s linear infinite;
+    }
+
+    #amber-glow {
+      opacity: 0;
+      transform-origin: 760px 360px;
+      transform: scale(0.5);
+      will-change: opacity, transform;
+      animation: glow-hit-loop 4.6s linear infinite;
+    }
+
+    #chevron-mover {
+      transform: translateX(-360px);
+      opacity: 0;
+      will-change: opacity, transform;
+      animation: chevron-slice-loop 4.6s linear infinite;
+    }
+
+    #word-reveal-rect {
+      transform: translateX(-340px);
+      will-change: transform;
+      animation: wipe-reveal-loop 4.6s linear infinite;
+    }
+
+    @keyframes plex-stage-loop {
+      0%, 77.2% { opacity: 1; animation-timing-function: ease-in; }
+      87.0%, 97.0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes chevron-slice-loop {
+      0%, 6.1% {
+        opacity: 0;
+        transform: translateX(-360px);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      8.8% {
+        opacity: 1;
+      }
+      25.2%, 87.0% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: translateX(-360px);
+      }
+    }
+
+    @keyframes wipe-reveal-loop {
+      0%, 7.4% {
+        transform: translateX(-340px);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      25.2%, 87.0% {
+        transform: translateX(0px);
+      }
+      93.0%, 100% {
+        transform: translateX(-340px);
+      }
+    }
+
+    @keyframes glow-hit-loop {
+      0%, 18.5% {
+        opacity: 0;
+        transform: scale(0.5);
+        animation-timing-function: ease-out;
+      }
+      29.1% {
+        opacity: 0.72;
+        transform: scale(1.1);
+        animation-timing-function: ease-out;
+      }
+      48.9%, 87.0% {
+        opacity: 0.25;
+        transform: scale(1);
+      }
+      93.0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #plex-stage, #amber-glow, #chevron-mover, #word-reveal-rect { animation: none; }
+      #chevron-mover, #word-reveal-rect { opacity: 1; transform: none; }
+      #amber-glow { opacity: 0.25; transform: none; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="amberAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e5a00d" stop-opacity="0.55" />
+      <stop offset="60%" stop-color="#e5a00d" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#111214" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="plexGold" gradientUnits="userSpaceOnUse" x1="720" y1="295" x2="808" y2="425">
+      <stop offset="0%" stop-color="#ffca42" />
+      <stop offset="55%" stop-color="#e5a00d" />
+      <stop offset="100%" stop-color="#c47e00" />
+    </linearGradient>
+
+    <clipPath id="plexWordClip">
+      <rect id="word-reveal-rect" x="455" y="280" width="280" height="160" />
+    </clipPath>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#111214" />
+
+  <g id="plex-stage">
+    <circle id="amber-glow" cx="766" cy="360" r="185" fill="url(#amberAura)" />
+
+    
+    <g clip-path="url(#plexWordClip)">
+      <text x="472" y="396" fill="#ffffff" font-family="&#39;Plus Jakarta Sans&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="112" font-weight="700" letter-spacing="-2">plex</text>
+    </g>
+
+    
+    <g id="chevron-mover">
+      <polygon points="732,300 768,300 816,360 768,420 732,420 780,360" fill="url(#plexGold)" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="mgm-plus">
+  <defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 640.0px 360.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.82; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.14); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.78; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-537px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(1320px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(1320px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-537px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-438px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1720px) skewX(-24deg); opacity: 0; }
+}
+.nv-gold-shimmer { animation: nv-gold-gleam 3.2s ease-in-out infinite; }
+@keyframes nv-gold-gleam {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50% { filter: brightness(1.20) saturate(1.22); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="1440" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#E5B842" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="20.0" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="6.8" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="1280" height="720" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#E5B842" stop-opacity="0" /><stop offset="55%" stop-color="#E5B842" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#E5B842" stop-opacity="0.85" /><stop offset="100%" stop-color="#E5B842" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#E5B842" stop-opacity="0.108" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.240" /><stop offset="60%" stop-color="#E5B842" stop-opacity="0.108" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080705" />
+      <stop offset="55%" stop-color="#120E08" />
+      <stop offset="100%" stop-color="#1C160B" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#E5B842" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#E5B842" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#080705" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEAB2" />
+      <stop offset="35%" stop-color="#E5B842" />
+      <stop offset="70%" stop-color="#C79A30" />
+      <stop offset="100%" stop-color="#9E7820" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <rect width="1280" height="720" fill="url(#glow)" />
+  <rect width="1280" height="720" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="1280" height="4" fill="#E5B842" fill-opacity="0.45" />
+  <rect x="0" y="716" width="1280" height="4" fill="#E5B842" fill-opacity="0.45" />
+  <g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(280.00, 208.69) scale(0.7200)" id="nv-logo-src">
+    <g fill="url(#gold)" class="nv-gold-shimmer"><path d="m 405.625,0 c -68.12472,0 -141.25,52.812964 -141.25,168.75 0,108.12456 63.12524,157.5 121.5625,157.5 21.87492,0 40.31254,-6.87504 55,-20.625 v 10.625 c 0,52.1873 -17.81299,75.97602 -56.25,75.625 -30.00026,-0.27398 -56.25,-22.8125 -56.25,-22.8125 l -9.6875,24.375 c -0.77424,1.9481 -1.91997,4.38885 -0.9375,7.5 0.89274,2.82702 6.29133,6.16952 10,8.125 13.47989,7.10756 28.12508,11.25 51.25,11.25 55.62476,0 107.5,-23.43794 109.0625,-129.6875 0,0 0.625,-59.06258 0.625,-82.8125 -0.9375,-23.43742 -6.56254,-35.00004 -17.5,-44.375 l -43.4375,26.875 c 9.99996,12.18746 11.875,15.62508 13.125,35 1.25,19.37492 0,40.625 0,40.625 -10.93746,15.93742 -28.12508,26.25 -45.9375,26.25 -66.56222,0 -73.75,-84.37516 -73.75,-120.9375 0,-87.187152 31.2502,-137.5 85.9375,-137.5 29.68738,0 55.62504,17.500064 65.625,33.4375 C 477.5,54.687548 480.46336,45.369068 482.5,38.75 485,30.625032 482.85012,25.262595 475,19.375 457.85001,6.512496 434.68738,0 405.625,0 Z M 17.058594,9.3046875 C 15.437228,9.1758265 14.0625,10.486168 14.0625,12.5 v 269.0625 c 0,13.74986 -2.225099,21.46955 -11.25,32.5 L 0,317.5 H 70.3125 L 67.5,314.0625 c -8.869531,-10.84055 -11.25,-18.75014 -11.25,-32.5 v -145 L 127.8125,230 199.375,136.5625 v 145 c 0,13.74986 -2.38048,21.65945 -11.25,32.5 l -2.8125,3.4375 h 70.3125 l -2.8125,-3.4375 c -9.0249,-11.03045 -11.25,-18.75014 -11.25,-32.5 V 12.5 c 0,-2.01383 -1.37477,-3.324173 -2.99609,-3.1953125 C 237.59359,9.382004 236.53222,9.9772704 235.625,11.25 L 127.8125,162.5 20,11.25 C 19.092787,9.9772718 18.03141,9.3820038 17.058594,9.3046875 Z m 500.937496,0 C 516.37474,9.1758268 515,10.486164 515,12.5 v 269.0625 c 0,13.74988 -2.22508,21.46953 -11.25,32.5 L 500.9375,317.5 H 571.25 l -2.8125,-3.4375 c -8.86955,-10.84057 -11.25,-18.75012 -11.25,-32.5 v -145 L 628.75,230 700.3125,136.5625 v 145 c 0,13.74988 -2.38046,21.65943 -11.25,32.5 L 686.25,317.5 h 70.3125 l -2.8125,-3.4375 c -9.02492,-11.03047 -11.25,-18.75012 -11.25,-32.5 V 12.5 c 0,-2.013834 -1.37475,-3.3241722 -2.99609,-3.1953125 -0.97282,0.07732 -2.03419,0.6725856 -2.94141,1.9453125 L 628.75,162.5 520.9375,11.25 C 520.03028,9.9772691 518.96891,9.3820044 517.99609,9.3046875 Z M 863.4375,47.5 v 93.75 h -93.75 v 42.8125 h 93.75 v 93.75 H 906.25 v -93.75 H 1000 V 141.25 H 906.25 V 47.5 Z" /></g>
+  </g>
+</g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="358" height="720" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="537" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="716" width="537" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

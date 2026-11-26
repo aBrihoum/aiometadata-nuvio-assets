@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Shudder Intro Animation">
+  <style>
+    svg { background: #040404; width: 100%; height: 100%; display: block; }
+
+    #shudder-stage {
+      opacity: 1;
+      will-change: opacity;
+      animation: shudder-stage-loop 4.6s linear infinite;
+    }
+
+    #blood-glow {
+      opacity: 0;
+      will-change: opacity;
+      animation: blood-pulse-loop 4.6s linear infinite;
+    }
+
+    #main-word {
+      opacity: 0;
+      transform-origin: 640px 360px;
+      will-change: opacity, transform;
+      animation: main-word-loop 4.6s linear infinite;
+    }
+
+    #glitch-red {
+      opacity: 0;
+      will-change: opacity, transform;
+      animation: red-split-loop 4.6s linear infinite;
+    }
+
+    #glitch-cyan {
+      opacity: 0;
+      will-change: opacity, transform;
+      animation: cyan-split-loop 4.6s linear infinite;
+    }
+
+    @keyframes shudder-stage-loop {
+      0%, 81.5% { opacity: 1; animation-timing-function: linear; }
+      83.7%, 97.0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes blood-pulse-loop {
+      0%, 4.3% { opacity: 0; }
+      18.4%    { opacity: 0.9; }
+      47.4%    { opacity: 0.45; }
+      68.5%    { opacity: 0.8; }
+      82.6%, 100% { opacity: 0; }
+    }
+
+    @keyframes main-word-loop {
+      0%, 5.4% { opacity: 0; transform: scale(1.08); }
+      10.0%    { opacity: 0.9; transform: scale(0.98) translate(-6px, 2px); }
+      14.7%    { opacity: 0.2; transform: scale(1.03) translate(5px, -2px); }
+      19.3%    { opacity: 1; transform: scale(1) translate(-2px, 1px); }
+      23.9%    { opacity: 1; transform: scale(1) translate(0, 0); }
+      25.0%    { transform: translate(-2px, 1px); }
+      28.9%    { transform: translate(2px, -1px); }
+      32.8%    { transform: translate(0, 0); }
+      36.7%    { transform: translate(-2px, 1px); }
+      40.6%    { transform: translate(2px, -1px); }
+      44.6%    { transform: translate(0, 0); }
+      48.5%    { transform: translate(-2px, 1px); }
+      52.4%    { transform: translate(2px, -1px); }
+      56.3%, 83.7% { opacity: 1; transform: translate(0, 0); }
+      89.0%, 100% { opacity: 0; transform: scale(1.08); }
+    }
+
+    @keyframes red-split-loop {
+      0%, 6.5% { opacity: 0; transform: translate(0, 0); }
+      14.3%    { opacity: 0.8; transform: translate(-12px, -3px); }
+      23.5%    { opacity: 0.45; transform: translate(9px, 2px); }
+      32.6%    { opacity: 0; transform: translate(0, 0); }
+      40.4%    { opacity: 0.8; transform: translate(-12px, -3px); }
+      49.6%    { opacity: 0.45; transform: translate(9px, 2px); }
+      58.7%, 100% { opacity: 0; transform: translate(0, 0); }
+    }
+
+    @keyframes cyan-split-loop {
+      0%, 7.6% { opacity: 0; transform: translate(0, 0); }
+      14.8%    { opacity: 0.6; transform: translate(11px, 2px); }
+      23.2%    { opacity: 0.3; transform: translate(-8px, -2px); }
+      31.5%    { opacity: 0; transform: translate(0, 0); }
+      38.7%    { opacity: 0.6; transform: translate(11px, 2px); }
+      47.1%    { opacity: 0.3; transform: translate(-8px, -2px); }
+      55.4%, 100% { opacity: 0; transform: translate(0, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #shudder-stage, #blood-glow, #main-word, #glitch-red, #glitch-cyan { animation: none; }
+      #blood-glow { opacity: 0.65; }
+      #main-word { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="crimsonVignette" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#8a0319" stop-opacity="0.58" />
+      <stop offset="58%" stop-color="#2b0007" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#040404" stop-opacity="1" />
+    </radialGradient>
+
+    <pattern id="scanlines" width="4" height="6" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000000" opacity="0.28" />
+    </pattern>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#040404" />
+
+  <g id="shudder-stage">
+    <rect id="blood-glow" x="-200%" y="-200%" width="500%" height="500%" fill="url(#crimsonVignette)" />
+
+    <text id="glitch-red" x="640" y="392" text-anchor="middle" fill="#ff0a33" font-family="&#39;Impact&#39;, &#39;Arial Narrow&#39;, &#39;Segoe UI&#39;, sans-serif" font-size="116" font-weight="900" letter-spacing="14">SHUDDER</text>
+
+    <text id="glitch-cyan" x="640" y="392" text-anchor="middle" fill="#00e5ff" font-family="&#39;Impact&#39;, &#39;Arial Narrow&#39;, &#39;Segoe UI&#39;, sans-serif" font-size="116" font-weight="900" letter-spacing="14">SHUDDER</text>
+
+    <text id="main-word" x="640" y="392" text-anchor="middle" fill="#f5f5f5" font-family="&#39;Impact&#39;, &#39;Arial Narrow&#39;, &#39;Segoe UI&#39;, sans-serif" font-size="116" font-weight="900" letter-spacing="14">SHUDDER</text>
+
+    <rect x="-200%" y="-200%" width="500%" height="500%" fill="url(#scanlines)" />
+  </g>
+</svg>

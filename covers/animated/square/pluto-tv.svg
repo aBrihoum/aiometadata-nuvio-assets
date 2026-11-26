@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720" role="img" aria-label="pluto-tv">
+  <defs id="nv-defs"><style>
+.nv-logo-wrap {
+  transform-origin: 360.0px 360.0px;
+  transform-box: view-box;
+  animation: nv-breathe 3.2s ease-in-out infinite;
+}
+@keyframes nv-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.065); }
+}
+.nv-halo-layer {
+  opacity: 0;
+  animation: nv-halo-bloom 3.2s ease-in-out infinite;
+}
+@keyframes nv-halo-bloom {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.80; }
+}
+.nv-logo-fg {
+  animation: nv-fg-bright 3.2s ease-in-out infinite;
+}
+@keyframes nv-fg-bright {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+.nv-glow-boost {
+  opacity: 0;
+  animation: nv-glow-pulse 3.2s ease-in-out infinite;
+}
+@keyframes nv-glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.76; }
+}
+.nv-comet-top {
+  opacity: 0;
+  animation: nv-comet-lr 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-lr {
+  0% { transform: translateX(-302px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(760px); opacity: 0; }
+}
+.nv-comet-bot {
+  opacity: 0;
+  animation: nv-comet-rl 3.2s ease-in-out infinite;
+}
+@keyframes nv-comet-rl {
+  0% { transform: translateX(760px); opacity: 0; }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  94%, 100% { transform: translateX(-302px); opacity: 0; }
+}
+.nv-sheen-bar {
+  opacity: 0;
+  animation: nv-sheen-sweep 3.2s ease-in-out infinite;
+}
+@keyframes nv-sheen-sweep {
+  0%, 8% { transform: translateX(-281px) skewX(-24deg); opacity: 0; }
+  16% { opacity: 1; }
+  54% { opacity: 1; }
+  66%, 100% { transform: translateX(1160px) skewX(-24deg); opacity: 0; }
+}
+.nv-sub-pulse { animation: nv-sub-bloom 3.2s ease-in-out infinite; }
+@keyframes nv-sub-bloom {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(255, 242, 0, 0.00)); }
+  50% { filter: brightness(1.30) drop-shadow(0 0 11.9px rgba(255, 242, 0, 0.92)); }
+}
+.nv-sub-pop { animation: nv-white-pop 3.2s ease-in-out infinite; }
+@keyframes nv-white-pop {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(255, 255, 255, 0.00)); }
+  50% { filter: brightness(1.22) drop-shadow(0 0 8.3px rgba(255, 255, 255, 0.70)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nv-logo-wrap, .nv-halo-layer, .nv-logo-fg, .nv-glow-boost, .nv-comet-top, .nv-comet-bot,
+  .nv-sheen-bar, .nv-sub-pulse, .nv-sub-pop, .nv-disney-arc, .nv-gold-shimmer, .nv-feather {
+    animation: none !important;
+  }
+}
+</style><filter id="nv-halo-filter" x="-80" y="-80" width="880" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#FFF200" flood-opacity="1" result="tint" /><feComposite in="tint" in2="SourceAlpha" operator="in" result="sil" /><feGaussianBlur in="sil" stdDeviation="18.0" result="blurOuter" /><feGaussianBlur in="sil" stdDeviation="6.12" result="blurInner" /><feComponentTransfer in="blurInner" result="blurInnerSoft"><feFuncA type="linear" slope="0.65" /></feComponentTransfer><feMerge><feMergeNode in="blurOuter" /><feMergeNode in="blurInnerSoft" /></feMerge></filter><clipPath id="nv-clip"><rect x="0" y="0" width="720" height="720" /></clipPath><linearGradient id="nv-comet-lr" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFF200" stop-opacity="0" /><stop offset="55%" stop-color="#FFF200" stop-opacity="0.85" /><stop offset="86%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient><linearGradient id="nv-comet-rl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="14%" stop-color="#FFFFFF" stop-opacity="1" /><stop offset="45%" stop-color="#FFF200" stop-opacity="0.85" /><stop offset="100%" stop-color="#FFF200" stop-opacity="0" /></linearGradient><linearGradient id="nv-sheen-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" /><stop offset="40%" stop-color="#FFF200" stop-opacity="0.072" /><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.160" /><stop offset="60%" stop-color="#FFF200" stop-opacity="0.072" /><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" /></linearGradient></defs><defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0D" />
+      <stop offset="55%" stop-color="#14141A" />
+      <stop offset="100%" stop-color="#1C1C24" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#FFF200" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#FFF200" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#0A0A0D" stop-opacity="0" />
+    </radialGradient>
+    <mask id="plutoCutout">
+      <rect x="0" y="0" width="512" height="512" fill="#FFFFFF" />
+      <g fill="#000000" font-family="'Montserrat', 'Futura', 'Arial Rounded MT Bold', 'Nunito', system-ui, sans-serif" font-weight="900" font-size="148" letter-spacing="-4">
+        <text x="58" y="308">pluto</text>
+      </g>
+    </mask>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)" />
+  <rect width="720" height="720" fill="url(#glow)" />
+  <rect width="720" height="720" fill="url(#glow)" class="nv-glow-boost" opacity="0" /><rect x="0" y="0" width="720" height="4" fill="#FFF200" fill-opacity="0.45" />
+  <rect x="0" y="716" width="720" height="4" fill="#FFF200" fill-opacity="0.45" />
+  <g class="nv-logo-wrap"><use href="#nv-logo-src" filter="url(#nv-halo-filter)" class="nv-halo-layer" opacity="0" pointer-events="none" /><g class="nv-logo-fg"><g transform="translate(86.62, 100.80) scale(1.0125)" id="nv-logo-src">
+        <circle cx="220" cy="256" r="172" fill="#FFF200" mask="url(#plutoCutout)" class="nv-sub-pulse" />
+    <g fill="#FFFFFF" transform="translate(394, 118)" class="nv-sub-pop">
+      <path d="M18 0h22v26h24v20H40v40c0 10 4 14 14 14h10v20H48c-22 0-30-11-30-32V46H4V26h14V0z" />
+      <path d="M74 26h24l18 60 18-60h24l-30 94h-24L74 26z" />
+    </g>
+  </g>
+</g></g><g clip-path="url(#nv-clip)" pointer-events="none"><rect class="nv-sheen-bar" x="0" y="0" width="201" height="720" fill="url(#nv-sheen-grad)" opacity="0" /><rect class="nv-comet-top" x="0" y="0" width="302" height="4" fill="url(#nv-comet-lr)" opacity="0" /><rect class="nv-comet-bot" x="0" y="716" width="302" height="4" fill="url(#nv-comet-rl)" opacity="0" /></g></svg>

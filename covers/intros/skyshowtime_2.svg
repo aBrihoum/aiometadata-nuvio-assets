@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SkyShowtime 2021 Prism Intro Animation">
+  <style>
+    svg {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #ribbon-violet {
+      opacity: 0;
+      transform-origin: 592.5px 360px;
+      will-change: transform, opacity;
+      animation:
+        violet-spin 7.2s linear infinite,
+        violet-fade 7.2s linear infinite;
+    }
+
+    #ribbon-emerald {
+      opacity: 0;
+      transform-origin: 592.5px 360px;
+      will-change: transform, opacity;
+      animation:
+        emerald-spin 7.2s linear infinite,
+        emerald-fade 7.2s linear infinite;
+    }
+
+    #ribbon-azure {
+      opacity: 0;
+      transform-origin: 592.5px 360px;
+      will-change: transform, opacity;
+      animation:
+        azure-spin 7.2s linear infinite,
+        azure-fade 7.2s linear infinite;
+    }
+
+    #center-burst {
+      opacity: 0;
+      transform-origin: 592.5px 360px;
+      will-change: transform, opacity;
+      animation:
+        burst-scale 7.2s linear infinite,
+        burst-fade 7.2s linear infinite;
+    }
+
+    #logo-camera {
+      transform-origin: 640px 360px;
+      will-change: transform;
+      animation: logo-drift 7.2s linear infinite;
+    }
+
+    #pass-iridescent {
+      opacity: 0;
+      will-change: opacity;
+      animation: iri-fade 7.2s linear infinite;
+    }
+
+    #pass-white {
+      opacity: 0;
+      will-change: opacity;
+      animation: white-fade 7.2s linear infinite;
+    }
+
+    #pass-lavender {
+      opacity: 0;
+      will-change: opacity;
+      animation: lav-fade 7.2s linear infinite;
+    }
+
+    /* ---- MOTION TRACKS (one uninterrupted curve per element) ---- */
+    @keyframes violet-spin {
+      0% {
+        transform: rotate(-120deg) scale(1.45);
+        animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+      }
+      34%, 100% {
+        transform: rotate(75deg) scale(0.45);
+      }
+    }
+
+    @keyframes emerald-spin {
+      0%, 16% {
+        transform: rotate(100deg) scale(1.25);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.22, 1);
+      }
+      44%, 100% {
+        transform: rotate(-25deg) scale(0.22);
+      }
+    }
+
+    @keyframes azure-spin {
+      0%, 18% {
+        transform: rotate(-75deg) scale(1.32);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.22, 1);
+      }
+      45%, 100% {
+        transform: rotate(35deg) scale(0.24);
+      }
+    }
+
+    @keyframes burst-scale {
+      0%, 35% {
+        transform: rotate(-35deg) scale(0.28);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      55%, 100% {
+        transform: rotate(30deg) scale(1.35);
+      }
+    }
+
+    @keyframes logo-drift {
+      0%, 44% {
+        transform: scale(0.92);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      66% {
+        transform: scale(1.0);
+        animation-timing-function: linear;
+      }
+      96%, 100% {
+        transform: scale(1.03);
+      }
+    }
+
+    /* ---- OPACITY TRACKS ---- */
+    @keyframes violet-fade {
+      0%        { opacity: 0; animation-timing-function: ease-out; }
+      10%       { opacity: 1; animation-timing-function: linear; }
+      24%       { opacity: 0.9; animation-timing-function: ease-in; }
+      34%, 100% { opacity: 0; }
+    }
+
+    @keyframes emerald-fade {
+      0%, 16%   { opacity: 0; animation-timing-function: ease-out; }
+      24%       { opacity: 1; animation-timing-function: linear; }
+      35%       { opacity: 0.92; animation-timing-function: ease-in; }
+      44%, 100% { opacity: 0; }
+    }
+
+    @keyframes azure-fade {
+      0%, 18%   { opacity: 0; animation-timing-function: ease-out; }
+      26%       { opacity: 1; animation-timing-function: linear; }
+      37%       { opacity: 0.92; animation-timing-function: ease-in; }
+      45%, 100% { opacity: 0; }
+    }
+
+    @keyframes burst-fade {
+      0%, 35%   { opacity: 0; animation-timing-function: ease-out; }
+      43%       { opacity: 0.95; animation-timing-function: ease-in; }
+      55%, 100% { opacity: 0; }
+    }
+
+    @keyframes iri-fade {
+      0%, 44%   { opacity: 0; animation-timing-function: ease-out; }
+      52%       { opacity: 1; animation-timing-function: ease-in-out; }
+      65%, 100% { opacity: 0; }
+    }
+
+    @keyframes white-fade {
+      0%, 55%   { opacity: 0; animation-timing-function: ease-in-out; }
+      65%       { opacity: 1; animation-timing-function: linear; }
+      78%       { opacity: 1; animation-timing-function: ease-in-out; }
+      86%, 100% { opacity: 0; }
+    }
+
+    @keyframes lav-fade {
+      0%, 76%   { opacity: 0; animation-timing-function: ease-in-out; }
+      85%       { opacity: 0.85; animation-timing-function: ease-in; }
+      94%, 100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #ribbon-violet, #ribbon-emerald, #ribbon-azure, #center-burst,
+      #logo-camera, #pass-iridescent, #pass-white, #pass-lavender {
+        animation: none;
+      }
+      #ribbon-violet, #ribbon-emerald, #ribbon-azure, #center-burst,
+      #pass-iridescent, #pass-lavender { opacity: 0; }
+      #logo-camera { transform: none; }
+      #pass-white { opacity: 1; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="fanVioletGrad" gradientUnits="userSpaceOnUse" x1="300" y1="60" x2="620" y2="620">
+      <stop offset="0%" stop-color="#b891ff" stop-opacity="0.96" />
+      <stop offset="42%" stop-color="#6b4ff5" stop-opacity="0.88" />
+      <stop offset="80%" stop-color="#2a1e85" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="shardGreenGrad" gradientUnits="userSpaceOnUse" x1="420" y1="180" x2="720" y2="480">
+      <stop offset="0%" stop-color="#96ff82" stop-opacity="0.95" />
+      <stop offset="52%" stop-color="#2ee652" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#074d24" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="shardAzureGrad" gradientUnits="userSpaceOnUse" x1="560" y1="220" x2="880" y2="490">
+      <stop offset="0%" stop-color="#062052" stop-opacity="0" />
+      <stop offset="48%" stop-color="#1982f2" stop-opacity="0.90" />
+      <stop offset="100%" stop-color="#6ce0ff" stop-opacity="0.98" />
+    </linearGradient>
+
+    <radialGradient id="jewelBurstGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="28%" stop-color="#f24cb8" stop-opacity="0.88" />
+      <stop offset="62%" stop-color="#6c42ff" stop-opacity="0.48" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="iriWordGrad" gradientUnits="userSpaceOnUse" x1="-185" y1="-55" x2="260" y2="55">
+      <stop offset="0%" stop-color="#5d4cc9" />
+      <stop offset="32%" stop-color="#9c62eb" />
+      <stop offset="52%" stop-color="#e8648c" />
+      <stop offset="76%" stop-color="#7c56d9" />
+      <stop offset="100%" stop-color="#5746bf" />
+    </linearGradient>
+
+    
+    <g id="skyShowtimeLogo">
+      <text x="-60" y="27" text-anchor="end" font-family="&#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="82" font-weight="600" letter-spacing="-3">sky</text>
+
+      
+      <path fill-rule="evenodd" d="M 0 -52 A 52 52 0 1 1 0 52 A 52 52 0 1 1 0 -52 Z
+           M -19 -11 C -19 -21 -24 -25 -30.5 -25 C -37.5 -25 -42 -20.5 -42 -12 C -42 -5 -38.5 -1.5 -32.5 1.5 L -29 3.2 C -26 4.8 -25.5 7 -25.5 11.5 C -25.5 16.5 -27.5 18.5 -30.5 18.5 C -33.5 18.5 -35.5 16.5 -35.5 11.5 V 9.5 H -42.5 V 12 C -42.5 21 -37.5 25 -30.5 25 C -23 25 -18.5 20.5 -18.5 11.5 C -18.5 4.2 -22 0.5 -28.5 -2.5 L -32 -4.2 C -34.5 -5.5 -35.2 -7.5 -35.2 -11.5 C -35.2 -16.5 -33.5 -18.5 -30.5 -18.5 C -27.5 -18.5 -26 -16.5 -26 -11.5 V -11 Z
+           M -13 -25 H -6 V -3.5 H 6 V -25 H 13 V 25 H 6 V 3.5 H -6 V 25 H -13 Z
+           M 19 -13.5 A 11.5 11.5 0 0 1 42 -13.5 V 13.5 A 11.5 11.5 0 0 1 19 13.5 Z
+           M 25.5 -13.5 A 5 5 0 0 1 35.5 -13.5 V 13.5 A 5 5 0 0 1 25.5 13.5 Z" />
+
+      <polygon points="60,-27 69,-27 75,11 81,-27 90,-27 96,11 102,-27 111,-27 101,27 91,27 85.5,-3 80,27 70,27" />
+      <path d="M 116 -27 H 148 V -19 H 136.5 V 27 H 127.5 V -19 H 116 Z" />
+      <rect x="155" y="-27" width="9" height="54" />
+      <path d="M 173 -27 H 184 L 195 9 L 206 -27 H 217 V 27 H 208 V -8 L 199 21 H 191 L 182 -8 V 27 H 173 Z" />
+      <path d="M 226 -27 H 256 V -19 H 235 V -4 H 253 V 4 H 235 V 19 H 256 V 27 H 226 Z" />
+    </g>
+  </defs>
+
+  <rect x="-200%" y="-200%" width="500%" height="500%" fill="#000000" />
+
+  
+  <g id="ribbon-violet">
+    <path d="M 520 45 A 330 330 0 0 0 365 615 L 478 505 A 185 185 0 0 1 560 182 Z" fill="url(#fanVioletGrad)" />
+    <path d="M 760 220 A 210 210 0 0 1 825 460 L 690 400 A 105 105 0 0 0 668 295 Z" fill="url(#fanVioletGrad)" opacity="0.78" />
+  </g>
+
+  
+  <g id="ribbon-emerald">
+    <path d="M 415 215 A 225 225 0 0 1 655 155 L 625 275 A 105 105 0 0 0 510 308 Z" fill="url(#shardGreenGrad)" />
+  </g>
+
+  <g id="ribbon-azure">
+    <path d="M 795 295 A 215 215 0 0 1 655 550 L 625 435 A 100 100 0 0 0 692 332 Z" fill="url(#shardAzureGrad)" />
+  </g>
+
+  
+  <circle id="center-burst" cx="592.5" cy="360" r="145" fill="url(#jewelBurstGrad)" />
+
+  
+  <g id="logo-camera">
+    <g transform="translate(640, 360) scale(1.25) translate(-38, 0)">
+      <use id="pass-iridescent" href="#skyShowtimeLogo" fill="url(#iriWordGrad)" />
+      <use id="pass-white" href="#skyShowtimeLogo" fill="#ffffff" />
+      <use id="pass-lavender" href="#skyShowtimeLogo" fill="#8266c7" />
+    </g>
+  </g>
+</svg>
