@@ -10,6 +10,12 @@ Started as a way to give the community crisp, lightweight, high-quality hover co
 Transparent-background vector logos for dark and light UIs:
 `imdb`, `letterboxd`, `lumieredb`, `mdblist`, `metacritic`, `rotten-tomatoes`, `simkl`, `thetvdb`, `tmdb`, `trakt`
 
+### `icons/covers/` (`dark/` & `light/` × `wide/`, `square/`, `poster/`)
+Full-bleed tile covers (60 SVGs) for the 10 metadata/list providers above in dark and light themes:
+- `wide/` (`1280×720`)
+- `square/` (`720×720`)
+- `poster/` (`600×900`)
+
 ### `covers/static/` & `covers/animated/` (`wide/`, `square/`, `poster/`)
 Full-bleed SVG cover tiles in all 3 Nuvio shapes (28 platforms, plus `_2` alternates):
 - `wide/` (`1280×720`)
